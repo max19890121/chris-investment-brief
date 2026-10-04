@@ -1,0 +1,105 @@
+{
+  "status": "OFFICIAL · READY",
+  "updated_at": "2026-10-05 Asia/Taipei",
+  "bluf": {
+    "headline": "利率仍是資產定價核心；科技相對強勢，但需確認債券波動同步降溫。",
+    "brief": "CHRIS 投資早報正式版已建立。目前先以穩定展示架構上線，即時市場資料與每日自動更新將於下一階段接入。",
+    "theme": "Rates · Tech · Volatility"
+  },
+  "risk_note": "目前為正式展示資料層；即時市場來源接入前，以資料狀態標記避免誤認為即時報價。",
+  "tickers": [
+    {"name":"S&P 500","value":"—","change":"DATA PENDING","tone":"warn"},
+    {"name":"NASDAQ","value":"—","change":"DATA PENDING","tone":"warn"},
+    {"name":"SOX","value":"—","change":"DATA PENDING","tone":"warn"},
+    {"name":"US 10Y","value":"—","change":"FRED READY","tone":"up"},
+    {"name":"DXY","value":"—","change":"DATA PENDING","tone":"warn"},
+    {"name":"USD/TWD","value":"—","change":"DATA PENDING","tone":"warn"},
+    {"name":"GOLD","value":"—","change":"DATA PENDING","tone":"warn"},
+    {"name":"WTI","value":"—","change":"DATA PENDING","tone":"warn"},
+    {"name":"VIX","value":"—","change":"FRED READY","tone":"up"},
+    {"name":"MOVE","value":"—","change":"OPTIONAL","tone":"warn"}
+  ],
+  "risk": [
+    {"name":"VIX","value":"—","label":"READY","tone":"up"},
+    {"name":"MOVE","value":"—","label":"OPTIONAL","tone":"warn"},
+    {"name":"F&G","value":"—","label":"OPTIONAL","tone":"warn"}
+  ],
+  "news": [
+    {"title":"Rates","summary":"長端殖利率仍是估值、美元與風險資產的重要變數。"},
+    {"title":"Semiconductors","summary":"SOX 相對大盤強弱可作為風險偏好的重要觀察。"},
+    {"title":"Energy","summary":"能源價格變化可能透過通膨預期影響利率路徑。"},
+    {"title":"Macro","summary":"就業、通膨與消費數據持續影響市場對 Fed 的定價。"}
+  ],
+  "watch": [
+    ["US 10Y","觀察長端利率方向"],
+    ["SOX","觀察科技風險偏好"],
+    ["MOVE","確認債券波動是否降溫"],
+    ["Oil","追蹤通膨風險"],
+    ["DXY","確認美元趨勢"]
+  ],
+  "sectors": [
+    {"name":"能源","change":0},
+    {"name":"工業","change":0},
+    {"name":"資訊科技","change":0},
+    {"name":"公用事業","change":0},
+    {"name":"金融","change":0},
+    {"name":"非必需消費","change":0},
+    {"name":"必需消費","change":0},
+    {"name":"原材料","change":0},
+    {"name":"房地產","change":0},
+    {"name":"通訊服務","change":0},
+    {"name":"醫療保健","change":0}
+  ],
+  "rates": [
+    {"name":"US 2Y","value":"—","date":"waiting"},
+    {"name":"US 10Y","value":"—","date":"waiting"},
+    {"name":"US 30Y","value":"—","date":"waiting"},
+    {"name":"Fed Funds","value":"—","date":"waiting"}
+  ],
+  "commodities": [
+    {"name":"WTI","value":"—","change":"PENDING","tone":"warn"},
+    {"name":"Brent","value":"—","change":"PENDING","tone":"warn"},
+    {"name":"Gold","value":"—","change":"PENDING","tone":"warn"}
+  ],
+  "calendar": [
+    {
+      "time":"—",
+      "country":"US",
+      "event":"Economic calendar adapter ready",
+      "actual":"—",
+      "forecast":"—",
+      "previous":"—"
+    }
+  ],
+  "vol_signals": [
+    ["VIX","等待資料接入"],
+    ["MOVE","等待資料接入"],
+    ["Equity / Bond Vol","觀察跨資產波動是否同步"],
+    ["Regime","Neutral / Pending"]
+  ],
+  "fed": [
+    ["Fed Funds","等待 FRED 資料"],
+    ["Policy Bias","Data dependent"],
+    ["FedWatch","使用 CME 官方入口"]
+  ],
+  "levels": [
+    {"name":"S&P 500","text":"關鍵價位可自訂"},
+    {"name":"NASDAQ","text":"關鍵價位可自訂"},
+    {"name":"SOX","text":"關鍵價位可自訂"},
+    {"name":"US 10Y","text":"關鍵殖利率可自訂"},
+    {"name":"DXY","text":"美元關鍵價位可自訂"}
+  ],
+  "chris_view": "CHRIS View 作為每日市場判斷、風險提醒與資產配置觀點區。正式即時資料接入後，可進一步加入自動化晨報訊號。",
+  "sources": [
+    {"name":"FRED","ok":true,"note":"利率與 VIX 自動化接口已預留。"},
+    {"name":"Market Feed","ok":false,"note":"等待接入市場報價資料源。"},
+    {"name":"CME","ok":true,"note":"FedWatch 採官方入口。"},
+    {"name":"CHRIS CIO Layer","ok":true,"note":"Chris View 與 Key Levels 可自訂。"}
+  ],
+  "history": {
+    "dates":["T-4","T-3","T-2","T-1","Latest"],
+    "dgs10":[4,4,4,4,4],
+    "vix":[15,15,15,15,15]
+  },
+  "curve":[4,4,4]
+}
