@@ -3,74 +3,383 @@ name: CHRIS Auto Update
 on:
   workflow_dispatch:
   schedule:
+    # 07:05 Asia/Taipei, Monday-Friday
     - cron: "5 23 * * 0-4"
 
 permissions:
   contents: write
 
+concurrency:
+  group: chris-auto-update
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
-      - name: Update market data
+      - name: Update verified market data
         shell: python
         run: |
-          import json
           import csv
           import io
-          import urllib.request
+          import json
           import urllib.parse
+          import urllib.request
+          import xml.etree.ElementTree as ET
+
           from datetime import datetime, timezone, timedelta
           from pathlib import Path
+          from zoneinfo import ZoneInfo
 
-          HEADERS = {"User-Agent": "Mozilla/5.0"}
+          HEADERS = {
+              "User-Agent": "Mozilla/5.0 CHRIS-Investment-Brief/2.0",
+              "Accept": "*/*",
+          }
+
+          TAIPEI = timezone(timedelta(hours=8))
 
           def get(url):
               req = urllib.request.Request(url, headers=HEADERS)
-              with urllib.request.urlopen(req, timeout=20) as r:
-                  return r.read().decode()
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  return r.read().decode("utf-8-sig")
+
+          # ============================================================
+          # Yahoo market data
+          # Real observed market prices.
+          # This is NOT labelled as an official exchange feed.
+          # ============================================================
 
           def yahoo(symbol):
               s = urllib.parse.quote(symbol, safe="")
               url = (
                   "https://query1.finance.yahoo.com/v8/finance/chart/"
-                  + s + "?range=10d&interval=1d"
+                  + s
+                  + "?range=10d&interval=1d"
               )
-              j = json.loads(get(url))["chart"]["result"][0]
-              close = j["indicators"]["quote"][0]["close"]
-              v = [float(x) for x in close if x is not None]
-              return v[-1], (v[-1] / v[-2] - 1) * 100
 
-          def fred(series):
-              url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=" + series
-              rows = list(csv.DictReader(io.StringIO(get(url))))
-              vals = []
-              for r in rows:
-                  x = r.get(series)
-                  if x and x != ".":
-                      vals.append((r.get("observation_date") or r.get("DATE"), float(x)))
-              return vals
+              raw = json.loads(get(url))
+              result = raw["chart"]["result"]
+
+              if not result:
+                  raise RuntimeError("Yahoo returned no result")
+
+              j = result[0]
+
+              timestamps = j.get("timestamp", [])
+              closes = j["indicators"]["quote"][0]["close"]
+
+              pairs = [
+                  (t, float(c))
+                  for t, c in zip(timestamps, closes)
+                  if t is not None and c is not None
+              ]
+
+              if len(pairs) < 2:
+                  raise RuntimeError("Not enough valid Yahoo observations")
+
+              previous = pairs[-2][1]
+              latest = pairs[-1][1]
+
+              change = (latest / previous - 1) * 100
+
+              tz_name = j.get("meta", {}).get(
+                  "exchangeTimezoneName",
+                  "UTC"
+              )
+
+              try:
+                  exchange_tz = ZoneInfo(tz_name)
+              except Exception:
+                  exchange_tz = timezone.utc
+
+              as_of = (
+                  datetime.fromtimestamp(
+                      pairs[-1][0],
+                      timezone.utc
+                  )
+                  .astimezone(exchange_tz)
+                  .date()
+                  .isoformat()
+              )
+
+              return latest, change, as_of
+
 
           def market_item(name, symbol):
               try:
-                  value, change = yahoo(symbol)
+                  value, change, as_of = yahoo(symbol)
+
                   return {
                       "name": name,
                       "value": f"{value:,.2f}",
                       "change": f"{change:+.2f}%",
-                      "tone": "up" if change >= 0 else "down"
+                      "tone": "up" if change >= 0 else "down",
+                      "status": "VERIFIED",
+                      "as_of": as_of,
+                      "source": "Yahoo Finance public market feed",
                   }
-              except Exception:
+
+              except Exception as e:
+                  print(f"[MARKET ERROR] {name}: {e}")
+
                   return {
                       "name": name,
                       "value": "—",
-                      "change": "STALE",
-                      "tone": "warn"
+                      "change": "SOURCE ERROR",
+                      "tone": "warn",
+                      "status": "SOURCE ERROR",
+                      "as_of": "—",
+                      "source": "Yahoo Finance public market feed",
                   }
+
+
+          # ============================================================
+          # U.S. Treasury OFFICIAL
+          # Daily Treasury Par Yield Curve
+          # ============================================================
+
+          def treasury_yields():
+              current_year = datetime.now(timezone.utc).year
+
+              years = [current_year, current_year - 1]
+              output = []
+
+              for year in years:
+                  url = (
+                      "https://home.treasury.gov/"
+                      "resource-center/data-chart-center/"
+                      "interest-rates/pages/xml"
+                      "?data=daily_treasury_yield_curve"
+                      f"&field_tdr_date_value={year}"
+                  )
+
+                  try:
+                      xml_text = get(url)
+                      root = ET.fromstring(xml_text)
+
+                      for entry in root.iter():
+                          if entry.tag.split("}")[-1] != "properties":
+                              continue
+
+                          values = {}
+
+                          for child in entry:
+                              key = child.tag.split("}")[-1]
+                              values[key] = (
+                                  child.text.strip()
+                                  if child.text
+                                  else None
+                              )
+
+                          date_raw = values.get("NEW_DATE")
+
+                          if not date_raw:
+                              continue
+
+                          date = date_raw[:10]
+
+                          def number(key):
+                              value = values.get(key)
+
+                              if value in (None, "", "null"):
+                                  return None
+
+                              try:
+                                  return float(value)
+                              except Exception:
+                                  return None
+
+                          output.append({
+                              "date": date,
+                              "2y": number("BC_2YEAR"),
+                              "10y": number("BC_10YEAR"),
+                              "30y": number("BC_30YEAR"),
+                          })
+
+                  except Exception as e:
+                      print(f"[TREASURY ERROR] {year}: {e}")
+
+              unique = {}
+
+              for row in output:
+                  unique[row["date"]] = row
+
+              rows = sorted(
+                  unique.values(),
+                  key=lambda x: x["date"]
+              )
+
+              if not rows:
+                  raise RuntimeError(
+                      "U.S. Treasury returned no valid observations"
+                  )
+
+              return rows
+
+
+          # ============================================================
+          # Cboe OFFICIAL VIX
+          # ============================================================
+
+          def cboe_vix():
+              url = (
+                  "https://cdn.cboe.com/api/global/"
+                  "us_indices/daily_prices/VIX_History.csv"
+              )
+
+              text = get(url)
+
+              reader = csv.DictReader(io.StringIO(text))
+
+              rows = []
+
+              for row in reader:
+                  date_raw = (
+                      row.get("DATE")
+                      or row.get("Date")
+                  )
+
+                  close_raw = (
+                      row.get("CLOSE")
+                      or row.get("Close")
+                  )
+
+                  if not date_raw or not close_raw:
+                      continue
+
+                  date_raw = date_raw.strip()
+
+                  parsed_date = None
+
+                  for fmt in (
+                      "%m/%d/%Y",
+                      "%Y-%m-%d",
+                      "%m/%d/%y",
+                  ):
+                      try:
+                          parsed_date = datetime.strptime(
+                              date_raw,
+                              fmt
+                          ).date().isoformat()
+                          break
+                      except ValueError:
+                          pass
+
+                  if not parsed_date:
+                      continue
+
+                  try:
+                      close = float(close_raw)
+                  except Exception:
+                      continue
+
+                  rows.append(
+                      (parsed_date, close)
+                  )
+
+              rows.sort(key=lambda x: x[0])
+
+              if not rows:
+                  raise RuntimeError(
+                      "Cboe returned no valid VIX observations"
+                  )
+
+              return rows
+
+
+          # ============================================================
+          # NEW YORK FED OFFICIAL EFFR
+          # ============================================================
+
+          def nyfed_effr():
+              urls = [
+                  "https://markets.newyorkfed.org/api/"
+                  "rates/unsecured/effr/last/1.json",
+
+                  "https://markets.newyorkfed.org/api/"
+                  "rates/all/latest.json",
+              ]
+
+              last_error = None
+
+              for url in urls:
+                  try:
+                      payload = json.loads(get(url))
+
+                      candidates = []
+
+                      if isinstance(payload, dict):
+                          for key in (
+                              "refRates",
+                              "rates",
+                              "data",
+                          ):
+                              value = payload.get(key)
+
+                              if isinstance(value, list):
+                                  candidates.extend(value)
+
+                      elif isinstance(payload, list):
+                          candidates = payload
+
+                      for row in candidates:
+                          if not isinstance(row, dict):
+                              continue
+
+                          rate_type = str(
+                              row.get("type")
+                              or row.get("rateType")
+                              or row.get("rate_type")
+                              or ""
+                          ).upper()
+
+                          # On the dedicated EFFR endpoint,
+                          # rate_type may not be needed.
+                          if (
+                              "all/latest" in url
+                              and "EFFR" not in rate_type
+                          ):
+                              continue
+
+                          rate_raw = (
+                              row.get("percentRate")
+                              or row.get("rate")
+                              or row.get("percent_rate")
+                          )
+
+                          date = (
+                              row.get("effectiveDate")
+                              or row.get("effective_date")
+                              or row.get("date")
+                          )
+
+                          if rate_raw is None or not date:
+                              continue
+
+                          return (
+                              str(date)[:10],
+                              float(rate_raw)
+                          )
+
+                  except Exception as e:
+                      last_error = e
+                      print(f"[NY FED ERROR] {url}: {e}")
+
+              raise RuntimeError(
+                  f"NY Fed EFFR unavailable: {last_error}"
+              )
+
+
+          # ============================================================
+          # MARKET
+          # ============================================================
 
           symbols = [
               ("S&P 500", "^GSPC"),
@@ -79,7 +388,7 @@ jobs:
               ("DXY", "DX-Y.NYB"),
               ("USD/TWD", "TWD=X"),
               ("GOLD", "GC=F"),
-              ("WTI", "CL=F")
+              ("WTI", "CL=F"),
           ]
 
           market = {}
@@ -87,47 +396,151 @@ jobs:
 
           for name, symbol in symbols:
               item = market_item(name, symbol)
-              tickers.append(item)
               market[name] = item
+              tickers.append(item)
 
-          fred_data = {}
 
-          for series in ["DGS2", "DGS10", "DGS30", "DFF", "VIXCLS"]:
-              try:
-                  fred_data[series] = fred(series)
-              except Exception:
-                  fred_data[series] = []
+          # ============================================================
+          # OFFICIAL DATA LOAD
+          # ============================================================
 
-          def latest(series):
-              x = fred_data.get(series, [])
-              return x[-1] if x else ("—", None)
+          treasury_ok = False
+          cboe_ok = False
+          nyfed_ok = False
 
-          d2, y2 = latest("DGS2")
-          d10, y10 = latest("DGS10")
-          d30, y30 = latest("DGS30")
-          dff, ff = latest("DFF")
-          dvix, vix = latest("VIXCLS")
+          treasury = []
+          vix_rows = []
 
-          tickers.insert(3, {
-              "name": "US 10Y",
-              "value": f"{y10:.2f}%" if y10 is not None else "—",
-              "change": d10,
-              "tone": "up"
-          })
+          y2 = None
+          y10 = None
+          y30 = None
+          treasury_date = "—"
 
-          tickers.append({
-              "name": "VIX",
-              "value": f"{vix:.2f}" if vix is not None else "—",
-              "change": dvix,
-              "tone": "up"
-          })
+          vix = None
+          vix_date = "—"
 
-          tickers.append({
-              "name": "MOVE",
-              "value": "—",
-              "change": "NO FEED",
-              "tone": "warn"
-          })
+          effr = None
+          effr_date = "—"
+
+          try:
+              treasury = treasury_yields()
+
+              latest_treasury = treasury[-1]
+
+              treasury_date = latest_treasury["date"]
+              y2 = latest_treasury["2y"]
+              y10 = latest_treasury["10y"]
+              y30 = latest_treasury["30y"]
+
+              treasury_ok = all(
+                  x is not None
+                  for x in (y2, y10, y30)
+              )
+
+          except Exception as e:
+              print(f"[TREASURY FATAL] {e}")
+
+          try:
+              vix_rows = cboe_vix()
+
+              vix_date, vix = vix_rows[-1]
+              cboe_ok = True
+
+          except Exception as e:
+              print(f"[CBOE FATAL] {e}")
+
+          try:
+              effr_date, effr = nyfed_effr()
+              nyfed_ok = True
+
+          except Exception as e:
+              print(f"[NYFED FATAL] {e}")
+
+
+          # ============================================================
+          # TICKERS
+          # ============================================================
+
+          tickers.insert(
+              3,
+              {
+                  "name": "US 10Y",
+                  "value":
+                      f"{y10:.2f}%"
+                      if y10 is not None
+                      else "—",
+
+                  "change":
+                      treasury_date
+                      if y10 is not None
+                      else "SOURCE ERROR",
+
+                  "tone":
+                      "up"
+                      if y10 is not None
+                      else "warn",
+
+                  "status":
+                      "VERIFIED"
+                      if y10 is not None
+                      else "SOURCE ERROR",
+
+                  "as_of": treasury_date,
+
+                  "source":
+                      "U.S. Department of the Treasury",
+              },
+          )
+
+          tickers.append(
+              {
+                  "name": "VIX",
+
+                  "value":
+                      f"{vix:.2f}"
+                      if vix is not None
+                      else "—",
+
+                  "change":
+                      vix_date
+                      if vix is not None
+                      else "SOURCE ERROR",
+
+                  "tone":
+                      "up"
+                      if vix is not None
+                      else "warn",
+
+                  "status":
+                      "VERIFIED"
+                      if vix is not None
+                      else "SOURCE ERROR",
+
+                  "as_of": vix_date,
+
+                  "source":
+                      "Cboe Global Markets",
+              }
+          )
+
+          tickers.append(
+              {
+                  "name": "MOVE",
+                  "value": "—",
+                  "change": "NO FEED",
+                  "tone": "warn",
+                  "status": "NO FEED",
+                  "as_of": "—",
+                  "source": "No licensed automated feed",
+              }
+          )
+
+
+          # ============================================================
+          # SECTORS
+          # Never create fake 0% observations.
+          # Failed sector = omitted.
+          # ============================================================
 
           sector_symbols = [
               ("能源", "XLE"),
@@ -140,231 +553,518 @@ jobs:
               ("原材料", "XLB"),
               ("房地產", "XLRE"),
               ("通訊服務", "XLC"),
-              ("醫療保健", "XLV")
+              ("醫療保健", "XLV"),
           ]
 
           sectors = []
 
           for name, symbol in sector_symbols:
               try:
-                  value, change = yahoo(symbol)
+                  value, change, as_of = yahoo(symbol)
+
                   sectors.append({
                       "name": name,
-                      "change": round(change, 2)
+                      "change": round(change, 2),
+                      "status": "VERIFIED",
+                      "as_of": as_of,
+                      "source":
+                          "Yahoo Finance public market feed",
                   })
-              except Exception:
-                  sectors.append({
-                      "name": name,
-                      "change": 0
-                  })
 
-          hist = fred_data.get("DGS10", [])[-20:]
-          vhist = fred_data.get("VIXCLS", [])[-20:]
+              except Exception as e:
+                  print(
+                      f"[SECTOR ERROR] {name}: {e}"
+                  )
 
-          dates = [x[0][5:] for x in hist]
-          yields = [x[1] for x in hist]
-          vix_history = [x[1] for x in vhist]
 
-          if len(vix_history) > len(dates):
-              vix_history = vix_history[-len(dates):]
+          # ============================================================
+          # HISTORY
+          # Treasury dates are the master timeline.
+          # VIX is aligned by actual date.
+          # No artificial padding values.
+          # ============================================================
 
-          while len(vix_history) < len(dates):
-              vix_history.insert(0, None)
+          history_rows = [
+              row
+              for row in treasury
+              if row.get("10y") is not None
+          ][-20:]
 
-          def rate(name, value, date):
+          dates = [
+              row["date"][5:]
+              for row in history_rows
+          ]
+
+          yields = [
+              row["10y"]
+              for row in history_rows
+          ]
+
+          vix_map = dict(vix_rows)
+
+          vix_history = [
+              vix_map.get(row["date"])
+              for row in history_rows
+          ]
+
+
+          # ============================================================
+          # HELPERS
+          # ============================================================
+
+          def rate(name, value, date, source):
               return {
                   "name": name,
-                  "value": f"{value:.2f}%" if value is not None else "—",
-                  "date": date
+
+                  "value":
+                      f"{value:.2f}%"
+                      if value is not None
+                      else "—",
+
+                  "date":
+                      date
+                      if value is not None
+                      else "SOURCE ERROR",
+
+                  "status":
+                      "VERIFIED"
+                      if value is not None
+                      else "SOURCE ERROR",
+
+                  "source": source,
               }
+
 
           def commodity(name):
               x = market[name]
+
               return {
                   "name": name,
                   "value": x["value"],
                   "change": x["change"],
-                  "tone": x["tone"]
+                  "tone": x["tone"],
+                  "status": x["status"],
+                  "as_of": x["as_of"],
+                  "source": x["source"],
               }
 
+
+          market_ok = all(
+              item["status"] == "VERIFIED"
+              for item in market.values()
+          )
+
+          official_ok = (
+              treasury_ok
+              and cboe_ok
+              and nyfed_ok
+          )
+
+          if official_ok and market_ok:
+              overall_status = "AUTO · VERIFIED"
+          else:
+              overall_status = "AUTO · PARTIAL"
+
+
           now = datetime.now(
-              timezone(timedelta(hours=8))
-          ).strftime("%Y-%m-%d %H:%M Asia/Taipei")
+              TAIPEI
+          ).strftime(
+              "%Y-%m-%d %H:%M Asia/Taipei"
+          )
+
+
+          # ============================================================
+          # FINAL JSON
+          # ============================================================
 
           data = {
-              "status": "AUTO · READY",
+              "status": overall_status,
+
               "updated_at": now,
 
               "bluf": {
-                  "headline": "全球市場、利率與波動率已自動更新",
+                  "headline":
+                      "全球市場、官方利率與波動率監控",
+
                   "brief":
-                      "CHRIS 投資早報已進入自動更新模式。"
-                      "以美股、科技、長端利率、美元與波動率交叉判讀市場風險偏好。",
-                  "theme": "Markets · Rates · Volatility"
+                      "CHRIS 投資早報採可驗證市場資料。"
+                      "美債殖利率使用 U.S. Treasury，"
+                      "VIX 使用 Cboe，"
+                      "EFFR 使用 Federal Reserve Bank "
+                      "of New York。"
+                      "無法取得的資料不以推算值取代。",
+
+                  "theme":
+                      "Verified Data · Rates · "
+                      "Markets · Volatility",
               },
 
               "risk_note":
-                  "VIX 與美債使用 FRED 最新可用資料；"
-                  "MOVE 未接授權資料源，因此不使用估算數值。",
+                  "US Treasury 與 VIX 使用官方發布資料；"
+                  "EFFR 使用 New York Fed 官方資料。"
+                  "股指、FX、商品與產業 ETF 為公開市場"
+                  "行情來源，非交易所授權即時 feed。"
+                  "MOVE 尚未接入授權來源，因此不估算。",
 
               "tickers": tickers,
 
               "risk": [
                   {
                       "name": "VIX",
-                      "value": f"{vix:.2f}" if vix is not None else "—",
-                      "label": dvix,
-                      "tone": "up"
+
+                      "value":
+                          f"{vix:.2f}"
+                          if vix is not None
+                          else "—",
+
+                      "label":
+                          vix_date
+                          if vix is not None
+                          else "SOURCE ERROR",
+
+                      "tone":
+                          "up"
+                          if vix is not None
+                          else "warn",
                   },
+
                   {
                       "name": "US 10Y",
-                      "value": f"{y10:.2f}%" if y10 is not None else "—",
-                      "label": d10,
-                      "tone": "up"
+
+                      "value":
+                          f"{y10:.2f}%"
+                          if y10 is not None
+                          else "—",
+
+                      "label":
+                          treasury_date
+                          if y10 is not None
+                          else "SOURCE ERROR",
+
+                      "tone":
+                          "up"
+                          if y10 is not None
+                          else "warn",
                   },
+
                   {
                       "name": "MOVE",
                       "value": "—",
                       "label": "NO FEED",
-                      "tone": "warn"
-                  }
+                      "tone": "warn",
+                  },
               ],
 
               "news": [
                   {
                       "title": "Rates",
+
                       "summary":
-                          f"美國 10 年期公債殖利率最新 "
-                          f"{y10:.2f}%。" if y10 is not None else "利率資料暫缺。"
+                          (
+                              "U.S. Treasury 官方 10 年期"
+                              f"殖利率 {y10:.2f}%，"
+                              f"資料日 {treasury_date}。"
+                          )
+                          if y10 is not None
+                          else
+                          "U.S. Treasury 官方資料暫時"
+                          "無法取得。",
                   },
+
                   {
                       "title": "Equities",
+
                       "summary":
-                          "追蹤 S&P 500、NASDAQ 與 SOX 最新交易日表現。"
+                          "追蹤 S&P 500、NASDAQ、SOX "
+                          "最近有效交易日收盤表現。",
                   },
+
                   {
                       "title": "Volatility",
+
                       "summary":
-                          f"VIX 最新 {vix:.2f}，資料日 {dvix}。"
-                          if vix is not None else "VIX 資料暫缺。"
+                          (
+                              f"Cboe VIX {vix:.2f}，"
+                              f"資料日 {vix_date}。"
+                          )
+                          if vix is not None
+                          else
+                          "Cboe VIX 官方資料暫時"
+                          "無法取得。",
                   },
+
                   {
                       "title": "Cross Asset",
+
                       "summary":
-                          "同步觀察美元、黃金與原油，確認跨資產風險訊號。"
-                  }
+                          "同步觀察美元、黃金與 WTI，"
+                          "作為跨資產風險訊號。",
+                  },
               ],
 
               "watch": [
-                  ["US 10Y", "觀察長端利率方向"],
-                  ["SOX", "觀察科技風險偏好"],
-                  ["VIX", "觀察股票波動率"],
-                  ["WTI", "追蹤能源與通膨風險"],
-                  ["DXY", "確認美元趨勢"]
+                  ["US 10Y", "長端利率方向"],
+                  ["SOX", "科技風險偏好"],
+                  ["VIX", "股票波動率"],
+                  ["WTI", "能源與通膨風險"],
+                  ["DXY", "美元趨勢"],
               ],
 
               "sectors": sectors,
 
               "rates": [
-                  rate("US 2Y", y2, d2),
-                  rate("US 10Y", y10, d10),
-                  rate("US 30Y", y30, d30),
-                  rate("Fed Funds", ff, dff)
+                  rate(
+                      "US 2Y",
+                      y2,
+                      treasury_date,
+                      "U.S. Treasury",
+                  ),
+
+                  rate(
+                      "US 10Y",
+                      y10,
+                      treasury_date,
+                      "U.S. Treasury",
+                  ),
+
+                  rate(
+                      "US 30Y",
+                      y30,
+                      treasury_date,
+                      "U.S. Treasury",
+                  ),
+
+                  rate(
+                      "EFFR",
+                      effr,
+                      effr_date,
+                      "Federal Reserve Bank of New York",
+                  ),
               ],
 
               "commodities": [
                   commodity("WTI"),
-                  commodity("GOLD")
+                  commodity("GOLD"),
               ],
 
               "calendar": [
                   {
                       "time": "—",
-                      "country": "US",
-                      "event": "經濟行事曆：等待授權資料源",
+                      "country": "—",
+                      "event":
+                          "NO VERIFIED ECONOMIC "
+                          "CALENDAR FEED",
+
                       "actual": "—",
                       "forecast": "—",
-                      "previous": "—"
+                      "previous": "—",
                   }
               ],
 
               "vol_signals": [
-                  ["VIX", f"{vix:.2f}" if vix is not None else "—"],
-                  ["MOVE", "No licensed feed"],
-                  ["US 10Y", f"{y10:.2f}%" if y10 is not None else "—"],
-                  ["Regime", "Data Driven"]
+                  [
+                      "VIX",
+                      f"{vix:.2f}"
+                      if vix is not None
+                      else "SOURCE ERROR",
+                  ],
+
+                  [
+                      "MOVE",
+                      "NO LICENSED FEED",
+                  ],
+
+                  [
+                      "US 10Y",
+                      f"{y10:.2f}%"
+                      if y10 is not None
+                      else "SOURCE ERROR",
+                  ],
+
+                  [
+                      "Regime",
+                      "Verified Data",
+                  ],
               ],
 
               "fed": [
-                  ["Fed Funds", f"{ff:.2f}%" if ff is not None else "—"],
-                  ["Data Date", dff],
-                  ["FedWatch", "CME 官方入口"]
+                  [
+                      "EFFR",
+                      f"{effr:.2f}%"
+                      if effr is not None
+                      else "SOURCE ERROR",
+                  ],
+
+                  [
+                      "Data Date",
+                      effr_date,
+                  ],
+
+                  [
+                      "Source",
+                      "Federal Reserve Bank of New York",
+                  ],
               ],
 
               "levels": [
-                  {"name": "S&P 500", "text": market["S&P 500"]["value"]},
-                  {"name": "NASDAQ", "text": market["NASDAQ"]["value"]},
-                  {"name": "SOX", "text": market["SOX"]["value"]},
+                  {
+                      "name": "S&P 500",
+                      "text":
+                          market["S&P 500"]["value"],
+                  },
+
+                  {
+                      "name": "NASDAQ",
+                      "text":
+                          market["NASDAQ"]["value"],
+                  },
+
+                  {
+                      "name": "SOX",
+                      "text":
+                          market["SOX"]["value"],
+                  },
+
                   {
                       "name": "US 10Y",
-                      "text": f"{y10:.2f}%" if y10 is not None else "—"
+                      "text":
+                          f"{y10:.2f}%"
+                          if y10 is not None
+                          else "—",
                   },
-                  {"name": "DXY", "text": market["DXY"]["value"]}
+
+                  {
+                      "name": "DXY",
+                      "text":
+                          market["DXY"]["value"],
+                  },
               ],
 
               "chris_view":
-                  "核心框架：利率 × 科技相對強弱 × 波動率。"
-                  "三者同步改善時提高風險偏好；"
-                  "長端利率與波動率同步上升時提高風險警戒。",
+                  "CHRIS CIO Framework："
+                  "利率 × 科技相對強弱 × 波動率。"
+                  "分析層只解讀已取得的市場資料，"
+                  "不生成或替代原始市場數值。",
 
               "sources": [
                   {
-                      "name": "FRED",
-                      "ok": True,
-                      "note": "Treasury、Fed Funds、VIX"
+                      "name": "U.S. Treasury",
+                      "ok": treasury_ok,
+                      "note":
+                          (
+                              f"Official · {treasury_date}"
+                              if treasury_ok
+                              else "SOURCE ERROR"
+                          ),
                   },
+
                   {
-                      "name": "Market Feed",
-                      "ok": True,
-                      "note": "股指、FX、商品與產業 ETF"
+                      "name": "Cboe VIX",
+                      "ok": cboe_ok,
+                      "note":
+                          (
+                              f"Official · {vix_date}"
+                              if cboe_ok
+                              else "SOURCE ERROR"
+                          ),
                   },
+
                   {
-                      "name": "CME",
-                      "ok": True,
-                      "note": "FedWatch 使用官方入口"
+                      "name": "New York Fed EFFR",
+                      "ok": nyfed_ok,
+                      "note":
+                          (
+                              f"Official · {effr_date}"
+                              if nyfed_ok
+                              else "SOURCE ERROR"
+                          ),
                   },
+
+                  {
+                      "name": "Yahoo Market Feed",
+                      "ok": market_ok,
+                      "note":
+                          "Public market data · "
+                          "not official exchange feed",
+                  },
+
+                  {
+                      "name": "MOVE",
+                      "ok": False,
+                      "note":
+                          "NO LICENSED FEED · "
+                          "no estimation used",
+                  },
+
                   {
                       "name": "CHRIS CIO Layer",
                       "ok": True,
-                      "note": "自動化市場監控框架"
-                  }
+                      "note":
+                          "Analysis only · "
+                          "does not create market data",
+                  },
               ],
 
               "history": {
                   "dates": dates,
                   "dgs10": yields,
-                  "vix": vix_history
+                  "vix": vix_history,
               },
 
+              # Never substitute missing yields with zero.
               "curve": [
-                  y2 or 0,
-                  y10 or 0,
-                  y30 or 0
-              ]
+                  y2,
+                  y10,
+                  y30,
+              ],
           }
 
-          Path("data").mkdir(exist_ok=True)
 
-          Path("data/brief.json").write_text(
-              json.dumps(data, ensure_ascii=False, indent=2),
-              encoding="utf-8"
+          Path("data").mkdir(
+              exist_ok=True
           )
 
-      - name: Commit data
+          Path(
+              "data/brief.json"
+          ).write_text(
+              json.dumps(
+                  data,
+                  ensure_ascii=False,
+                  indent=2,
+              ),
+              encoding="utf-8",
+          )
+
+          print(
+              json.dumps(
+                  {
+                      "status": overall_status,
+                      "treasury": treasury_ok,
+                      "cboe_vix": cboe_ok,
+                      "nyfed_effr": nyfed_ok,
+                      "market": market_ok,
+                      "updated_at": now,
+                  },
+                  ensure_ascii=False,
+                  indent=2,
+              )
+          )
+
+      - name: Commit verified data
         run: |
           git config user.name "CHRIS Market Bot"
           git config user.email "actions@users.noreply.github.com"
+
           git add data/brief.json
-          git diff --cached --quiet && exit 0
-          git commit -m "Auto update CHRIS morning brief"
-          git push
+
+          if git diff --cached --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+
+          git commit -m "Update CHRIS verified market data"
+
+          git fetch origin main
+          git rebase origin/main
+
+          git push origin HEAD:main
