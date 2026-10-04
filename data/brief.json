@@ -1,85 +1,115 @@
 {
-  "status": "AUTO · READY",
-  "updated_at": "2026-10-05 01:55 Asia/Taipei",
+  "status": "AUTO · VERIFIED",
+  "updated_at": "2026-10-05 02:19 Asia/Taipei",
   "bluf": {
-    "headline": "全球市場、利率與波動率已自動更新",
-    "brief": "CHRIS 投資早報已進入自動更新模式。以美股、科技、長端利率、美元與波動率交叉判讀市場風險偏好。",
-    "theme": "Markets · Rates · Volatility"
+    "headline": "全球市場、官方利率與波動率監控",
+    "brief": "CHRIS 投資早報採可驗證市場資料。美債殖利率使用 U.S. Treasury，VIX 使用 Cboe，EFFR 使用 Federal Reserve Bank of New York。無法取得的資料不以推算值取代。",
+    "theme": "Verified Data · Rates · Markets · Volatility"
   },
-  "risk_note": "VIX 與美債使用 FRED 最新可用資料；MOVE 未接授權資料源，因此不使用估算數值。",
+  "risk_note": "US Treasury 與 VIX 使用官方發布資料；EFFR 使用 New York Fed 官方資料。股指、FX、商品與產業 ETF 為公開市場行情來源，非交易所授權即時 feed。MOVE 尚未接入授權來源，因此不估算。",
   "tickers": [
     {
       "name": "S&P 500",
       "value": "7,722.72",
       "change": "+0.73%",
-      "tone": "up"
+      "tone": "up",
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "NASDAQ",
       "value": "27,190.86",
       "change": "+1.19%",
-      "tone": "up"
+      "tone": "up",
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "SOX",
       "value": "13,136.67",
       "change": "+2.40%",
-      "tone": "up"
+      "tone": "up",
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "US 10Y",
-      "value": "—",
-      "change": "—",
-      "tone": "up"
+      "value": "5.28%",
+      "change": "2026-10-02",
+      "tone": "up",
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "U.S. Department of the Treasury"
     },
     {
       "name": "DXY",
       "value": "101.93",
       "change": "-0.17%",
-      "tone": "down"
+      "tone": "down",
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "USD/TWD",
       "value": "31.80",
       "change": "-0.28%",
-      "tone": "down"
+      "tone": "down",
+      "status": "VERIFIED",
+      "as_of": "2026-10-04",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "GOLD",
       "value": "4,162.30",
       "change": "-0.95%",
-      "tone": "down"
+      "tone": "down",
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "WTI",
       "value": "91.11",
       "change": "-1.90%",
-      "tone": "down"
+      "tone": "down",
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "VIX",
-      "value": "—",
-      "change": "—",
-      "tone": "up"
+      "value": "15.31",
+      "change": "2026-10-02",
+      "tone": "up",
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Cboe Global Markets"
     },
     {
       "name": "MOVE",
       "value": "—",
       "change": "NO FEED",
-      "tone": "warn"
+      "tone": "warn",
+      "status": "NO FEED",
+      "as_of": "—",
+      "source": "No licensed automated feed"
     }
   ],
   "risk": [
     {
       "name": "VIX",
-      "value": "—",
-      "label": "—",
+      "value": "15.31",
+      "label": "2026-10-02",
       "tone": "up"
     },
     {
       "name": "US 10Y",
-      "value": "—",
-      "label": "—",
+      "value": "5.28%",
+      "label": "2026-10-02",
       "tone": "up"
     },
     {
@@ -92,109 +122,150 @@
   "news": [
     {
       "title": "Rates",
-      "summary": "利率資料暫缺。"
+      "summary": "U.S. Treasury 官方 10 年期殖利率 5.28%，資料日 2026-10-02。"
     },
     {
       "title": "Equities",
-      "summary": "追蹤 S&P 500、NASDAQ 與 SOX 最新交易日表現。"
+      "summary": "追蹤 S&P 500、NASDAQ、SOX 最近有效交易日收盤表現。"
     },
     {
       "title": "Volatility",
-      "summary": "VIX 資料暫缺。"
+      "summary": "Cboe VIX 15.31，資料日 2026-10-02。"
     },
     {
       "title": "Cross Asset",
-      "summary": "同步觀察美元、黃金與原油，確認跨資產風險訊號。"
+      "summary": "同步觀察美元、黃金與 WTI，作為跨資產風險訊號。"
     }
   ],
   "watch": [
     [
       "US 10Y",
-      "觀察長端利率方向"
+      "長端利率方向"
     ],
     [
       "SOX",
-      "觀察科技風險偏好"
+      "科技風險偏好"
     ],
     [
       "VIX",
-      "觀察股票波動率"
+      "股票波動率"
     ],
     [
       "WTI",
-      "追蹤能源與通膨風險"
+      "能源與通膨風險"
     ],
     [
       "DXY",
-      "確認美元趨勢"
+      "美元趨勢"
     ]
   ],
   "sectors": [
     {
       "name": "能源",
-      "change": 0.19
+      "change": 0.19,
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "工業",
-      "change": 0.78
+      "change": 0.78,
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "資訊科技",
-      "change": 1.01
+      "change": 1.01,
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "公用事業",
-      "change": 0.38
+      "change": 0.38,
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "金融",
-      "change": 0.06
+      "change": 0.06,
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "非必需消費",
-      "change": 1.13
+      "change": 1.13,
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "必需消費",
-      "change": 0.25
+      "change": 0.25,
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "原材料",
-      "change": 0.66
+      "change": 0.66,
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "房地產",
-      "change": 0.32
+      "change": 0.32,
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "通訊服務",
-      "change": 0.35
+      "change": 0.35,
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "醫療保健",
-      "change": -0.01
+      "change": -0.01,
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     }
   ],
   "rates": [
     {
       "name": "US 2Y",
-      "value": "—",
-      "date": "—"
+      "value": "4.83%",
+      "date": "2026-10-02",
+      "status": "VERIFIED",
+      "source": "U.S. Treasury"
     },
     {
       "name": "US 10Y",
-      "value": "—",
-      "date": "—"
+      "value": "5.28%",
+      "date": "2026-10-02",
+      "status": "VERIFIED",
+      "source": "U.S. Treasury"
     },
     {
       "name": "US 30Y",
-      "value": "—",
-      "date": "—"
+      "value": "5.63%",
+      "date": "2026-10-02",
+      "status": "VERIFIED",
+      "source": "U.S. Treasury"
     },
     {
-      "name": "Fed Funds",
-      "value": "—",
-      "date": "—"
+      "name": "EFFR",
+      "value": "3.88%",
+      "date": "2026-10-01",
+      "status": "VERIFIED",
+      "source": "Federal Reserve Bank of New York"
     }
   ],
   "commodities": [
@@ -202,20 +273,26 @@
       "name": "WTI",
       "value": "91.11",
       "change": "-1.90%",
-      "tone": "down"
+      "tone": "down",
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     },
     {
       "name": "GOLD",
       "value": "4,162.30",
       "change": "-0.95%",
-      "tone": "down"
+      "tone": "down",
+      "status": "VERIFIED",
+      "as_of": "2026-10-02",
+      "source": "Yahoo Finance public market feed"
     }
   ],
   "calendar": [
     {
       "time": "—",
-      "country": "US",
-      "event": "經濟行事曆：等待授權資料源",
+      "country": "—",
+      "event": "NO VERIFIED ECONOMIC CALENDAR FEED",
       "actual": "—",
       "forecast": "—",
       "previous": "—"
@@ -224,33 +301,33 @@
   "vol_signals": [
     [
       "VIX",
-      "—"
+      "15.31"
     ],
     [
       "MOVE",
-      "No licensed feed"
+      "NO LICENSED FEED"
     ],
     [
       "US 10Y",
-      "—"
+      "5.28%"
     ],
     [
       "Regime",
-      "Data Driven"
+      "Verified Data"
     ]
   ],
   "fed": [
     [
-      "Fed Funds",
-      "—"
+      "EFFR",
+      "3.88%"
     ],
     [
       "Data Date",
-      "—"
+      "2026-10-01"
     ],
     [
-      "FedWatch",
-      "CME 官方入口"
+      "Source",
+      "Federal Reserve Bank of New York"
     ]
   ],
   "levels": [
@@ -268,44 +345,117 @@
     },
     {
       "name": "US 10Y",
-      "text": "—"
+      "text": "5.28%"
     },
     {
       "name": "DXY",
       "text": "101.93"
     }
   ],
-  "chris_view": "核心框架：利率 × 科技相對強弱 × 波動率。三者同步改善時提高風險偏好；長端利率與波動率同步上升時提高風險警戒。",
+  "chris_view": "CHRIS CIO Framework：利率 × 科技相對強弱 × 波動率。分析層只解讀已取得的市場資料，不生成或替代原始市場數值。",
   "sources": [
     {
-      "name": "FRED",
+      "name": "U.S. Treasury",
       "ok": true,
-      "note": "Treasury、Fed Funds、VIX"
+      "note": "Official · 2026-10-02"
     },
     {
-      "name": "Market Feed",
+      "name": "Cboe VIX",
       "ok": true,
-      "note": "股指、FX、商品與產業 ETF"
+      "note": "Official · 2026-10-02"
     },
     {
-      "name": "CME",
+      "name": "New York Fed EFFR",
       "ok": true,
-      "note": "FedWatch 使用官方入口"
+      "note": "Official · 2026-10-01"
+    },
+    {
+      "name": "Yahoo Market Feed",
+      "ok": true,
+      "note": "Public market data · not official exchange feed"
+    },
+    {
+      "name": "MOVE",
+      "ok": false,
+      "note": "NO LICENSED FEED · no estimation used"
     },
     {
       "name": "CHRIS CIO Layer",
       "ok": true,
-      "note": "自動化市場監控框架"
+      "note": "Analysis only · does not create market data"
     }
   ],
   "history": {
-    "dates": [],
-    "dgs10": [],
-    "vix": []
+    "dates": [
+      "09-04",
+      "09-08",
+      "09-09",
+      "09-10",
+      "09-11",
+      "09-14",
+      "09-15",
+      "09-16",
+      "09-17",
+      "09-18",
+      "09-21",
+      "09-22",
+      "09-23",
+      "09-24",
+      "09-25",
+      "09-28",
+      "09-29",
+      "09-30",
+      "10-01",
+      "10-02"
+    ],
+    "dgs10": [
+      4.78,
+      4.8,
+      4.83,
+      4.95,
+      4.96,
+      4.97,
+      5.0,
+      5.01,
+      4.94,
+      5.01,
+      4.96,
+      4.96,
+      5.11,
+      5.18,
+      5.17,
+      5.24,
+      5.26,
+      5.29,
+      5.24,
+      5.28
+    ],
+    "vix": [
+      14.53,
+      15.72,
+      16.46,
+      17.84,
+      15.84,
+      17.1,
+      17.2,
+      17.71,
+      15.44,
+      14.81,
+      14.87,
+      14.21,
+      15.18,
+      15.67,
+      14.87,
+      16.07,
+      16.04,
+      16.34,
+      16.39,
+      15.31
+    ]
   },
   "curve": [
-    0,
-    0,
-    0
+    4.83,
+    5.28,
+    5.63
   ]
 }
