@@ -1,6 +1,6 @@
 {
   "status": "AUTO · VERIFIED",
-  "updated_at": "2026-10-05 02:19 Asia/Taipei",
+  "updated_at": "2026-10-05 07:19 Asia/Taipei",
   "bluf": {
     "headline": "全球市場、官方利率與波動率監控",
     "brief": "CHRIS 投資早報採可驗證市場資料。美債殖利率使用 U.S. Treasury，VIX 使用 Cboe，EFFR 使用 Federal Reserve Bank of New York。無法取得的資料不以推算值取代。",
@@ -46,11 +46,11 @@
     },
     {
       "name": "DXY",
-      "value": "101.93",
-      "change": "-0.17%",
+      "value": "101.89",
+      "change": "-0.04%",
       "tone": "down",
       "status": "VERIFIED",
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-04",
       "source": "Yahoo Finance public market feed"
     },
     {
@@ -59,25 +59,25 @@
       "change": "-0.28%",
       "tone": "down",
       "status": "VERIFIED",
-      "as_of": "2026-10-04",
+      "as_of": "2026-10-05",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "GOLD",
-      "value": "4,162.30",
-      "change": "-0.95%",
-      "tone": "down",
+      "value": "4,172.50",
+      "change": "+0.25%",
+      "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-04",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "WTI",
       "value": "91.11",
-      "change": "-1.90%",
-      "tone": "down",
+      "change": "+0.00%",
+      "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-04",
       "source": "Yahoo Finance public market feed"
     },
     {
@@ -272,19 +272,19 @@
     {
       "name": "WTI",
       "value": "91.11",
-      "change": "-1.90%",
-      "tone": "down",
+      "change": "+0.00%",
+      "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-04",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "GOLD",
-      "value": "4,162.30",
-      "change": "-0.95%",
-      "tone": "down",
+      "value": "4,172.50",
+      "change": "+0.25%",
+      "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-04",
       "source": "Yahoo Finance public market feed"
     }
   ],
@@ -349,7 +349,7 @@
     },
     {
       "name": "DXY",
-      "text": "101.93"
+      "text": "101.89"
     }
   ],
   "chris_view": "CHRIS CIO Framework：利率 × 科技相對強弱 × 波動率。分析層只解讀已取得的市場資料，不生成或替代原始市場數值。",
