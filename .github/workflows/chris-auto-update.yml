@@ -52,7 +52,7 @@ jobs:
               for r in rows:
                   x = r.get(series)
                   if x and x != ".":
-                      vals.append((r["DATE"], float(x)))
+                      vals.append((r.get("observation_date") or r.get("DATE"), float(x)))
               return vals
 
           def market_item(name, symbol):
