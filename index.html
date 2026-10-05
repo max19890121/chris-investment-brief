@@ -1,56 +1,854 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CHRIS 投資早報</title><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>CHRIS 投資早報</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
 <style>
-:root{--bg:#f5f7fa;--panel:#ffffff;--panel2:#ffffff;--line:#d9e0e8;--text:#111111;--muted:#657181;--green:#0b365d;--red:#c62828;--amber:#9f1f2b;--blue:#0b365d}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#ffffff 0,#f5f7fa 240px);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif}.wrap{max-width:1460px;margin:auto;padding:16px}
-header{border-top:4px solid #c62828;display:flex;justify-content:space-between;align-items:end;gap:15px;padding:16px 0;border-bottom:1px solid var(--line)}.brand{font-size:30px;font-weight:850}.brand b{color:#c62828}.brand{color:#0b365d;letter-spacing:.02em}.muted{font-size:11px;color:var(--muted);line-height:1.55}.health{text-align:right}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:5px}
-nav{display:flex;gap:7px;overflow:auto;position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);padding:10px 0}nav a{font-size:11px;color:#0b365d;text-decoration:none;border:1px solid var(--line);padding:7px 9px;border-radius:7px;white-space:nowrap}
-section{margin-top:21px}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:15px;box-shadow:0 4px 14px rgba(11,54,93,.06)}.ticker .name{font-size:10px;color:var(--muted)}.ticker .value{font-size:21px;font-weight:800;margin:6px 0}.up{color:var(--green)}.down{color:var(--red)}.warn{color:var(--amber)}.hero,.two{display:grid;grid-template-columns:1.65fr 1fr;gap:8px}.hero h1{font-size:27px;line-height:1.38;margin:7px 0}.hero p{line-height:1.7;color:#b9c6d4}.eye{font-size:10px;color:#c62828;font-weight:800;letter-spacing:.14em}.pill{display:inline-block;background:#eef4f9;color:#0b365d;border:1px solid #c6d5e3;border-radius:99px;padding:5px 8px;font-size:10px}
-.risks{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.risk{text-align:center;background:#f8fafc;border:1px solid var(--line);padding:10px;border-radius:9px}.risk strong{display:block;font-size:20px;margin:4px}.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.head h2{font-size:16px;margin:0}
-.news{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.news article{background:#f8fafc;border:1px solid var(--line);border-radius:9px;padding:11px}.news h3{font-size:13px;margin:0 0 6px}.news p{font-size:11px;color:var(--muted);line-height:1.55;margin:0}.tbl{width:100%;border-collapse:collapse;font-size:12px}.tbl th,.tbl td{padding:9px 6px;text-align:left;border-bottom:1px solid var(--line)}.tbl th{font-weight:500;color:var(--muted)}
-.sectors{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}.sector{text-align:center;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:12px 7px}.sector span{display:block;font-size:10px;color:var(--muted);margin-bottom:5px}.levels{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.level{background:#081019;border-left:3px solid #0b365d;padding:10px;border-radius:7px}.level span{display:block;color:var(--muted);font-size:10px;line-height:1.55;margin-top:4px}
-.charts{display:grid;grid-template-columns:1fr 1fr;gap:8px}.chartbox{height:260px}.sources{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.source b{display:block;margin-bottom:5px}.badge{font-size:9px;padding:3px 5px;border-radius:5px;background:#eef4f9;color:#0b365d}.stale{background:#fff1f1;color:#c62828}.toolbar{display:flex;gap:7px;flex-wrap:wrap}button{background:#0b365d;border:1px solid #0b365d;color:#ffffff;border-radius:7px;padding:7px 10px;cursor:pointer}footer{border-top-color:#0b365d!important;margin:30px 0 10px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:10px;line-height:1.7}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero,.two,.charts{grid-template-columns:1fr}.sectors{grid-template-columns:repeat(3,1fr)}.levels{grid-template-columns:1fr 1fr}.sources{grid-template-columns:1fr 1fr}.news{grid-template-columns:1fr}}@media(max-width:520px){.wrap{padding:11px}.brand{font-size:22px}.hero h1{font-size:21px}.sectors{grid-template-columns:repeat(2,1fr)}.levels,.sources{grid-template-columns:1fr}.health{font-size:9px}}
-</style></head><body><div class="wrap">
-<header><div><div class="brand"><b>CHRIS</b> 投資早報</div><div class="muted">Investment Morning Brief · Markets · Macro · Rates · Strategy · Volatility</div></div><div class="health"><span class="dot"></span><span id="status">LOADING</span><br><span class="muted" id="updated"></span></div></header>
-<nav><a href="#overview">總覽</a><a href="#bluf">BLUF</a><a href="#news">焦點</a><a href="#sectors">產業</a><a href="#cross">跨資產</a><a href="#macro">宏觀</a><a href="#calendar">行事曆</a><a href="#vol">波動率</a><a href="#fed">Fed</a><a href="#view">Chris View</a><a href="#sources">資料狀態</a></nav>
-<section id="overview"><div class="grid" id="tickers"></div></section>
-<section id="bluf" class="hero"><div class="card"><div class="eye">CHRIS · BLUF</div><h1 id="headline">Loading…</h1><p id="brief"></p><span class="pill" id="theme"></span></div><div class="card"><div class="eye">RISK MONITOR</div><div class="risks" id="risks"></div><p class="muted" id="risknote"></p></div></section>
-<section id="news" class="two"><div class="card"><div class="head"><h2>全球重大焦點</h2><span class="eye">TOP STORIES</span></div><div class="news" id="newslist"></div></div><div class="card"><div class="head"><h2>今日 5 個訊號</h2><span class="eye">WATCHLIST</span></div><table class="tbl" id="watch"></table></div></section>
-<section id="sectors"><div class="head"><h2>S&P 500｜11 大產業</h2><span class="eye">SECTOR MAP</span></div><div class="sectors" id="sectorgrid"></div></section>
-<section id="cross" class="two"><div class="card"><div class="head"><h2>Rates / FX</h2><span class="eye">CROSS ASSET</span></div><table class="tbl" id="rates"></table></div><div class="card"><div class="head"><h2>Commodities</h2><span class="eye">ENERGY / METALS</span></div><table class="tbl" id="commodities"></table></div></section>
-<section id="macro" class="charts"><div class="card"><div class="head"><h2>US 10Y Yield</h2><span class="eye">HISTORY</span></div><div class="chartbox"><canvas id="yieldChart"></canvas></div></div><div class="card"><div class="head"><h2>Yield Curve</h2><span class="eye">2Y / 10Y / 30Y</span></div><div class="chartbox"><canvas id="curveChart"></canvas></div></div></section>
-<section id="calendar" class="card"><div class="head"><h2>經濟行事曆</h2><span class="eye">ACTUAL · FORECAST · PREVIOUS</span></div><table class="tbl" id="calendarTable"></table></section>
-<section id="vol" class="charts"><div class="card"><div class="head"><h2>Volatility Dashboard</h2><span class="eye">VIX / MOVE</span></div><div class="chartbox"><canvas id="volChart"></canvas></div></div><div class="card"><div class="head"><h2>Volatility Signals</h2><span class="eye">REGIME</span></div><table class="tbl" id="volsignals"></table></div></section>
-<section id="fed" class="two"><div class="card"><div class="head"><h2>Fed / FOMC</h2><span class="eye">POLICY</span></div><table class="tbl" id="fedtable"></table></div><div class="card"><div class="head"><h2>FedWatch</h2><span class="eye">CME LINK</span></div><p class="muted">官方 FedWatch 機率不在前端爬取；此區保留官方入口與人工/授權資料 adapter，避免不穩定 scraping。</p><div class="toolbar"><button onclick="window.open('https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html','_blank')">Open CME FedWatch</button></div></div></section>
-<section id="view"><div class="head"><h2>Chris 今日交易觀察</h2><span class="eye">KEY LEVELS</span></div><div class="levels" id="levels"></div><div class="card" style="margin-top:8px"><div class="eye">CHRIS VIEW</div><p id="chrisview" style="line-height:1.75"></p></div></section>
-<section id="sources"><div class="head"><h2>資料來源與狀態</h2><span class="eye">DATA HEALTH</span></div><div class="sources" id="sourcegrid"></div></section>
-<section><div class="card"><div class="head"><h2>工具</h2><span class="eye">UTILITY</span></div><div class="toolbar"><button onclick="location.reload()">Refresh</button><button onclick="window.print()">Print / PDF</button><button onclick="downloadJSON()">Download JSON</button></div></div></section>
-<footer>CHRIS 投資早報 · Official Edition<br>資料來源可能具有不同更新頻率。系統以來源狀態、資料日期與 STALE 標記避免將舊資料誤認為即時資料。本網站僅供資訊整理，不構成投資建議。</footer></div>
-<script>
-let D={}, charts=[];
-const cls=x=>x>=0?'up':'down';
-async function boot(){try{D=await fetch('./data/brief.json?'+Date.now()).then(r=>r.json());render()}catch(e){document.getElementById('status').textContent='DATA ERROR';}}
-function render(){
- status.textContent=D.status;updated.textContent='Updated '+D.updated_at;
- tickers.innerHTML=D.tickers.map(x=>`<div class="card ticker"><div class="name">${x.name}</div><div class="value">${x.value}</div><div class="${x.tone}">${x.change}</div></div>`).join('');
- headline.textContent=D.bluf.headline;brief.textContent=D.bluf.brief;theme.textContent=D.bluf.theme;risknote.textContent=D.risk_note;
- risks.innerHTML=D.risk.map(x=>`<div class="risk"><span class="muted">${x.name}</span><strong>${x.value}</strong><span class="${x.tone}">${x.label}</span></div>`).join('');
- newslist.innerHTML=D.news.map((x,i)=>`<article><h3>${String(i+1).padStart(2,'0')}｜${x.title}</h3><p>${x.summary}</p></article>`).join('');
- watch.innerHTML=D.watch.map(x=>`<tr><td>${x[0]}</td><td>${x[1]}</td></tr>`).join('');
- sectorgrid.innerHTML=D.sectors.map(x=>`<div class="sector"><span>${x.name}</span><b class="${cls(x.change)}">${x.change>0?'+':''}${x.change.toFixed(2)}%</b></div>`).join('');
- rates.innerHTML='<tr><th>資產</th><th>水準</th><th>日期</th></tr>'+D.rates.map(x=>`<tr><td>${x.name}</td><td>${x.value}</td><td>${x.date}</td></tr>`).join('');
- commodities.innerHTML='<tr><th>資產</th><th>水準</th><th>變動</th></tr>'+D.commodities.map(x=>`<tr><td>${x.name}</td><td>${x.value}</td><td class="${x.tone}">${x.change}</td></tr>`).join('');
- calendarTable.innerHTML='<tr><th>時間</th><th>國家</th><th>事件</th><th>Actual</th><th>Forecast</th><th>Previous</th></tr>'+D.calendar.map(x=>`<tr><td>${x.time}</td><td>${x.country}</td><td>${x.event}</td><td>${x.actual}</td><td>${x.forecast}</td><td>${x.previous}</td></tr>`).join('');
- volsignals.innerHTML=D.vol_signals.map(x=>`<tr><td>${x[0]}</td><td>${x[1]}</td></tr>`).join('');
- fedtable.innerHTML=D.fed.map(x=>`<tr><td>${x[0]}</td><td>${x[1]}</td></tr>`).join('');
- levels.innerHTML=D.levels.map(x=>`<div class="level"><b>${x.name}</b><span>${x.text}</span></div>`).join('');chrisview.textContent=D.chris_view;
- sourcegrid.innerHTML=D.sources.map(x=>`<div class="card source"><b>${x.name}</b><span class="badge ${x.ok?'':'stale'}">${x.ok?'OK':'STALE'}</span><p class="muted">${x.note}</p></div>`).join('');
- draw('yieldChart','10Y Yield',D.history.dates,D.history.dgs10);draw('volChart','VIX',D.history.dates,D.history.vix);
- new Chart(document.getElementById('curveChart'),{type:'line',data:{labels:['2Y','10Y','30Y'],datasets:[{label:'Yield %',data:D.curve}]},options:opts()});
+:root{
+  --bg:#f5f7fa;
+  --panel:#ffffff;
+  --panel2:#ffffff;
+  --line:#d9e0e8;
+  --text:#111111;
+  --muted:#657181;
+
+  /* 漲跌顏色 */
+  --green:#16a34a;
+  --red:#dc2626;
+
+  /* 警示與原始品牌色 */
+  --amber:#d97706;
+  --blue:#0b365d;
 }
-function opts(){return{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#657181'}}},scales:{x:{ticks:{color:'#657181'},grid:{color:'#e7ebf0'}},y:{ticks:{color:'#657181'},grid:{color:'#e7ebf0'}}}}}
-function draw(id,label,labels,data){new Chart(document.getElementById(id),{type:'line',data:{labels,datasets:[{label,data,tension:.25,pointRadius:0,borderWidth:2}]},options:opts()})}
-function downloadJSON(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(D,null,2)],{type:'application/json'}));a.download='chris-brief.json';a.click()}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:linear-gradient(180deg,#ffffff 0,#f5f7fa 240px);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;
+}
+
+.wrap{
+  max-width:1460px;
+  margin:auto;
+  padding:16px;
+}
+
+header{
+  border-top:4px solid #c62828;
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:15px;
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.brand{
+  font-size:30px;
+  font-weight:850;
+  color:#0b365d;
+  letter-spacing:.02em;
+}
+
+.brand b{color:#c62828}
+
+.muted{
+  font-size:11px;
+  color:var(--muted);
+  line-height:1.55;
+}
+
+.health{text-align:right}
+
+.dot{
+  display:inline-block;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--green);
+  margin-right:5px;
+}
+
+nav{
+  display:flex;
+  gap:7px;
+  overflow:auto;
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(14px);
+  padding:10px 0;
+}
+
+nav a{
+  font-size:11px;
+  color:#0b365d;
+  text-decoration:none;
+  border:1px solid var(--line);
+  padding:7px 9px;
+  border-radius:7px;
+  white-space:nowrap;
+}
+
+section{margin-top:21px}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:8px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:15px;
+  box-shadow:0 4px 14px rgba(11,54,93,.06);
+}
+
+.ticker .name{
+  font-size:10px;
+  color:var(--muted);
+}
+
+.ticker .value{
+  font-size:21px;
+  font-weight:800;
+  margin:6px 0;
+}
+
+/* =========================
+   漲跌顏色核心設定
+   上漲 = 綠
+   下跌 = 紅
+   ========================= */
+
+.up{
+  color:var(--green)!important;
+  font-weight:700;
+}
+
+.down{
+  color:var(--red)!important;
+  font-weight:700;
+}
+
+.warn{
+  color:var(--amber)!important;
+  font-weight:700;
+}
+
+.hero,.two{
+  display:grid;
+  grid-template-columns:1.65fr 1fr;
+  gap:8px;
+}
+
+.hero h1{
+  font-size:27px;
+  line-height:1.38;
+  margin:7px 0;
+}
+
+.hero p{
+  line-height:1.7;
+  color:#b9c6d4;
+}
+
+.eye{
+  font-size:10px;
+  color:#c62828;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+
+.pill{
+  display:inline-block;
+  background:#eef4f9;
+  color:#0b365d;
+  border:1px solid #c6d5e3;
+  border-radius:99px;
+  padding:5px 8px;
+  font-size:10px;
+}
+
+.risks{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
+  margin-top:10px;
+}
+
+.risk{
+  text-align:center;
+  background:#f8fafc;
+  border:1px solid var(--line);
+  padding:10px;
+  border-radius:9px;
+}
+
+.risk strong{
+  display:block;
+  font-size:20px;
+  margin:4px;
+}
+
+.head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.head h2{
+  font-size:16px;
+  margin:0;
+}
+
+.news{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:7px;
+}
+
+.news article{
+  background:#f8fafc;
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:11px;
+}
+
+.news h3{
+  font-size:13px;
+  margin:0 0 6px;
+}
+
+.news p{
+  font-size:11px;
+  color:var(--muted);
+  line-height:1.55;
+  margin:0;
+}
+
+.tbl{
+  width:100%;
+  border-collapse:collapse;
+  font-size:12px;
+}
+
+.tbl th,.tbl td{
+  padding:9px 6px;
+  text-align:left;
+  border-bottom:1px solid var(--line);
+}
+
+.tbl th{
+  font-weight:500;
+  color:var(--muted);
+}
+
+.sectors{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:7px;
+}
+
+.sector{
+  text-align:center;
+  background:#f8fafc;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:12px 7px;
+}
+
+.sector span{
+  display:block;
+  font-size:10px;
+  color:var(--muted);
+  margin-bottom:5px;
+}
+
+.levels{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:7px;
+}
+
+.level{
+  background:#081019;
+  border-left:3px solid #0b365d;
+  padding:10px;
+  border-radius:7px;
+}
+
+.level span{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.55;
+  margin-top:4px;
+}
+
+.charts{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.chartbox{height:260px}
+
+.sources{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+}
+
+.source b{
+  display:block;
+  margin-bottom:5px;
+}
+
+.badge{
+  font-size:9px;
+  padding:3px 5px;
+  border-radius:5px;
+  background:#eef4f9;
+  color:#0b365d;
+}
+
+.stale{
+  background:#fff1f1;
+  color:#c62828;
+}
+
+.toolbar{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+button{
+  background:#0b365d;
+  border:1px solid #0b365d;
+  color:#ffffff;
+  border-radius:7px;
+  padding:7px 10px;
+  cursor:pointer;
+}
+
+footer{
+  border-top-color:#0b365d!important;
+  margin:30px 0 10px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.7;
+}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .hero,.two,.charts{grid-template-columns:1fr}
+  .sectors{grid-template-columns:repeat(3,1fr)}
+  .levels{grid-template-columns:1fr 1fr}
+  .sources{grid-template-columns:1fr 1fr}
+  .news{grid-template-columns:1fr}
+}
+
+@media(max-width:520px){
+  .wrap{padding:11px}
+  .brand{font-size:22px}
+  .hero h1{font-size:21px}
+  .sectors{grid-template-columns:repeat(2,1fr)}
+  .levels,.sources{grid-template-columns:1fr}
+  .health{font-size:9px}
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <div class="brand"><b>CHRIS</b> 投資早報</div>
+    <div class="muted">
+      Investment Morning Brief · Markets · Macro · Rates · Strategy · Volatility
+    </div>
+  </div>
+
+  <div class="health">
+    <span class="dot"></span>
+    <span id="status">LOADING</span><br>
+    <span class="muted" id="updated"></span>
+  </div>
+</header>
+
+<nav>
+  <a href="#overview">總覽</a>
+  <a href="#bluf">BLUF</a>
+  <a href="#news">焦點</a>
+  <a href="#sectors">產業</a>
+  <a href="#cross">跨資產</a>
+  <a href="#macro">宏觀</a>
+  <a href="#calendar">行事曆</a>
+  <a href="#vol">波動率</a>
+  <a href="#fed">Fed</a>
+  <a href="#view">Chris View</a>
+  <a href="#sources">資料狀態</a>
+</nav>
+
+<section id="overview">
+  <div class="grid" id="tickers"></div>
+</section>
+
+<section id="bluf" class="hero">
+
+  <div class="card">
+    <div class="eye">CHRIS · BLUF</div>
+    <h1 id="headline">Loading…</h1>
+    <p id="brief"></p>
+    <span class="pill" id="theme"></span>
+  </div>
+
+  <div class="card">
+    <div class="eye">RISK MONITOR</div>
+    <div class="risks" id="risks"></div>
+    <p class="muted" id="risknote"></p>
+  </div>
+
+</section>
+
+<section id="news" class="two">
+
+  <div class="card">
+    <div class="head">
+      <h2>全球重大焦點</h2>
+      <span class="eye">TOP STORIES</span>
+    </div>
+    <div class="news" id="newslist"></div>
+  </div>
+
+  <div class="card">
+    <div class="head">
+      <h2>今日 5 個訊號</h2>
+      <span class="eye">WATCHLIST</span>
+    </div>
+    <table class="tbl" id="watch"></table>
+  </div>
+
+</section>
+
+<section id="sectors">
+  <div class="head">
+    <h2>S&P 500｜11 大產業</h2>
+    <span class="eye">SECTOR MAP</span>
+  </div>
+  <div class="sectors" id="sectorgrid"></div>
+</section>
+
+<section id="cross" class="two">
+
+  <div class="card">
+    <div class="head">
+      <h2>Rates / FX</h2>
+      <span class="eye">CROSS ASSET</span>
+    </div>
+    <table class="tbl" id="rates"></table>
+  </div>
+
+  <div class="card">
+    <div class="head">
+      <h2>Commodities</h2>
+      <span class="eye">ENERGY / METALS</span>
+    </div>
+    <table class="tbl" id="commodities"></table>
+  </div>
+
+</section>
+
+<section id="macro" class="charts">
+
+  <div class="card">
+    <div class="head">
+      <h2>US 10Y Yield</h2>
+      <span class="eye">HISTORY</span>
+    </div>
+    <div class="chartbox">
+      <canvas id="yieldChart"></canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="head">
+      <h2>Yield Curve</h2>
+      <span class="eye">2Y / 10Y / 30Y</span>
+    </div>
+    <div class="chartbox">
+      <canvas id="curveChart"></canvas>
+    </div>
+  </div>
+
+</section>
+
+<section id="calendar" class="card">
+
+  <div class="head">
+    <h2>經濟行事曆</h2>
+    <span class="eye">ACTUAL · FORECAST · PREVIOUS</span>
+  </div>
+
+  <table class="tbl" id="calendarTable"></table>
+
+</section>
+
+<section id="vol" class="charts">
+
+  <div class="card">
+    <div class="head">
+      <h2>Volatility Dashboard</h2>
+      <span class="eye">VIX / MOVE</span>
+    </div>
+    <div class="chartbox">
+      <canvas id="volChart"></canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="head">
+      <h2>Volatility Signals</h2>
+      <span class="eye">REGIME</span>
+    </div>
+    <table class="tbl" id="volsignals"></table>
+  </div>
+
+</section>
+
+<section id="fed" class="two">
+
+  <div class="card">
+    <div class="head">
+      <h2>Fed / FOMC</h2>
+      <span class="eye">POLICY</span>
+    </div>
+    <table class="tbl" id="fedtable"></table>
+  </div>
+
+  <div class="card">
+    <div class="head">
+      <h2>FedWatch</h2>
+      <span class="eye">CME LINK</span>
+    </div>
+
+    <p class="muted">
+      官方 FedWatch 機率不在前端爬取；此區保留官方入口與人工/授權資料 adapter，避免不穩定 scraping。
+    </p>
+
+    <div class="toolbar">
+      <button onclick="window.open('https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html','_blank')">
+        Open CME FedWatch
+      </button>
+    </div>
+  </div>
+
+</section>
+
+<section id="view">
+
+  <div class="head">
+    <h2>Chris 今日交易觀察</h2>
+    <span class="eye">KEY LEVELS</span>
+  </div>
+
+  <div class="levels" id="levels"></div>
+
+  <div class="card" style="margin-top:8px">
+    <div class="eye">CHRIS VIEW</div>
+    <p id="chrisview" style="line-height:1.75"></p>
+  </div>
+
+</section>
+
+<section id="sources">
+
+  <div class="head">
+    <h2>資料來源與狀態</h2>
+    <span class="eye">DATA HEALTH</span>
+  </div>
+
+  <div class="sources" id="sourcegrid"></div>
+
+</section>
+
+<section>
+
+  <div class="card">
+    <div class="head">
+      <h2>工具</h2>
+      <span class="eye">UTILITY</span>
+    </div>
+
+    <div class="toolbar">
+      <button onclick="location.reload()">Refresh</button>
+      <button onclick="window.print()">Print / PDF</button>
+      <button onclick="downloadJSON()">Download JSON</button>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+CHRIS 投資早報 · Official Edition<br>
+資料來源可能具有不同更新頻率。系統以來源狀態、資料日期與 STALE 標記避免將舊資料誤認為即時資料。
+本網站僅供資訊整理，不構成投資建議。
+</footer>
+
+</div>
+
+<script>
+
+let D={}, charts=[];
+
+/* 數值 > 0 = 綠色；數值 < 0 = 紅色 */
+const cls=x=>{
+  if(x>0) return 'up';
+  if(x<0) return 'down';
+  return '';
+};
+
+async function boot(){
+  try{
+    D=await fetch('./data/brief.json?'+Date.now()).then(r=>r.json());
+    render();
+  }catch(e){
+    document.getElementById('status').textContent='DATA ERROR';
+  }
+}
+
+function render(){
+
+  status.textContent=D.status;
+  updated.textContent='Updated '+D.updated_at;
+
+  tickers.innerHTML=D.tickers.map(x=>`
+    <div class="card ticker">
+      <div class="name">${x.name}</div>
+      <div class="value">${x.value}</div>
+      <div class="${x.tone}">${x.change}</div>
+    </div>
+  `).join('');
+
+  headline.textContent=D.bluf.headline;
+  brief.textContent=D.bluf.brief;
+  theme.textContent=D.bluf.theme;
+  risknote.textContent=D.risk_note;
+
+  risks.innerHTML=D.risk.map(x=>`
+    <div class="risk">
+      <span class="muted">${x.name}</span>
+      <strong>${x.value}</strong>
+      <span class="${x.tone}">${x.label}</span>
+    </div>
+  `).join('');
+
+  newslist.innerHTML=D.news.map((x,i)=>`
+    <article>
+      <h3>${String(i+1).padStart(2,'0')}｜${x.title}</h3>
+      <p>${x.summary}</p>
+    </article>
+  `).join('');
+
+  watch.innerHTML=D.watch.map(x=>`
+    <tr>
+      <td>${x[0]}</td>
+      <td>${x[1]}</td>
+    </tr>
+  `).join('');
+
+  sectorgrid.innerHTML=D.sectors.map(x=>`
+    <div class="sector">
+      <span>${x.name}</span>
+      <b class="${cls(x.change)}">
+        ${x.change>0?'+':''}${x.change.toFixed(2)}%
+      </b>
+    </div>
+  `).join('');
+
+  rates.innerHTML=
+    '<tr><th>資產</th><th>水準</th><th>日期</th></tr>'+
+    D.rates.map(x=>`
+      <tr>
+        <td>${x.name}</td>
+        <td>${x.value}</td>
+        <td>${x.date}</td>
+      </tr>
+    `).join('');
+
+  commodities.innerHTML=
+    '<tr><th>資產</th><th>水準</th><th>變動</th></tr>'+
+    D.commodities.map(x=>`
+      <tr>
+        <td>${x.name}</td>
+        <td>${x.value}</td>
+        <td class="${x.tone}">${x.change}</td>
+      </tr>
+    `).join('');
+
+  calendarTable.innerHTML=
+    '<tr><th>時間</th><th>國家</th><th>事件</th><th>Actual</th><th>Forecast</th><th>Previous</th></tr>'+
+    D.calendar.map(x=>`
+      <tr>
+        <td>${x.time}</td>
+        <td>${x.country}</td>
+        <td>${x.event}</td>
+        <td>${x.actual}</td>
+        <td>${x.forecast}</td>
+        <td>${x.previous}</td>
+      </tr>
+    `).join('');
+
+  volsignals.innerHTML=D.vol_signals.map(x=>`
+    <tr>
+      <td>${x[0]}</td>
+      <td>${x[1]}</td>
+    </tr>
+  `).join('');
+
+  fedtable.innerHTML=D.fed.map(x=>`
+    <tr>
+      <td>${x[0]}</td>
+      <td>${x[1]}</td>
+    </tr>
+  `).join('');
+
+  levels.innerHTML=D.levels.map(x=>`
+    <div class="level">
+      <b>${x.name}</b>
+      <span>${x.text}</span>
+    </div>
+  `).join('');
+
+  chrisview.textContent=D.chris_view;
+
+  sourcegrid.innerHTML=D.sources.map(x=>`
+    <div class="card source">
+      <b>${x.name}</b>
+      <span class="badge ${x.ok?'':'stale'}">
+        ${x.ok?'OK':'STALE'}
+      </span>
+      <p class="muted">${x.note}</p>
+    </div>
+  `).join('');
+
+  draw(
+    'yieldChart',
+    '10Y Yield',
+    D.history.dates,
+    D.history.dgs10
+  );
+
+  draw(
+    'volChart',
+    'VIX',
+    D.history.dates,
+    D.history.vix
+  );
+
+  new Chart(
+    document.getElementById('curveChart'),
+    {
+      type:'line',
+      data:{
+        labels:['2Y','10Y','30Y'],
+        datasets:[
+          {
+            label:'Yield %',
+            data:D.curve
+          }
+        ]
+      },
+      options:opts()
+    }
+  );
+}
+
+function opts(){
+  return{
+    responsive:true,
+    maintainAspectRatio:false,
+    plugins:{
+      legend:{
+        labels:{
+          color:'#657181'
+        }
+      }
+    },
+    scales:{
+      x:{
+        ticks:{color:'#657181'},
+        grid:{color:'#e7ebf0'}
+      },
+      y:{
+        ticks:{color:'#657181'},
+        grid:{color:'#e7ebf0'}
+      }
+    }
+  }
+}
+
+function draw(id,label,labels,data){
+
+  new Chart(
+    document.getElementById(id),
+    {
+      type:'line',
+      data:{
+        labels,
+        datasets:[
+          {
+            label,
+            data,
+            tension:.25,
+            pointRadius:0,
+            borderWidth:2
+          }
+        ]
+      },
+      options:opts()
+    }
+  );
+}
+
+function downloadJSON(){
+
+  const a=document.createElement('a');
+
+  a.href=URL.createObjectURL(
+    new Blob(
+      [JSON.stringify(D,null,2)],
+      {type:'application/json'}
+    )
+  );
+
+  a.download='chris-brief.json';
+
+  a.click();
+}
+
 boot();
-</script></body></html>
+
+</script>
+
+</body>
+</html>
