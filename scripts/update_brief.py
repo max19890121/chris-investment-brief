@@ -1436,6 +1436,7 @@ def publisher_news(name, domain):
                 host=urllib.parse.urlparse(publisher.get('url','')).hostname or ''
                 if host not in (domain,'www.'+domain):continue
                 title=html_module.unescape(entry.findtext('title') or '').removesuffix(' - '+name).strip()
+                if not re.search(r'\b(stocks?|equities|Nasdaq|earnings|Wall (?:Street|St)|Dow|S&P|NYSE|Nvidia|Apple|Microsoft|Tesla|Amazon|Alphabet|Meta)\b',title,re.I):continue
                 link=entry.findtext('link') or ''; published=parsedate_to_datetime(entry.findtext('pubDate') or '')
                 if not title or title in seen or urllib.parse.urlparse(link).hostname!='news.google.com' or published.tzinfo is None:continue
                 age=(datetime.now(timezone.utc)-published).total_seconds()/86400
@@ -1444,7 +1445,7 @@ def publisher_news(name, domain):
                 result['items'].append(dict(title=title,url=link,as_of=published.astimezone(TAIPEI).strftime('%Y-%m-%d %H:%M'),published_at=published.isoformat(),source=name,publisher_url=publisher.get('url'),delivery='Google News RSS',status='VERIFIED'))
             except (ValueError,TypeError,OverflowError):continue
         result['items'].sort(key=lambda x:x['published_at'],reverse=True)
-        result['items']=result['items'][:10]
+        result['items']=result['items'][:5]
         result['status']='VERIFIED' if result['items'] else 'NO FEED'
     except Exception as e:result['error']=str(e);print('[NEWS ERROR]',name,e)
     return result
@@ -1567,6 +1568,86 @@ if data['headlines']['status']!='VERIFIED' or data['coverage']['status']=='PARTI
     data['status']='AUTO · PARTIAL'
 overall_status=data['status']
 
+
+# Reader-facing editorial data: translation uses only sourced headlines.
+def translate_headline(text):
+    url='https://translate.googleapis.com/translate_a/single?'+urllib.parse.urlencode(dict(client='gtx',sl='en',tl='zh-TW',dt='t',q=text))
+    payload=json.loads(get(url))
+    translated=''.join(part[0] for part in payload[0] if part and isinstance(part[0],str)).strip()
+    if not translated or not re.search(r'[\u3400-\u9fff]',translated):raise ValueError('No Chinese translation returned')
+    return translated
+
+def prepare_chinese_news(feed):
+    feed['items']=feed.get('items',[])[:5]
+    def translate_item(item):
+        item=dict(item)
+        try:
+            item['summary_zh']=translate_headline(item['title'])
+            item['translation_status']='OK'
+            item['summary_method']='Translated publisher headline only; not a full-article summary'
+        except Exception as e:
+            item['summary_zh']=None;item['translation_status']='SOURCE ERROR';item['translation_error']=str(e)
+        return item
+    with ThreadPoolExecutor(max_workers=3) as pool:feed['items']=list(pool.map(translate_item,feed['items']))
+    return feed
+
+WEEKLY_CALENDAR_URL='https://nfs.faireconomy.media/ff_calendar_thisweek.json'
+ECONOMIC_TITLES={
+'ISM Manufacturing PMI':'ISM 製造業 PMI','ISM Services PMI':'ISM 服務業 PMI',
+'Non-Farm Employment Change':'非農就業人數變化','Unemployment Rate':'失業率',
+'Average Hourly Earnings m/m':'平均時薪（月增率）','ADP Non-Farm Employment Change':'ADP 非農就業變化',
+'ADP Weekly Employment Change':'ADP 每週就業變化','Unemployment Claims':'初領失業救濟金人數',
+'CPI m/m':'CPI（月增率）','CPI y/y':'CPI（年增率）','Core CPI m/m':'核心 CPI（月增率）',
+'PPI m/m':'PPI（月增率）','Core PPI m/m':'核心 PPI（月增率）',
+'Core PCE Price Index m/m':'核心 PCE 物價指數（月增率）',
+'Retail Sales m/m':'零售銷售（月增率）','Core Retail Sales m/m':'核心零售銷售（月增率）',
+'Advance GDP q/q':'GDP 季增率（初值）','Prelim GDP q/q':'GDP 季增率（修正值）','Final GDP q/q':'GDP 季增率（終值）',
+'JOLTS Job Openings':'JOLTS 職缺數','Trade Balance':'貿易收支',
+'Prelim UoM Consumer Sentiment':'密西根大學消費者信心（初值）','Revised UoM Consumer Sentiment':'密西根大學消費者信心（修正值）',
+'Prelim UoM Inflation Expectations':'密西根大學通膨預期（初值）','Revised UoM Inflation Expectations':'密西根大學通膨預期（修正值）',
+'CB Consumer Confidence':'消費者信心指數','Durable Goods Orders m/m':'耐久財訂單（月增率）',
+'Core Durable Goods Orders m/m':'核心耐久財訂單（月增率）','Industrial Production m/m':'工業生產（月增率）',
+'Existing Home Sales':'成屋銷售','New Home Sales':'新屋銷售','Building Permits':'建築許可','Housing Starts':'新屋開工',
+}
+def weekly_calendar():
+    today=datetime.now(TAIPEI).date();monday=today-timedelta(days=today.weekday());sunday=monday+timedelta(days=6)
+    result=dict(status='SOURCE ERROR',events=[],source='Forex Factory / Fair Economy',url=WEEKLY_CALENDAR_URL,week_start=monday.isoformat(),week_end=sunday.isoformat(),timezone='Asia/Taipei')
+    try:
+        entries=json.loads(get(WEEKLY_CALENDAR_URL))
+        if not isinstance(entries,list):raise ValueError('Invalid calendar response')
+        seen=set();in_week=False
+        for entry in entries:
+            try:
+                stamp=datetime.fromisoformat(entry['date'])
+                if stamp.tzinfo is None:continue
+                local=stamp.astimezone(TAIPEI)
+                if not monday<=local.date()<=sunday:continue
+                in_week=True
+                if entry.get('country')!='USD':continue
+                title=entry.get('title','')
+                if re.search(r'Speaks|Minutes|Auction|Holiday|Meetings',title,re.I):continue
+                if entry.get('impact') not in ('High','Medium') and title not in ECONOMIC_TITLES:continue
+                label=ECONOMIC_TITLES.get(title)
+                if not label:
+                    try:label=translate_headline(title)
+                    except Exception:label=title
+                key=(title,local.strftime('%Y-%m-%d %H:%M'))
+                if key in seen:continue
+                seen.add(key)
+                result['events'].append(dict(time=key[1],country='美國',event=label,original_title=title,actual=entry.get('actual') or None,forecast=entry.get('forecast') or None,previous=entry.get('previous') or None,status='VERIFIED',source=result['source'],impact=entry.get('impact')))
+            except (ValueError,TypeError,KeyError):continue
+        result['events'].sort(key=lambda x:x['time'])
+        result['status']='VERIFIED' if result['events'] else 'NO FEED' if in_week else 'STALE'
+    except Exception as e:result['error']=str(e)
+    return result
+
+data['headlines']=prepare_chinese_news(data['headlines'])
+data['news']=[dict(title=n.get('summary_zh') or '中文翻譯暫時無法取得',summary=n.get('summary_zh') or 'SOURCE ERROR',url=n['url'],source=n['source']) for n in data['headlines']['items']]
+data['economic_calendar']=weekly_calendar()
+data['calendar']=data['economic_calendar']['events']
+data['sources']=[s for s in data['sources'] if s['name']!='BLS Calendar']
+data['sources'].append(dict(name='本週經濟行事曆',ok=data['economic_calendar']['status']=='VERIFIED',note=data['economic_calendar']['status'],url=WEEKLY_CALENDAR_URL))
+if data['economic_calendar']['status']!='VERIFIED' or any(n.get('translation_status')!='OK' for n in data['headlines']['items']):data['status']='AUTO · PARTIAL'
 
 Path("data").mkdir(exist_ok=True)
 

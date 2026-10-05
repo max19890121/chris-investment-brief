@@ -508,11 +508,11 @@ footer{
 <section id="calendar" class="card">
 
   <div class="head">
-    <h2>經濟行事曆</h2>
-    <span class="eye">ACTUAL · FORECAST · PREVIOUS</span>
+    <h2>本週重要經濟數據</h2>
+    <span class="eye">台灣時間 · 美國重點數據</span>
   </div>
 
-  <table class="tbl" id="calendarTable"></table>
+  <p id="week-label" class="muted"></p><div style="overflow-x:auto"><table class="tbl" id="calendarTable"></table></div>
 
 </section>
 
@@ -591,7 +591,7 @@ footer{
     <span class="eye">DATA HEALTH</span>
   </div>
 
-  <div class="sources" id="sourcegrid"></div>
+  <details><summary>查看資料來源與異常狀態</summary><div class="sources" id="sourcegrid"></div></details>
 
 </section>
 
@@ -685,17 +685,17 @@ function render(){
   `).join('');
 
   rates.innerHTML=
-    '<tr><th>資產</th><th>水準</th><th>日期</th></tr>'+
+    '<tr><th>項目</th><th>價格</th><th>漲跌幅</th></tr>'+
     D.rates.map(x=>`
       <tr>
         <td>${x.name}</td>
         <td>${x.value}</td>
-        <td>${x.date}</td>
+        <td>${x.change??'NO FEED'}</td>
       </tr>
     `).join('');
 
   commodities.innerHTML=
-    '<tr><th>資產</th><th>水準</th><th>變動</th></tr>'+
+    '<tr><th>項目</th><th>價格</th><th>漲跌幅</th></tr>'+
     D.commodities.map(x=>`
       <tr>
         <td>${x.name}</td>
@@ -704,18 +704,7 @@ function render(){
       </tr>
     `).join('');
 
-  calendarTable.innerHTML=
-    '<tr><th>時間</th><th>國家</th><th>事件</th><th>Actual</th><th>Forecast</th><th>Previous</th></tr>'+
-    D.calendar.map(x=>`
-      <tr>
-        <td>${x.time}</td>
-        <td>${x.country}</td>
-        <td>${x.event}</td>
-        <td>${x.actual}</td>
-        <td>${x.forecast}</td>
-        <td>${x.previous}</td>
-      </tr>
-    `).join('');
+  renderWeeklyCalendar();
 
   volsignals.innerHTML=D.vol_signals.map(x=>`
     <tr>
@@ -769,6 +758,7 @@ function render(){
 
   draw('curveChart','Yield %',['2Y','10Y','30Y'],D.curve);
   draw('moveChart','MOVE',D.move_history?.dates||[],D.move_history?.values||[]);
+  hideVerificationLabels();
 }
 function draw(id,title,dates,values){
 const old=document.getElementById(id);if(!old)return;const host=old.tagName==='CANVAS'?document.createElement('div'):old;if(old.tagName==='CANVAS'){host.id=id;old.replaceWith(host);}host.replaceChildren();
@@ -849,7 +839,7 @@ function renderLevelCharts(){
     card.insertBefore(svg,note);
     const format=v=>v.toLocaleString('en-US',{maximumFractionDigits:2})+(history.unit||'');
     card.append(make('span','區間低／高：'+format(low)+' ／ '+format(high)));
-    note.textContent=first.day+' → '+last.day+' · '+history.status;
+    note.textContent=first.day+' → '+last.day+(history.status==='VERIFIED'?'':' · '+history.status);
     if(history.status==='STALE') note.className='warn';
   }
 }
@@ -873,20 +863,37 @@ function downloadJSON(){
 // Shared, safe rendering of publisher headlines and additional boards.
 function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
 function safeLink(title,url){const a=el('a',title);try{const u=new URL(url);if(u.protocol==='https:'){a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';}}catch{}return a;}
-function renderReuters(){newslist.replaceChildren();const feed=D.headlines;if(!feed?.items?.length){newslist.append(el('p',feed?.status||'NO FEED'));return;}newslist.append(el('p',(feed.source||'NO FEED')+'｜標題保留原文；時間為台灣時間。','muted'));for(const [i,n] of feed.items.entries()){const article=el('article');article.append(safeLink(`${i+1}｜${n.title}`,n.url),el('p',`${n.as_of} · ${n.source} · ${n.status}`));newslist.append(article);}}
+function hideVerificationLabels(){
+ if(!document.createTreeWalker)return;
+ const walker=document.createTreeWalker(document.body,4);let n;
+ while(n=walker.nextNode()){if(n.parentElement?.closest('script,style'))continue;n.nodeValue=n.nodeValue.replace(/\bVERIFIED\b/g,'').replace(/·\s*·/g,'·').replace(/·\s*$/g,'').trim();}
+}
+function renderWeeklyCalendar(){
+ calendarTable.replaceChildren();const feed=D.economic_calendar||{};
+ document.getElementById('week-label').textContent=(feed.week_start&&feed.week_end?feed.week_start+' ～ '+feed.week_end+' · 台灣時間':'本週 · 台灣時間');
+ const header=el('tr');['時間','重要數據','實際','預期','前值'].forEach(c=>header.append(el('th',c)));calendarTable.append(header);
+ for(const item of feed.events||[]){const tr=el('tr');[item.time,item.event,item.actual??'—',item.forecast??'—',item.previous??'—'].forEach(v=>tr.append(el('td',v)));calendarTable.append(tr);}
+ if(!feed.events?.length){const tr=el('tr'),td=el('td',feed.status==='VERIFIED'?'本週沒有符合篩選的重要數據':feed.status||'NO FEED');td.colSpan=5;tr.append(td);calendarTable.append(tr);}
+}
+function renderReuters(){
+ newslist.replaceChildren();const feed=D.headlines;
+ if(!feed?.items?.length){newslist.append(el('p',feed?.status||'NO FEED'));return;}
+ for(const [i,n] of feed.items.slice(0,5).entries()){
+  const article=el('article');article.append(el('h3',`${i+1}｜${n.summary_zh||'中文翻譯暫時無法取得'}`));
+  if(!n.summary_zh)article.append(el('p','SOURCE ERROR｜翻譯來源暫時無法使用'));
+  article.append(el('p',`${n.source} · ${n.as_of}`,'muted'));newslist.append(article);
+ }
+}
 function fmt(v){return typeof v==='number'&&Number.isFinite(v)?v.toLocaleString('en-US',{maximumFractionDigits:3}):v??'NO FEED';}
 function tableBlock(title,rows,columns,note=''){const box=el('section',undefined,'card');box.append(el('h2',title));if(note)box.append(el('p',note,'muted'));const wrap=el('div');wrap.style.overflowX='auto';const t=el('table',undefined,'tbl');const tr=el('tr');columns.forEach(c=>tr.append(el('th',c[0])));t.append(tr);for(const row of rows||[]){const r=el('tr');columns.forEach(c=>{const value=c[1](row);const cell=el('td',fmt(value));if(c[2])cell.className=row.tone|| (Number.isFinite(value)?(value>0?'up':value<0?'down':''):'');r.append(cell);});t.append(r);}if(!rows?.length){const r=el('tr'),c=el('td','NO FEED');c.colSpan=columns.length;r.append(c);t.append(r);}wrap.append(t);box.append(wrap);return box;}
-function renderExpanded(){const host=document.getElementById('expanded');if(!host)return;host.replaceChildren();const quoteCols=[['項目',r=>r.name],['水準',r=>r.value],['漲跌 %',r=>r.change,true],['日期',r=>r.as_of||r.date],['狀態',r=>r.status||'NO FEED'],['來源',r=>r.source]];
+function renderExpanded(){const host=document.getElementById('expanded');if(!host)return;host.replaceChildren();const quoteCols=[['項目',r=>r.name],['價格',r=>r.value??r.status??'NO FEED'],['漲跌幅',r=>r.change??'NO FEED',true]];
 for(const [key,title] of [['us','美股市場'],['asia','亞洲市場'],['europe','歐洲市場'],['europe_rates','歐洲公債與信用利差'],['fx','外匯市場'],['energy','能源市場'],['metals','貴金屬｜現貨與期貨分列']])host.append(tableBlock(title,D.markets?.[key],quoteCols));
-const global=el('section',undefined,'card');global.append(el('h2','全球焦點｜美國、歐洲、亞洲、中東、全球'));for(const region of D.global_focus||[]){global.append(el('h3',`${region.region} · ${region.status}`));for(const n of region.items?.slice(0,3)||[])global.append(safeLink(n.title,n.url),el('p',`${n.as_of} · ${n.source}`,'muted'));if(!region.items?.length)global.append(el('p',region.status||'NO FEED'));}host.append(global);
-host.append(tableBlock('情緒指標',[D.fear_greed].filter(Boolean),[['指標',r=>r.name],['讀值',r=>r.value],['分類',r=>r.rating],['日期',r=>r.as_of],['狀態',r=>r.status]],'VIX 與 MOVE 見波動率板塊。缺失資料不以其他指標推估。'));
-host.append(tableBlock('實際經濟數據',D.economic_actuals,[['項目',r=>r.name],['Actual',r=>r.value],['單位',r=>r.unit],['上一期',r=>r.previous],['期間',r=>r.as_of],['狀態',r=>r.status]],'非農欄位為 BLS 就業總人數，非新增人數；無來源的預測不填入。'));
-host.append(tableBlock('未來經濟行事曆（台灣時間）',D.economic_calendar?.events,[['時間',r=>r.time],['事件',r=>r.event],['Actual',r=>r.actual],['Forecast',r=>r.forecast],['Previous',r=>r.previous]],D.economic_calendar?.status||'NO FEED'));
-host.append(tableBlock('FOMC 會議',D.fomc?.meetings,[['開始（美國日期）',r=>r.start],['結束',r=>r.end],['事件',r=>r.event],['來源',r=>r.source]],D.fomc?.status||'NO FEED'));
-for(const [title,obj] of [['Fed 目標區間',D.fed_policy],['CME FedWatch 利率機率',D.fedwatch]]){const box=el('section',undefined,'card');box.append(el('h2',title));for(const [key,v] of Object.entries(obj||{})){if(['url','error'].includes(key))continue;if(typeof v!=='object')box.append(el('p',`${key}：${fmt(v)}`));}if(obj?.url)box.append(safeLink('官方來源',obj.url));host.append(box);}
-host.append(tableBlock('殖利率曲線與 EFFR 利差',D.spreads,[['利差',r=>r.name],['基點 bp',r=>r.value_bp],['日期',r=>r.as_of],['狀態',r=>r.status]],'僅使用同一日期的已驗證原始殖利率。'));
-host.append(tableBlock('觀察區間',D.key_levels,[['資產',r=>r.name],['低',r=>r.low],['高',r=>r.high],['日期',r=>r.as_of],['狀態',r=>r.status]],'最近 20 筆有效觀測的最小／最大值，不視為支撐、壓力或預測價位。商品日內高低若無資料則為 NO FEED。'));
-host.append(tableBlock('商品觀察價位', (D.markets?.energy||[]).concat(D.markets?.metals||[]).map(r=>({...r,low:null,high:null})),[['資產',r=>r.name],['最新水準',r=>r.value],['區間低',r=>r.low],['區間高',r=>r.high],['日期',r=>r.as_of]],'NO FEED｜尚無可驗證的商品歷史區間；不推估支撐、壓力或目標價。'));
+host.append(tableBlock('情緒指標',[D.fear_greed].filter(Boolean),quoteCols,'VIX 與 MOVE 見波動率板塊。缺失資料不以其他指標推估。'));
+host.append(tableBlock('實際經濟數據',D.economic_actuals,[['項目',r=>r.name],['最新數值',r=>r.value],['上一期',r=>r.previous]],'非農欄位為 BLS 就業總人數，非新增人數；無來源的預測不填入。'));
+host.append(tableBlock('FOMC 會議',D.fomc?.meetings,[['項目',r=>r.event==='FOMC meeting'?'FOMC 會議':r.event],['開始（美國日期）',r=>r.start],['結束',r=>r.end]],D.fomc?.status||'NO FEED'));
+for(const [title,obj] of [['Fed 目標區間',D.fed_policy],['CME FedWatch 利率機率',D.fedwatch]]){const box=el('section',undefined,'card');box.append(el('h2',title));for(const [key,v] of Object.entries(obj||{})){if(['url','error','status','source','as_of'].includes(key))continue;if(typeof v!=='object')box.append(el('p',`${key}：${fmt(v)}`));}if(obj?.url)box.append(safeLink('官方來源',obj.url));host.append(box);}
+host.append(tableBlock('殖利率曲線與 EFFR 利差',D.spreads,[['項目',r=>r.name],['價格（基點 bp）',r=>r.value_bp],['漲跌幅',r=>r.change??'NO FEED']],'僅使用同一日期的已驗證原始殖利率。'));
+host.append(tableBlock('觀察區間',D.key_levels,[['項目',r=>r.name],['區間低',r=>r.low],['區間高',r=>r.high]],'最近 20 筆有效觀測的最小／最大值，不視為支撐、壓力或預測價位。商品日內高低若無資料則為 NO FEED。'));
 const observations=el('section',undefined,'card');observations.append(el('h2','五個核心觀察｜透明規則'));for(const s of D.core_observations||[])observations.append(el('p',s));host.append(observations);
 const date=document.getElementById('report-date');if(date)date.value=D.report_date||'';
 }

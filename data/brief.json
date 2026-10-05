@@ -1,9 +1,9 @@
 {
   "status": "AUTO · PARTIAL",
-  "updated_at": "2026-10-05 13:15 Asia/Taipei",
+  "updated_at": "2026-10-05 13:45 Asia/Taipei",
   "bluf": {
     "headline": "CHRIS 觀點｜Risk-On",
-    "brief": "CHRIS 觀點｜Risk-On。同日收盤漲跌：S&P 500 +0.73%、NASDAQ +1.19%、SOX +2.40%；科技與半導體當日領先大盤。 VIX 15.31：低波動 2Y–10Y (10Y−2Y) +45.0 bp（2026-10-02） 10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02） 2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02） 10Y−EFFR +136.0 bp（2026-10-01） DXY 當日 +0.45%；美元走強 黃金當日 -0.06%。 WTI 當日 -1.06%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
+    "brief": "CHRIS 觀點｜Risk-On。同日收盤漲跌：S&P 500 +0.73%、NASDAQ +1.19%、SOX +2.40%；科技與半導體當日領先大盤。 VIX 15.31：低波動 2Y–10Y (10Y−2Y) +45.0 bp（2026-10-02） 10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02） 2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02） 10Y−EFFR +136.0 bp（2026-10-01） DXY 當日 +0.42%；美元走強 黃金當日 -0.02%。 WTI 當日 -0.90%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
     "theme": "Rule-based · Verified Inputs · Risk-On"
   },
   "risk_note": "US Treasury 與 VIX 使用官方發布資料；EFFR 使用 New York Fed 官方資料。股指、FX、商品與產業 ETF 為公開市場行情來源，非交易所授權即時 feed。MOVE 使用 Investing.com 公開延遲歷史行情，非官方 ICE API。 新鮮度門檻：7 個日曆日；各資料日期可能不同。",
@@ -46,8 +46,8 @@
     },
     {
       "name": "DXY",
-      "value": "102.39",
-      "change": "+0.45%",
+      "value": "102.36",
+      "change": "+0.42%",
       "tone": "up",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -55,8 +55,8 @@
     },
     {
       "name": "USD/TWD",
-      "value": "31.81",
-      "change": "-0.25%",
+      "value": "31.83",
+      "change": "-0.19%",
       "tone": "down",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -64,8 +64,8 @@
     },
     {
       "name": "GOLD",
-      "value": "4,160.00",
-      "change": "-0.06%",
+      "value": "4,161.30",
+      "change": "-0.02%",
       "tone": "down",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -73,8 +73,8 @@
     },
     {
       "name": "WTI",
-      "value": "90.14",
-      "change": "-1.06%",
+      "value": "90.29",
+      "change": "-0.90%",
       "tone": "down",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -121,8 +121,8 @@
     },
     {
       "name": "Brent 期貨",
-      "value": "101.67",
-      "change": "-0.57%",
+      "value": "101.86",
+      "change": "-0.38%",
       "tone": "down",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -154,54 +154,34 @@
   ],
   "news": [
     {
-      "title": "Stocks upbeat, dollar rises at euro's expense",
-      "summary": "2026-10-05 09:22 · Reuters via Google News RSS",
+      "title": "股市樂觀，美元上漲，歐元下跌",
+      "summary": "股市樂觀，美元上漲，歐元下跌",
+      "source": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOUzk3bWZMY2M2d1ZHLWhKbzhqV2VPZjY0N2JCcm0tMGRLUTAzM2V5TmZ3RzI1dGZNZ0duR2NmZXIxQU1qaWZvdGI5SUwtRWpiQ0dkWTBVdUIxNFZzVDAxOWpQa0FmQWFTRWZUTV9lWE1yRGR5MmN6WG16UGJNamRNUzB4WQ?oc=5"
     },
     {
-      "title": "US removes B-1 bombers from UK base amid security concerns",
-      "summary": "2026-10-05 05:22 · Reuters via Google News RSS",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQQlFOOXowMVhwM2NXbHA2Z01IbUNKSGJIcnJHaEUybUdKZ2xCNHV0SU5sb183a1dZU3RJS0hEa2djdnZNU1hUcEhucW9HOEUxZDZoWS1UVUhrVjVtTnlEUmt2VERkMVFET3cxaUdkZjBKUUxBdVFJS3BPNndHQnVJUXloNjBQMnp0SjhqeEI4Zk1kb3QzVG5Zam5zYWdJcEk?oc=5"
+      "title": "由於疲軟的就業數據平息了升息預期，股市收高",
+      "summary": "由於疲軟的就業數據平息了升息預期，股市收高",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPeTVxVTNLX2pUZEc1U0xtNWdyYWRjY0NjSVcweXJNYk9PTDVKVnJaTzFNTUdnNW5LVEFxaHlELU9fVW9neE93Q0VDanlUbkJPcUhMaXNmNUJQX3pXd0JvcU1VSHh5Z1NEZnQzWGFsclpXZ08zRTVmY2ZaV1J4a2JBU3lPTEVNTUNBSVdVcWRydUlJOEY5ZU13NERhMFE3YUstSzB2RE5JV1gtZw?oc=5"
     },
     {
-      "title": "Musk says he will rename SpaceXAI to SpaceXSI",
-      "summary": "2026-10-05 00:56 · Reuters via Google News RSS",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQT1lwRkt2ZlBuMTlqLVZCbk5ZVExzN0JMd0FnT0F5SllkSGdCU2xkNUlsSHVKZTRuNklIYlY5VTU5QmpqeUdWOXpJWEdhWGhaSE11dmRpQ0taekpfUllyay16MDg3VERqRm5WSjY3bGhKSGZVcnJWOFBod1FsQzBIdjVVN1U0b0xfT3VoZDNJdFZpVDJyN1Q0NlpjeUUtM2hFbUxF?oc=5"
+      "title": "華爾街監管機構提出投資顧問加密資產託管規則",
+      "summary": "華爾街監管機構提出投資顧問加密資產託管規則",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcFpoVVFIbWRuYW1BRXZCWGY4LXQ5N2xTZGRjOFNNbHhOTXBmRG5IR3JJVFhLUjBocGU4MnRJVlJPQWR2NWhhbDNNbm1tS1dRMHpfdU9pYjB6SWt2SnN4a180X2w0YTVjdUxGMUd0SklGbXMwUjhMY3pZVjhHaVY0UFNod1ZIdlhhZUE4cWlpLXhrbjFYbk11YjZSeXp5QnN2UGlld0VMYW9ydkxiakwtdWpEMFFCZi1Hbmc?oc=5"
     },
     {
-      "title": "Haunted by grief, Gaza's displaced still wait overseas for return",
-      "summary": "2026-10-04 21:55 · Reuters via Google News RSS",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQYVA4aW4yZm9obXNLWVl2RGItRkE4cUwxUHFucmpkQ2NzU2JzNDc1SXF1bkxtb1hQZmRYYjVxVU9aMmVRb2xBVi1oLXFKd2RDTmo3UUJ2M1I2Ym02X0lzVUVNcUh5c2hISjMwVHBQOFVrVkhhZlZNQjRrNElrNXEyYWR6blZnenpPTG5pLXpYNGFQcjZ2MmlUUklBRTg0ZlA2QWtEVlNJRHFxTXdIUjMyM0FpZw?oc=5"
+      "title": "美國就業數據疲弱後股市上漲，但債券恢復拋售",
+      "summary": "美國就業數據疲弱後股市上漲，但債券恢復拋售",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE0xaEpXc3pMdGRXalZlcHdvWThBeklWRlpfRDd4cUZLbXNGS2s0YVF4Sm42YUpqaFNTbVkyWmIyanN6WmxtSG5yME8zTml3Z1N3a0NabmktSy1YYWp0SFlOM2NQZEN6WmFnX096dUREY1pHTFJ0NzlrUW54cw?oc=5"
     },
     {
-      "title": "Rare police raid of Taipei gay bar sparks angry protest",
-      "summary": "2026-10-04 21:22 · Reuters via Google News RSS",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNMURISGFRZ3VjZ1dka1Y5alhIVHBOM2xkYVkxM0R6cXY0RTVUT2UzSFVFR3J2cm1WM1Jfb1NBQUhObmhSMVUzZ2g1Y09qY3FvZy1ReXk0ZlZKUnpLWEFacnNYZjRzdy1JYWZiR1BCRENFa0Z3dFd6TTRwVzdwX1NmXzI5OGVFN1Q3amV1Z1lud3dmMjc0S0Q1ZDRLNEpRV2gxVGxmU041U0syWG1ucjZNVg?oc=5"
-    },
-    {
-      "title": "Cornell president vows 'serious look' at fraternities, sororities in wake of rape allegations",
-      "summary": "2026-10-04 10:03 · Reuters via Google News RSS",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQYXFPTFhZZ1JDQXowelZUcmd1RmZjMkV3ZHo3VUp2aWQ2SVV2YlNxMGh0NHI3bW8xdExua0x5d0VlN2Rld2FmTERuTUNKQVNZYW8tT2E4dlQyWmF4YXNuc2pqMHJDa1IzdW9KS24ySDgxQV9YLXBqMmMtME01eGtPN1ZZQ3V3VWM2MmVPMmlNd0FsN1ZONms2VExneTJvLVZYRTQ4YV9SYTZOa0J6d0xmaDRjcTE?oc=5"
-    },
-    {
-      "title": "Trump names intelligence chief Clayton as AI czar, to head task force",
-      "summary": "2026-10-04 06:46 · Reuters via Google News RSS",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOczlKTmxkdnE3WHZpaWs1Y2V2dFJJOENfZkRRdjdCdGJBcXRqMFRWVlFKMGZWRDhlTXBiOTQxNUY1dDlSNlZYcXlmS1ZaaF9iWkJsek5QeTZ5V2txU0hOVnFXUE9EZHU1NE1XdldXV3FaQzAzcU9KZmZNcXhJMzVaVHdYV2tIUHVDdG5Cc1FMTjFHUHRvQzEtQmhFdDUwOXR3RlUwWlBDX3c5ZlNUMWZZd1BLcm12TWVWYWc?oc=5"
-    },
-    {
-      "title": "Portugal prosecutors probe legality of US use of Lajes base in Iran war",
-      "summary": "2026-10-04 04:02 · Reuters via Google News RSS",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPalVaWllxS1FsVThCWHF3bXZTLXVRNWNhMTdNaERvemRJSWRtZU1iRHNTN19WSGt5THpaRjZpZkE5OGtMYkZPY3JOSG95ZlF3TU10M05VYkdCMHJ0bW93dlk5THJmYm9pM2daU1VteXJKWnp1bm5GSDBobkZyUDBzNDNkaExRSElQSG9zR3hfNFFtazQ4Y2ZtWk92a1NXZXRRbUd1Y0ZQOA?oc=5"
-    },
-    {
-      "title": "OpenAI safety employee quits, says 'time for trial and error is over'",
-      "summary": "2026-10-04 03:00 · Reuters via Google News RSS",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPanBnbDA2SnluX0swT1ZpQ212VUNKRHh1T3d2Tmt0VDBieEtFVmh6blFFZEVCZlFLbjd4TnNYRnhacmtoSEdRTTFsbVdQN3RjRW5BTVd2NkJwdkdmcHNBa2czV3BZc19MYnJ1dkFvTkh1YXZQQkw1Zmtma2Y4Qm10RzlIUlhJS1ZSUHJnVVdTNlk1djVnNndqNXJBZ29hcEVJUmdkZTNWcklGWEF4TGtuZw?oc=5"
-    },
-    {
-      "title": "Indian police detain several people in Gen Z-led protests against voter roll changes",
-      "summary": "2026-10-03 22:58 · Reuters via Google News RSS",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOSzBOVThKTi1YelVZQllEUDlIWlZVdFdVZElrc204eDhmdVdsVXVBOXhzeGxZUG92Q0hNRloxdjh4UkJ4eGkydDNjQWZQZFB6TjFLNzM0eFhUalBzSmNGaFJteU9tNV9vZkFYZHFZYzFGQVNXNlRFd0QzcHA4Ym02dEZTSU5nREdxbDJfUGRtWklEbVYxZUdWakRrY2hqWFlKR3ZqMWZveDBaeDB2RDBieHdCa1ZiQ0FadU04LTNn?oc=5"
+      "title": "Breakingviews - 評論：Meta 的繆斯是價值破壞的可愛代理人",
+      "summary": "Breakingviews - 評論：Meta 的繆斯是價值破壞的可愛代理人",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONHY2amRkS056YXR4NDVqU3NaT0tTQXNicFd3VDBQLTRxaEI5RW5WaXhYa2prRmR5clBIS3ZVeW52UjFTVUdseU01S3F2cVFKWVJocXZwYXllVGRjNWNhRGxPNWFISzhFa1pkVVNBSmdoRFFiV1c1OE5wUDVFaGU5N0xIN19qM2MyN2o2WTdRQzJ5M0pCNlVyckg5SURzQmJCMVZvUjMzd0JiTms?oc=5"
     }
   ],
   "watch": [
@@ -434,8 +414,8 @@
   "commodities": [
     {
       "name": "WTI",
-      "value": "90.14",
-      "change": "-1.06%",
+      "value": "90.29",
+      "change": "-0.90%",
       "tone": "down",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -443,8 +423,8 @@
     },
     {
       "name": "GOLD",
-      "value": "4,160.00",
-      "change": "-0.06%",
+      "value": "4,161.30",
+      "change": "-0.02%",
       "tone": "down",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -453,12 +433,88 @@
   ],
   "calendar": [
     {
-      "time": "—",
-      "country": "—",
-      "event": "NO VERIFIED ECONOMIC CALENDAR FEED",
-      "actual": "—",
-      "forecast": "—",
-      "previous": "—"
+      "time": "2026-10-05 22:00",
+      "country": "美國",
+      "event": "ISM 服務業 PMI",
+      "original_title": "ISM Services PMI",
+      "actual": null,
+      "forecast": "55.1",
+      "previous": "55.4",
+      "status": "VERIFIED",
+      "source": "Forex Factory / Fair Economy",
+      "impact": "Medium"
+    },
+    {
+      "time": "2026-10-06 20:15",
+      "country": "美國",
+      "event": "ADP 每週就業變化",
+      "original_title": "ADP Weekly Employment Change",
+      "actual": null,
+      "forecast": null,
+      "previous": null,
+      "status": "VERIFIED",
+      "source": "Forex Factory / Fair Economy",
+      "impact": "Low"
+    },
+    {
+      "time": "2026-10-06 20:16",
+      "country": "美國",
+      "event": "ADP 每週就業變化",
+      "original_title": "ADP Weekly Employment Change",
+      "actual": null,
+      "forecast": null,
+      "previous": "20.0K",
+      "status": "VERIFIED",
+      "source": "Forex Factory / Fair Economy",
+      "impact": "Low"
+    },
+    {
+      "time": "2026-10-06 20:30",
+      "country": "美國",
+      "event": "貿易收支",
+      "original_title": "Trade Balance",
+      "actual": null,
+      "forecast": "-95.2B",
+      "previous": "-88.6B",
+      "status": "VERIFIED",
+      "source": "Forex Factory / Fair Economy",
+      "impact": "Low"
+    },
+    {
+      "time": "2026-10-08 20:30",
+      "country": "美國",
+      "event": "初領失業救濟金人數",
+      "original_title": "Unemployment Claims",
+      "actual": null,
+      "forecast": "200K",
+      "previous": "197K",
+      "status": "VERIFIED",
+      "source": "Forex Factory / Fair Economy",
+      "impact": "Medium"
+    },
+    {
+      "time": "2026-10-09 22:00",
+      "country": "美國",
+      "event": "密西根大學消費者信心（初值）",
+      "original_title": "Prelim UoM Consumer Sentiment",
+      "actual": null,
+      "forecast": "47.6",
+      "previous": "47.8",
+      "status": "VERIFIED",
+      "source": "Forex Factory / Fair Economy",
+      "impact": "Medium"
+    },
+    {
+      "time": "2026-10-09 22:00",
+      "country": "美國",
+      "event": "密西根大學通膨預期（初值）",
+      "original_title": "Prelim UoM Inflation Expectations",
+      "actual": null,
+      "forecast": null,
+      "previous": "4.6%",
+      "status": "VERIFIED",
+      "source": "Forex Factory / Fair Economy",
+      "impact": "Medium"
     }
   ],
   "vol_signals": [
@@ -528,10 +584,10 @@
     },
     {
       "name": "DXY",
-      "text": "102.39"
+      "text": "102.36"
     }
   ],
-  "chris_view": "CHRIS 觀點｜Risk-On。同日收盤漲跌：S&P 500 +0.73%、NASDAQ +1.19%、SOX +2.40%；科技與半導體當日領先大盤。 VIX 15.31：低波動 2Y–10Y (10Y−2Y) +45.0 bp（2026-10-02） 10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02） 2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02） 10Y−EFFR +136.0 bp（2026-10-01） DXY 當日 +0.45%；美元走強 黃金當日 -0.06%。 WTI 當日 -1.06%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
+  "chris_view": "CHRIS 觀點｜Risk-On。同日收盤漲跌：S&P 500 +0.73%、NASDAQ +1.19%、SOX +2.40%；科技與半導體當日領先大盤。 VIX 15.31：低波動 2Y–10Y (10Y−2Y) +45.0 bp（2026-10-02） 10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02） 2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02） 10Y−EFFR +136.0 bp（2026-10-01） DXY 當日 +0.42%；美元走強 黃金當日 -0.02%。 WTI 當日 -0.90%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
   "sources": [
     {
       "name": "U.S. Treasury",
@@ -583,8 +639,8 @@
     },
     {
       "name": "Global news · ECB",
-      "ok": true,
-      "note": "VERIFIED",
+      "ok": false,
+      "note": "SOURCE ERROR",
       "url": "https://www.ecb.europa.eu/rss/press.html"
     },
     {
@@ -612,12 +668,6 @@
       "url": "https://www.cnn.com/markets/fear-and-greed"
     },
     {
-      "name": "BLS Calendar",
-      "ok": false,
-      "note": "SOURCE ERROR",
-      "url": "https://www.bls.gov/schedule/news_release/bls.ics"
-    },
-    {
       "name": "FOMC Calendar",
       "ok": true,
       "note": "VERIFIED",
@@ -628,6 +678,12 @@
       "ok": false,
       "note": "NO FEED",
       "url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+    },
+    {
+      "name": "本週經濟行事曆",
+      "ok": true,
+      "note": "VERIFIED",
+      "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
     }
   ],
   "history": {
@@ -837,22 +893,22 @@
         "source": "Cboe Global Markets"
       },
       "DXY": {
-        "value": 102.39,
-        "change_pct": 0.45,
+        "value": 102.36,
+        "change_pct": 0.42,
         "as_of": "2026-10-05",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
       "GOLD": {
-        "value": 4160.0,
-        "change_pct": -0.06,
+        "value": 4161.3,
+        "change_pct": -0.02,
         "as_of": "2026-10-05",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
       "WTI": {
-        "value": 90.14,
-        "change_pct": -1.06,
+        "value": 90.29,
+        "change_pct": -0.9,
         "as_of": "2026-10-05",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
@@ -950,7 +1006,7 @@
           "DXY"
         ],
         "status": "VERIFIED",
-        "text": "DXY 當日 +0.45%；美元走強"
+        "text": "DXY 當日 +0.42%；美元走強"
       },
       {
         "name": "Gold",
@@ -959,7 +1015,7 @@
           "GOLD"
         ],
         "status": "VERIFIED",
-        "text": "黃金當日 -0.06%。"
+        "text": "黃金當日 -0.02%。"
       },
       {
         "name": "Oil",
@@ -968,7 +1024,7 @@
           "WTI"
         ],
         "status": "VERIFIED",
-        "text": "WTI 當日 -1.06%。"
+        "text": "WTI 當日 -0.90%。"
       }
     ],
     "rules": {
@@ -1626,7 +1682,7 @@
         102.0999984741211,
         101.93000030517578,
         null,
-        102.38800048828125
+        102.36199951171875
       ],
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -1733,8 +1789,8 @@
     "asia": [
       {
         "name": "台灣加權",
-        "value": "49,604.87",
-        "change": "+2.33%",
+        "value": "49,666.41",
+        "change": "+2.46%",
         "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1742,8 +1798,8 @@
       },
       {
         "name": "日經225",
-        "value": "69,703.45",
-        "change": "+2.04%",
+        "value": "69,687.28",
+        "change": "+2.02%",
         "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1760,8 +1816,8 @@
       },
       {
         "name": "香港恆生",
-        "value": "23,921.23",
-        "change": "-0.21%",
+        "value": "23,955.80",
+        "change": "-0.07%",
         "tone": "down",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1769,8 +1825,8 @@
       },
       {
         "name": "新加坡海峽",
-        "value": "5,636.34",
-        "change": "+0.03%",
+        "value": "5,640.47",
+        "change": "+0.10%",
         "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1778,8 +1834,8 @@
       },
       {
         "name": "澳洲ASX 200",
-        "value": "8,684.20",
-        "change": "+0.02%",
+        "value": "8,686.40",
+        "change": "+0.05%",
         "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1827,8 +1883,8 @@
     "fx": [
       {
         "name": "DXY",
-        "value": "102.39",
-        "change": "+0.45%",
+        "value": "102.36",
+        "change": "+0.42%",
         "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1837,7 +1893,7 @@
       {
         "name": "EUR/USD",
         "value": "1.12",
-        "change": "-0.55%",
+        "change": "-0.50%",
         "tone": "down",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1845,8 +1901,8 @@
       },
       {
         "name": "USD/JPY",
-        "value": "157.97",
-        "change": "+0.03%",
+        "value": "158.01",
+        "change": "+0.05%",
         "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1863,8 +1919,8 @@
       },
       {
         "name": "USD/TWD",
-        "value": "31.81",
-        "change": "-0.25%",
+        "value": "31.83",
+        "change": "-0.19%",
         "tone": "down",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1874,8 +1930,8 @@
     "energy": [
       {
         "name": "WTI",
-        "value": "90.14",
-        "change": "-1.06%",
+        "value": "90.29",
+        "change": "-0.90%",
         "tone": "down",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1883,8 +1939,8 @@
       },
       {
         "name": "Brent 期貨",
-        "value": "101.67",
-        "change": "-0.57%",
+        "value": "101.86",
+        "change": "-0.38%",
         "tone": "down",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1894,8 +1950,8 @@
     "metals": [
       {
         "name": "GOLD",
-        "value": "4,160.00",
-        "change": "-0.06%",
+        "value": "4,161.30",
+        "change": "-0.02%",
         "tone": "down",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1903,8 +1959,8 @@
       },
       {
         "name": "白銀期貨",
-        "value": "61.25",
-        "change": "+2.12%",
+        "value": "61.22",
+        "change": "+2.06%",
         "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -2026,79 +2082,9 @@
       "region": "歐洲",
       "source": "ECB",
       "source_url": "https://www.ecb.europa.eu/rss/press.html",
-      "status": "VERIFIED",
-      "items": [
-        {
-          "title": " Decisions taken by the Governing Council of the ECB (in addition to decisions setting interest rates)",
-          "url": "https://www.ecb.europa.eu//press/govcdec/otherdec/2026/html/ecb.gc261002~54c6b5672b.en.html",
-          "as_of": "2026-10-02 21:00",
-          "source": "ECB",
-          "status": "VERIFIED"
-        },
-        {
-          "title": " Boris Vujčić: Resilience, integration and competitiveness: building the future of European banking",
-          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261002_1~419efe18e0.en.html",
-          "as_of": "2026-10-02 19:30",
-          "source": "ECB",
-          "status": "VERIFIED"
-        },
-        {
-          "title": " Isabel Schnabel: Central banks on-chain",
-          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261001_1~a0be67193b.en.pdf",
-          "as_of": "2026-10-01 23:30",
-          "source": "ECB",
-          "status": "VERIFIED"
-        },
-        {
-          "title": " Christine Lagarde: Where AI risks meet",
-          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261001~cf3c630379.en.html",
-          "as_of": "2026-10-01 21:30",
-          "source": "ECB",
-          "status": "VERIFIED"
-        },
-        {
-          "title": " Christine Lagarde: Interview with La Croix",
-          "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in260930~10084a5f3d.en.html",
-          "as_of": "2026-10-01 01:00",
-          "source": "ECB",
-          "status": "VERIFIED"
-        },
-        {
-          "title": " Isabel Schnabel: Monetary policy in a world of overlapping shocks",
-          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp260930_1~7c6c120482.en.html",
-          "as_of": "2026-09-30 23:45",
-          "source": "ECB",
-          "status": "VERIFIED"
-        },
-        {
-          "title": " Frank Elderson: Supervisory risk appetite, efficiency and effectiveness",
-          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp260930~d495288355.en.html",
-          "as_of": "2026-09-30 10:20",
-          "source": "ECB",
-          "status": "VERIFIED"
-        },
-        {
-          "title": " ECB amends monetary policy implementation guidelines as part of regular review",
-          "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr260929~050089e922.en.html",
-          "as_of": "2026-09-29 16:00",
-          "source": "ECB",
-          "status": "VERIFIED"
-        },
-        {
-          "title": " Christine Lagarde: Hearing of the Committee on Economic and Monetary Affairs of the European Parliament",
-          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp260928~a875675544.en.html",
-          "as_of": "2026-09-28 21:30",
-          "source": "ECB",
-          "status": "VERIFIED"
-        },
-        {
-          "title": " ECB Executive Board member Isabel Schnabel to resign to take senior role at IMF",
-          "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr260924~bea1dd9824.en.html",
-          "as_of": "2026-09-24 20:00",
-          "source": "ECB",
-          "status": "STALE"
-        }
-      ]
+      "status": "SOURCE ERROR",
+      "items": [],
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>"
     },
     {
       "region": "亞洲",
@@ -2242,104 +2228,69 @@
         "source": "Reuters",
         "publisher_url": "https://www.reuters.com",
         "delivery": "Google News RSS",
-        "status": "VERIFIED"
+        "status": "VERIFIED",
+        "summary_zh": "股市樂觀，美元上漲，歐元下跌",
+        "translation_status": "OK",
+        "summary_method": "Translated publisher headline only; not a full-article summary"
       },
       {
-        "title": "US removes B-1 bombers from UK base amid security concerns",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQQlFOOXowMVhwM2NXbHA2Z01IbUNKSGJIcnJHaEUybUdKZ2xCNHV0SU5sb183a1dZU3RJS0hEa2djdnZNU1hUcEhucW9HOEUxZDZoWS1UVUhrVjVtTnlEUmt2VERkMVFET3cxaUdkZjBKUUxBdVFJS3BPNndHQnVJUXloNjBQMnp0SjhqeEI4Zk1kb3QzVG5Zam5zYWdJcEk?oc=5",
-        "as_of": "2026-10-05 05:22",
-        "published_at": "2026-10-04T21:22:00+00:00",
+        "title": "Equities close higher as softer jobs data quiets rate-hike expectations",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPeTVxVTNLX2pUZEc1U0xtNWdyYWRjY0NjSVcweXJNYk9PTDVKVnJaTzFNTUdnNW5LVEFxaHlELU9fVW9neE93Q0VDanlUbkJPcUhMaXNmNUJQX3pXd0JvcU1VSHh5Z1NEZnQzWGFsclpXZ08zRTVmY2ZaV1J4a2JBU3lPTEVNTUNBSVdVcWRydUlJOEY5ZU13NERhMFE3YUstSzB2RE5JV1gtZw?oc=5",
+        "as_of": "2026-10-03 06:44",
+        "published_at": "2026-10-02T22:44:50+00:00",
         "source": "Reuters",
         "publisher_url": "https://www.reuters.com",
         "delivery": "Google News RSS",
-        "status": "VERIFIED"
+        "status": "VERIFIED",
+        "summary_zh": "由於疲軟的就業數據平息了升息預期，股市收高",
+        "translation_status": "OK",
+        "summary_method": "Translated publisher headline only; not a full-article summary"
       },
       {
-        "title": "Musk says he will rename SpaceXAI to SpaceXSI",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQT1lwRkt2ZlBuMTlqLVZCbk5ZVExzN0JMd0FnT0F5SllkSGdCU2xkNUlsSHVKZTRuNklIYlY5VTU5QmpqeUdWOXpJWEdhWGhaSE11dmRpQ0taekpfUllyay16MDg3VERqRm5WSjY3bGhKSGZVcnJWOFBod1FsQzBIdjVVN1U0b0xfT3VoZDNJdFZpVDJyN1Q0NlpjeUUtM2hFbUxF?oc=5",
-        "as_of": "2026-10-05 00:56",
-        "published_at": "2026-10-04T16:56:09+00:00",
+        "title": "Wall Street regulator proposes rules on investment adviser crypto asset custody",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcFpoVVFIbWRuYW1BRXZCWGY4LXQ5N2xTZGRjOFNNbHhOTXBmRG5IR3JJVFhLUjBocGU4MnRJVlJPQWR2NWhhbDNNbm1tS1dRMHpfdU9pYjB6SWt2SnN4a180X2w0YTVjdUxGMUd0SklGbXMwUjhMY3pZVjhHaVY0UFNod1ZIdlhhZUE4cWlpLXhrbjFYbk11YjZSeXp5QnN2UGlld0VMYW9ydkxiakwtdWpEMFFCZi1Hbmc?oc=5",
+        "as_of": "2026-10-03 04:29",
+        "published_at": "2026-10-02T20:29:37+00:00",
         "source": "Reuters",
         "publisher_url": "https://www.reuters.com",
         "delivery": "Google News RSS",
-        "status": "VERIFIED"
+        "status": "VERIFIED",
+        "summary_zh": "華爾街監管機構提出投資顧問加密資產託管規則",
+        "translation_status": "OK",
+        "summary_method": "Translated publisher headline only; not a full-article summary"
       },
       {
-        "title": "Haunted by grief, Gaza's displaced still wait overseas for return",
-        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQYVA4aW4yZm9obXNLWVl2RGItRkE4cUwxUHFucmpkQ2NzU2JzNDc1SXF1bkxtb1hQZmRYYjVxVU9aMmVRb2xBVi1oLXFKd2RDTmo3UUJ2M1I2Ym02X0lzVUVNcUh5c2hISjMwVHBQOFVrVkhhZlZNQjRrNElrNXEyYWR6blZnenpPTG5pLXpYNGFQcjZ2MmlUUklBRTg0ZlA2QWtEVlNJRHFxTXdIUjMyM0FpZw?oc=5",
-        "as_of": "2026-10-04 21:55",
-        "published_at": "2026-10-04T13:55:24+00:00",
+        "title": "Stocks rise after weak US jobs data but bonds resume selling",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE0xaEpXc3pMdGRXalZlcHdvWThBeklWRlpfRDd4cUZLbXNGS2s0YVF4Sm42YUpqaFNTbVkyWmIyanN6WmxtSG5yME8zTml3Z1N3a0NabmktSy1YYWp0SFlOM2NQZEN6WmFnX096dUREY1pHTFJ0NzlrUW54cw?oc=5",
+        "as_of": "2026-10-03 01:56",
+        "published_at": "2026-10-02T17:56:07+00:00",
         "source": "Reuters",
         "publisher_url": "https://www.reuters.com",
         "delivery": "Google News RSS",
-        "status": "VERIFIED"
+        "status": "VERIFIED",
+        "summary_zh": "美國就業數據疲弱後股市上漲，但債券恢復拋售",
+        "translation_status": "OK",
+        "summary_method": "Translated publisher headline only; not a full-article summary"
       },
       {
-        "title": "Rare police raid of Taipei gay bar sparks angry protest",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNMURISGFRZ3VjZ1dka1Y5alhIVHBOM2xkYVkxM0R6cXY0RTVUT2UzSFVFR3J2cm1WM1Jfb1NBQUhObmhSMVUzZ2g1Y09qY3FvZy1ReXk0ZlZKUnpLWEFacnNYZjRzdy1JYWZiR1BCRENFa0Z3dFd6TTRwVzdwX1NmXzI5OGVFN1Q3amV1Z1lud3dmMjc0S0Q1ZDRLNEpRV2gxVGxmU041U0syWG1ucjZNVg?oc=5",
-        "as_of": "2026-10-04 21:22",
-        "published_at": "2026-10-04T13:22:16+00:00",
+        "title": "Breakingviews - COMMENTARY: Meta’s Muse is adorable agent of value destruction",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONHY2amRkS056YXR4NDVqU3NaT0tTQXNicFd3VDBQLTRxaEI5RW5WaXhYa2prRmR5clBIS3ZVeW52UjFTVUdseU01S3F2cVFKWVJocXZwYXllVGRjNWNhRGxPNWFISzhFa1pkVVNBSmdoRFFiV1c1OE5wUDVFaGU5N0xIN19qM2MyN2o2WTdRQzJ5M0pCNlVyckg5SURzQmJCMVZvUjMzd0JiTms?oc=5",
+        "as_of": "2026-10-03 00:31",
+        "published_at": "2026-10-02T16:31:38+00:00",
         "source": "Reuters",
         "publisher_url": "https://www.reuters.com",
         "delivery": "Google News RSS",
-        "status": "VERIFIED"
-      },
-      {
-        "title": "Cornell president vows 'serious look' at fraternities, sororities in wake of rape allegations",
-        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQYXFPTFhZZ1JDQXowelZUcmd1RmZjMkV3ZHo3VUp2aWQ2SVV2YlNxMGh0NHI3bW8xdExua0x5d0VlN2Rld2FmTERuTUNKQVNZYW8tT2E4dlQyWmF4YXNuc2pqMHJDa1IzdW9KS24ySDgxQV9YLXBqMmMtME01eGtPN1ZZQ3V3VWM2MmVPMmlNd0FsN1ZONms2VExneTJvLVZYRTQ4YV9SYTZOa0J6d0xmaDRjcTE?oc=5",
-        "as_of": "2026-10-04 10:03",
-        "published_at": "2026-10-04T02:03:00+00:00",
-        "source": "Reuters",
-        "publisher_url": "https://www.reuters.com",
-        "delivery": "Google News RSS",
-        "status": "VERIFIED"
-      },
-      {
-        "title": "Trump names intelligence chief Clayton as AI czar, to head task force",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOczlKTmxkdnE3WHZpaWs1Y2V2dFJJOENfZkRRdjdCdGJBcXRqMFRWVlFKMGZWRDhlTXBiOTQxNUY1dDlSNlZYcXlmS1ZaaF9iWkJsek5QeTZ5V2txU0hOVnFXUE9EZHU1NE1XdldXV3FaQzAzcU9KZmZNcXhJMzVaVHdYV2tIUHVDdG5Cc1FMTjFHUHRvQzEtQmhFdDUwOXR3RlUwWlBDX3c5ZlNUMWZZd1BLcm12TWVWYWc?oc=5",
-        "as_of": "2026-10-04 06:46",
-        "published_at": "2026-10-03T22:46:00+00:00",
-        "source": "Reuters",
-        "publisher_url": "https://www.reuters.com",
-        "delivery": "Google News RSS",
-        "status": "VERIFIED"
-      },
-      {
-        "title": "Portugal prosecutors probe legality of US use of Lajes base in Iran war",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPalVaWllxS1FsVThCWHF3bXZTLXVRNWNhMTdNaERvemRJSWRtZU1iRHNTN19WSGt5THpaRjZpZkE5OGtMYkZPY3JOSG95ZlF3TU10M05VYkdCMHJ0bW93dlk5THJmYm9pM2daU1VteXJKWnp1bm5GSDBobkZyUDBzNDNkaExRSElQSG9zR3hfNFFtazQ4Y2ZtWk92a1NXZXRRbUd1Y0ZQOA?oc=5",
-        "as_of": "2026-10-04 04:02",
-        "published_at": "2026-10-03T20:02:26+00:00",
-        "source": "Reuters",
-        "publisher_url": "https://www.reuters.com",
-        "delivery": "Google News RSS",
-        "status": "VERIFIED"
-      },
-      {
-        "title": "OpenAI safety employee quits, says 'time for trial and error is over'",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPanBnbDA2SnluX0swT1ZpQ212VUNKRHh1T3d2Tmt0VDBieEtFVmh6blFFZEVCZlFLbjd4TnNYRnhacmtoSEdRTTFsbVdQN3RjRW5BTVd2NkJwdkdmcHNBa2czV3BZc19MYnJ1dkFvTkh1YXZQQkw1Zmtma2Y4Qm10RzlIUlhJS1ZSUHJnVVdTNlk1djVnNndqNXJBZ29hcEVJUmdkZTNWcklGWEF4TGtuZw?oc=5",
-        "as_of": "2026-10-04 03:00",
-        "published_at": "2026-10-03T19:00:00+00:00",
-        "source": "Reuters",
-        "publisher_url": "https://www.reuters.com",
-        "delivery": "Google News RSS",
-        "status": "VERIFIED"
-      },
-      {
-        "title": "Indian police detain several people in Gen Z-led protests against voter roll changes",
-        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOSzBOVThKTi1YelVZQllEUDlIWlZVdFdVZElrc204eDhmdVdsVXVBOXhzeGxZUG92Q0hNRloxdjh4UkJ4eGkydDNjQWZQZFB6TjFLNzM0eFhUalBzSmNGaFJteU9tNV9vZkFYZHFZYzFGQVNXNlRFd0QzcHA4Ym02dEZTSU5nREdxbDJfUGRtWklEbVYxZUdWakRrY2hqWFlKR3ZqMWZveDBaeDB2RDBieHdCa1ZiQ0FadU04LTNn?oc=5",
-        "as_of": "2026-10-03 22:58",
-        "published_at": "2026-10-03T14:58:11+00:00",
-        "source": "Reuters",
-        "publisher_url": "https://www.reuters.com",
-        "delivery": "Google News RSS",
-        "status": "VERIFIED"
+        "status": "VERIFIED",
+        "summary_zh": "Breakingviews - 評論：Meta 的繆斯是價值破壞的可愛代理人",
+        "translation_status": "OK",
+        "summary_method": "Translated publisher headline only; not a full-article summary"
       }
     ],
     "attempts": [
       {
         "source": "Reuters",
         "status": "VERIFIED",
-        "count": 10,
+        "count": 5,
         "source_url": "https://news.google.com/rss/search?q=site%3Areuters.com+%28%22Wall+Street%22+OR+%22US+stocks%22+OR+%22U.S.+stocks%22+OR+Nasdaq+OR+%22S%26P+500%22%29+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen",
         "error": null
       }
@@ -2449,11 +2400,98 @@
     "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
   },
   "economic_calendar": {
-    "status": "SOURCE ERROR",
-    "events": [],
-    "source": "BLS",
-    "url": "https://www.bls.gov/schedule/news_release/bls.ics",
-    "error": "No upcoming official BLS events"
+    "status": "VERIFIED",
+    "events": [
+      {
+        "time": "2026-10-05 22:00",
+        "country": "美國",
+        "event": "ISM 服務業 PMI",
+        "original_title": "ISM Services PMI",
+        "actual": null,
+        "forecast": "55.1",
+        "previous": "55.4",
+        "status": "VERIFIED",
+        "source": "Forex Factory / Fair Economy",
+        "impact": "Medium"
+      },
+      {
+        "time": "2026-10-06 20:15",
+        "country": "美國",
+        "event": "ADP 每週就業變化",
+        "original_title": "ADP Weekly Employment Change",
+        "actual": null,
+        "forecast": null,
+        "previous": null,
+        "status": "VERIFIED",
+        "source": "Forex Factory / Fair Economy",
+        "impact": "Low"
+      },
+      {
+        "time": "2026-10-06 20:16",
+        "country": "美國",
+        "event": "ADP 每週就業變化",
+        "original_title": "ADP Weekly Employment Change",
+        "actual": null,
+        "forecast": null,
+        "previous": "20.0K",
+        "status": "VERIFIED",
+        "source": "Forex Factory / Fair Economy",
+        "impact": "Low"
+      },
+      {
+        "time": "2026-10-06 20:30",
+        "country": "美國",
+        "event": "貿易收支",
+        "original_title": "Trade Balance",
+        "actual": null,
+        "forecast": "-95.2B",
+        "previous": "-88.6B",
+        "status": "VERIFIED",
+        "source": "Forex Factory / Fair Economy",
+        "impact": "Low"
+      },
+      {
+        "time": "2026-10-08 20:30",
+        "country": "美國",
+        "event": "初領失業救濟金人數",
+        "original_title": "Unemployment Claims",
+        "actual": null,
+        "forecast": "200K",
+        "previous": "197K",
+        "status": "VERIFIED",
+        "source": "Forex Factory / Fair Economy",
+        "impact": "Medium"
+      },
+      {
+        "time": "2026-10-09 22:00",
+        "country": "美國",
+        "event": "密西根大學消費者信心（初值）",
+        "original_title": "Prelim UoM Consumer Sentiment",
+        "actual": null,
+        "forecast": "47.6",
+        "previous": "47.8",
+        "status": "VERIFIED",
+        "source": "Forex Factory / Fair Economy",
+        "impact": "Medium"
+      },
+      {
+        "time": "2026-10-09 22:00",
+        "country": "美國",
+        "event": "密西根大學通膨預期（初值）",
+        "original_title": "Prelim UoM Inflation Expectations",
+        "actual": null,
+        "forecast": null,
+        "previous": "4.6%",
+        "status": "VERIFIED",
+        "source": "Forex Factory / Fair Economy",
+        "impact": "Medium"
+      }
+    ],
+    "source": "Forex Factory / Fair Economy",
+    "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.json",
+    "week_start": "2026-10-05",
+    "week_end": "2026-10-11",
+    "timezone": "Asia/Taipei"
   },
   "economic_actuals": [
     {
@@ -2571,7 +2609,7 @@
     {
       "name": "DXY",
       "low": 99.45999908447266,
-      "high": 102.38800048828125,
+      "high": 102.36199951171875,
       "as_of": "2026-10-05",
       "status": "VERIFIED",
       "method": "Last 20 available observations: observed min/max; not support/resistance",
@@ -2587,9 +2625,9 @@
     "10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02）",
     "2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02）",
     "10Y−EFFR +136.0 bp（2026-10-01）",
-    "DXY 當日 +0.45%；美元走強",
-    "黃金當日 -0.06%。",
-    "WTI 當日 -1.06%。"
+    "DXY 當日 +0.42%；美元走強",
+    "黃金當日 -0.02%。",
+    "WTI 當日 -0.90%。"
   ],
   "report_date": "2026-10-05",
   "schema_version": "3.0",
