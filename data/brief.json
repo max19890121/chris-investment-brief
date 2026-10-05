@@ -1,9 +1,9 @@
 {
   "status": "AUTO · PARTIAL",
-  "updated_at": "2026-10-05 13:45 Asia/Taipei",
+  "updated_at": "2026-10-05 13:52 Asia/Taipei",
   "bluf": {
     "headline": "CHRIS 觀點｜Risk-On",
-    "brief": "CHRIS 觀點｜Risk-On。同日收盤漲跌：S&P 500 +0.73%、NASDAQ +1.19%、SOX +2.40%；科技與半導體當日領先大盤。 VIX 15.31：低波動 2Y–10Y (10Y−2Y) +45.0 bp（2026-10-02） 10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02） 2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02） 10Y−EFFR +136.0 bp（2026-10-01） DXY 當日 +0.42%；美元走強 黃金當日 -0.02%。 WTI 當日 -0.90%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
+    "brief": "CHRIS 觀點｜Risk-On。同日收盤漲跌：S&P 500 +0.73%、NASDAQ +1.19%、SOX +2.40%；科技與半導體當日領先大盤。 VIX 15.31：低波動 2Y–10Y (10Y−2Y) +45.0 bp（2026-10-02） 10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02） 2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02） 10Y−EFFR +136.0 bp（2026-10-01） DXY 當日 +0.41%；美元走強 黃金當日 +0.04%。 WTI 當日 -1.11%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
     "theme": "Rule-based · Verified Inputs · Risk-On"
   },
   "risk_note": "US Treasury 與 VIX 使用官方發布資料；EFFR 使用 New York Fed 官方資料。股指、FX、商品與產業 ETF 為公開市場行情來源，非交易所授權即時 feed。MOVE 使用 Investing.com 公開延遲歷史行情，非官方 ICE API。 新鮮度門檻：7 個日曆日；各資料日期可能不同。",
@@ -46,8 +46,8 @@
     },
     {
       "name": "DXY",
-      "value": "102.36",
-      "change": "+0.42%",
+      "value": "102.35",
+      "change": "+0.41%",
       "tone": "up",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -55,8 +55,8 @@
     },
     {
       "name": "USD/TWD",
-      "value": "31.83",
-      "change": "-0.19%",
+      "value": "31.80",
+      "change": "-0.27%",
       "tone": "down",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -64,17 +64,17 @@
     },
     {
       "name": "GOLD",
-      "value": "4,161.30",
-      "change": "-0.02%",
-      "tone": "down",
+      "value": "4,163.80",
+      "change": "+0.04%",
+      "tone": "up",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "WTI",
-      "value": "90.29",
-      "change": "-0.90%",
+      "value": "90.10",
+      "change": "-1.11%",
       "tone": "down",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -121,8 +121,8 @@
     },
     {
       "name": "Brent 期貨",
-      "value": "101.86",
-      "change": "-0.38%",
+      "value": "101.74",
+      "change": "-0.50%",
       "tone": "down",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -156,32 +156,32 @@
     {
       "title": "股市樂觀，美元上漲，歐元下跌",
       "summary": "股市樂觀，美元上漲，歐元下跌",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOUzk3bWZMY2M2d1ZHLWhKbzhqV2VPZjY0N2JCcm0tMGRLUTAzM2V5TmZ3RzI1dGZNZ0duR2NmZXIxQU1qaWZvdGI5SUwtRWpiQ0dkWTBVdUIxNFZzVDAxOWpQa0FmQWFTRWZUTV9lWE1yRGR5MmN6WG16UGJNamRNUzB4WQ?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOUzk3bWZMY2M2d1ZHLWhKbzhqV2VPZjY0N2JCcm0tMGRLUTAzM2V5TmZ3RzI1dGZNZ0duR2NmZXIxQU1qaWZvdGI5SUwtRWpiQ0dkWTBVdUIxNFZzVDAxOWpQa0FmQWFTRWZUTV9lWE1yRGR5MmN6WG16UGJNamRNUzB4WQ?oc=5",
+      "source": "Reuters"
     },
     {
       "title": "由於疲軟的就業數據平息了升息預期，股市收高",
       "summary": "由於疲軟的就業數據平息了升息預期，股市收高",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPeTVxVTNLX2pUZEc1U0xtNWdyYWRjY0NjSVcweXJNYk9PTDVKVnJaTzFNTUdnNW5LVEFxaHlELU9fVW9neE93Q0VDanlUbkJPcUhMaXNmNUJQX3pXd0JvcU1VSHh5Z1NEZnQzWGFsclpXZ08zRTVmY2ZaV1J4a2JBU3lPTEVNTUNBSVdVcWRydUlJOEY5ZU13NERhMFE3YUstSzB2RE5JV1gtZw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPeTVxVTNLX2pUZEc1U0xtNWdyYWRjY0NjSVcweXJNYk9PTDVKVnJaTzFNTUdnNW5LVEFxaHlELU9fVW9neE93Q0VDanlUbkJPcUhMaXNmNUJQX3pXd0JvcU1VSHh5Z1NEZnQzWGFsclpXZ08zRTVmY2ZaV1J4a2JBU3lPTEVNTUNBSVdVcWRydUlJOEY5ZU13NERhMFE3YUstSzB2RE5JV1gtZw?oc=5",
+      "source": "Reuters"
     },
     {
       "title": "華爾街監管機構提出投資顧問加密資產託管規則",
       "summary": "華爾街監管機構提出投資顧問加密資產託管規則",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcFpoVVFIbWRuYW1BRXZCWGY4LXQ5N2xTZGRjOFNNbHhOTXBmRG5IR3JJVFhLUjBocGU4MnRJVlJPQWR2NWhhbDNNbm1tS1dRMHpfdU9pYjB6SWt2SnN4a180X2w0YTVjdUxGMUd0SklGbXMwUjhMY3pZVjhHaVY0UFNod1ZIdlhhZUE4cWlpLXhrbjFYbk11YjZSeXp5QnN2UGlld0VMYW9ydkxiakwtdWpEMFFCZi1Hbmc?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcFpoVVFIbWRuYW1BRXZCWGY4LXQ5N2xTZGRjOFNNbHhOTXBmRG5IR3JJVFhLUjBocGU4MnRJVlJPQWR2NWhhbDNNbm1tS1dRMHpfdU9pYjB6SWt2SnN4a180X2w0YTVjdUxGMUd0SklGbXMwUjhMY3pZVjhHaVY0UFNod1ZIdlhhZUE4cWlpLXhrbjFYbk11YjZSeXp5QnN2UGlld0VMYW9ydkxiakwtdWpEMFFCZi1Hbmc?oc=5",
+      "source": "Reuters"
     },
     {
       "title": "美國就業數據疲弱後股市上漲，但債券恢復拋售",
       "summary": "美國就業數據疲弱後股市上漲，但債券恢復拋售",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE0xaEpXc3pMdGRXalZlcHdvWThBeklWRlpfRDd4cUZLbXNGS2s0YVF4Sm42YUpqaFNTbVkyWmIyanN6WmxtSG5yME8zTml3Z1N3a0NabmktSy1YYWp0SFlOM2NQZEN6WmFnX096dUREY1pHTFJ0NzlrUW54cw?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE0xaEpXc3pMdGRXalZlcHdvWThBeklWRlpfRDd4cUZLbXNGS2s0YVF4Sm42YUpqaFNTbVkyWmIyanN6WmxtSG5yME8zTml3Z1N3a0NabmktSy1YYWp0SFlOM2NQZEN6WmFnX096dUREY1pHTFJ0NzlrUW54cw?oc=5",
+      "source": "Reuters"
     },
     {
       "title": "Breakingviews - 評論：Meta 的繆斯是價值破壞的可愛代理人",
       "summary": "Breakingviews - 評論：Meta 的繆斯是價值破壞的可愛代理人",
-      "source": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONHY2amRkS056YXR4NDVqU3NaT0tTQXNicFd3VDBQLTRxaEI5RW5WaXhYa2prRmR5clBIS3ZVeW52UjFTVUdseU01S3F2cVFKWVJocXZwYXllVGRjNWNhRGxPNWFISzhFa1pkVVNBSmdoRFFiV1c1OE5wUDVFaGU5N0xIN19qM2MyN2o2WTdRQzJ5M0pCNlVyckg5SURzQmJCMVZvUjMzd0JiTms?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxONHY2amRkS056YXR4NDVqU3NaT0tTQXNicFd3VDBQLTRxaEI5RW5WaXhYa2prRmR5clBIS3ZVeW52UjFTVUdseU01S3F2cVFKWVJocXZwYXllVGRjNWNhRGxPNWFISzhFa1pkVVNBSmdoRFFiV1c1OE5wUDVFaGU5N0xIN19qM2MyN2o2WTdRQzJ5M0pCNlVyckg5SURzQmJCMVZvUjMzd0JiTms?oc=5",
+      "source": "Reuters"
     }
   ],
   "watch": [
@@ -414,8 +414,8 @@
   "commodities": [
     {
       "name": "WTI",
-      "value": "90.29",
-      "change": "-0.90%",
+      "value": "90.10",
+      "change": "-1.11%",
       "tone": "down",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -423,9 +423,9 @@
     },
     {
       "name": "GOLD",
-      "value": "4,161.30",
-      "change": "-0.02%",
-      "tone": "down",
+      "value": "4,163.80",
+      "change": "+0.04%",
+      "tone": "up",
       "status": "VERIFIED",
       "as_of": "2026-10-05",
       "source": "Yahoo Finance public market feed"
@@ -584,10 +584,10 @@
     },
     {
       "name": "DXY",
-      "text": "102.36"
+      "text": "102.35"
     }
   ],
-  "chris_view": "CHRIS 觀點｜Risk-On。同日收盤漲跌：S&P 500 +0.73%、NASDAQ +1.19%、SOX +2.40%；科技與半導體當日領先大盤。 VIX 15.31：低波動 2Y–10Y (10Y−2Y) +45.0 bp（2026-10-02） 10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02） 2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02） 10Y−EFFR +136.0 bp（2026-10-01） DXY 當日 +0.42%；美元走強 黃金當日 -0.02%。 WTI 當日 -0.90%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
+  "chris_view": "CHRIS 觀點｜Risk-On。同日收盤漲跌：S&P 500 +0.73%、NASDAQ +1.19%、SOX +2.40%；科技與半導體當日領先大盤。 VIX 15.31：低波動 2Y–10Y (10Y−2Y) +45.0 bp（2026-10-02） 10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02） 2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02） 10Y−EFFR +136.0 bp（2026-10-01） DXY 當日 +0.41%；美元走強 黃金當日 +0.04%。 WTI 當日 -1.11%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
   "sources": [
     {
       "name": "U.S. Treasury",
@@ -639,8 +639,8 @@
     },
     {
       "name": "Global news · ECB",
-      "ok": false,
-      "note": "SOURCE ERROR",
+      "ok": true,
+      "note": "VERIFIED",
       "url": "https://www.ecb.europa.eu/rss/press.html"
     },
     {
@@ -893,22 +893,22 @@
         "source": "Cboe Global Markets"
       },
       "DXY": {
-        "value": 102.36,
-        "change_pct": 0.42,
+        "value": 102.35,
+        "change_pct": 0.41,
         "as_of": "2026-10-05",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
       "GOLD": {
-        "value": 4161.3,
-        "change_pct": -0.02,
+        "value": 4163.8,
+        "change_pct": 0.04,
         "as_of": "2026-10-05",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
       "WTI": {
-        "value": 90.29,
-        "change_pct": -0.9,
+        "value": 90.1,
+        "change_pct": -1.11,
         "as_of": "2026-10-05",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
@@ -1006,7 +1006,7 @@
           "DXY"
         ],
         "status": "VERIFIED",
-        "text": "DXY 當日 +0.42%；美元走強"
+        "text": "DXY 當日 +0.41%；美元走強"
       },
       {
         "name": "Gold",
@@ -1015,7 +1015,7 @@
           "GOLD"
         ],
         "status": "VERIFIED",
-        "text": "黃金當日 -0.02%。"
+        "text": "黃金當日 +0.04%。"
       },
       {
         "name": "Oil",
@@ -1024,7 +1024,7 @@
           "WTI"
         ],
         "status": "VERIFIED",
-        "text": "WTI 當日 -0.90%。"
+        "text": "WTI 當日 -1.11%。"
       }
     ],
     "rules": {
@@ -1682,7 +1682,7 @@
         102.0999984741211,
         101.93000030517578,
         null,
-        102.36199951171875
+        102.3489990234375
       ],
       "status": "VERIFIED",
       "as_of": "2026-10-05",
@@ -1798,8 +1798,8 @@
       },
       {
         "name": "日經225",
-        "value": "69,687.28",
-        "change": "+2.02%",
+        "value": "69,768.43",
+        "change": "+2.14%",
         "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1816,8 +1816,8 @@
       },
       {
         "name": "香港恆生",
-        "value": "23,955.80",
-        "change": "-0.07%",
+        "value": "23,959.91",
+        "change": "-0.05%",
         "tone": "down",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1825,8 +1825,8 @@
       },
       {
         "name": "新加坡海峽",
-        "value": "5,640.47",
-        "change": "+0.10%",
+        "value": "5,643.85",
+        "change": "+0.16%",
         "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1883,8 +1883,8 @@
     "fx": [
       {
         "name": "DXY",
-        "value": "102.36",
-        "change": "+0.42%",
+        "value": "102.35",
+        "change": "+0.41%",
         "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1893,7 +1893,7 @@
       {
         "name": "EUR/USD",
         "value": "1.12",
-        "change": "-0.50%",
+        "change": "-0.49%",
         "tone": "down",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1901,8 +1901,8 @@
       },
       {
         "name": "USD/JPY",
-        "value": "158.01",
-        "change": "+0.05%",
+        "value": "157.99",
+        "change": "+0.04%",
         "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1919,8 +1919,8 @@
       },
       {
         "name": "USD/TWD",
-        "value": "31.83",
-        "change": "-0.19%",
+        "value": "31.80",
+        "change": "-0.27%",
         "tone": "down",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1930,8 +1930,8 @@
     "energy": [
       {
         "name": "WTI",
-        "value": "90.29",
-        "change": "-0.90%",
+        "value": "90.10",
+        "change": "-1.11%",
         "tone": "down",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1939,8 +1939,8 @@
       },
       {
         "name": "Brent 期貨",
-        "value": "101.86",
-        "change": "-0.38%",
+        "value": "101.74",
+        "change": "-0.50%",
         "tone": "down",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -1950,9 +1950,9 @@
     "metals": [
       {
         "name": "GOLD",
-        "value": "4,161.30",
-        "change": "-0.02%",
-        "tone": "down",
+        "value": "4,163.80",
+        "change": "+0.04%",
+        "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
         "source": "Yahoo Finance public market feed"
@@ -1960,7 +1960,7 @@
       {
         "name": "白銀期貨",
         "value": "61.22",
-        "change": "+2.06%",
+        "change": "+2.08%",
         "tone": "up",
         "status": "VERIFIED",
         "as_of": "2026-10-05",
@@ -2082,9 +2082,79 @@
       "region": "歐洲",
       "source": "ECB",
       "source_url": "https://www.ecb.europa.eu/rss/press.html",
-      "status": "SOURCE ERROR",
-      "items": [],
-      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>"
+      "status": "VERIFIED",
+      "items": [
+        {
+          "title": " Decisions taken by the Governing Council of the ECB (in addition to decisions setting interest rates)",
+          "url": "https://www.ecb.europa.eu//press/govcdec/otherdec/2026/html/ecb.gc261002~54c6b5672b.en.html",
+          "as_of": "2026-10-02 21:00",
+          "source": "ECB",
+          "status": "VERIFIED"
+        },
+        {
+          "title": " Boris Vujčić: Resilience, integration and competitiveness: building the future of European banking",
+          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261002_1~419efe18e0.en.html",
+          "as_of": "2026-10-02 19:30",
+          "source": "ECB",
+          "status": "VERIFIED"
+        },
+        {
+          "title": " Isabel Schnabel: Central banks on-chain",
+          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261001_1~a0be67193b.en.pdf",
+          "as_of": "2026-10-01 23:30",
+          "source": "ECB",
+          "status": "VERIFIED"
+        },
+        {
+          "title": " Christine Lagarde: Where AI risks meet",
+          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261001~cf3c630379.en.html",
+          "as_of": "2026-10-01 21:30",
+          "source": "ECB",
+          "status": "VERIFIED"
+        },
+        {
+          "title": " Christine Lagarde: Interview with La Croix",
+          "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in260930~10084a5f3d.en.html",
+          "as_of": "2026-10-01 01:00",
+          "source": "ECB",
+          "status": "VERIFIED"
+        },
+        {
+          "title": " Isabel Schnabel: Monetary policy in a world of overlapping shocks",
+          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp260930_1~7c6c120482.en.html",
+          "as_of": "2026-09-30 23:45",
+          "source": "ECB",
+          "status": "VERIFIED"
+        },
+        {
+          "title": " Frank Elderson: Supervisory risk appetite, efficiency and effectiveness",
+          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp260930~d495288355.en.html",
+          "as_of": "2026-09-30 10:20",
+          "source": "ECB",
+          "status": "VERIFIED"
+        },
+        {
+          "title": " ECB amends monetary policy implementation guidelines as part of regular review",
+          "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr260929~050089e922.en.html",
+          "as_of": "2026-09-29 16:00",
+          "source": "ECB",
+          "status": "VERIFIED"
+        },
+        {
+          "title": " Christine Lagarde: Hearing of the Committee on Economic and Monetary Affairs of the European Parliament",
+          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp260928~a875675544.en.html",
+          "as_of": "2026-09-28 21:30",
+          "source": "ECB",
+          "status": "VERIFIED"
+        },
+        {
+          "title": " ECB Executive Board member Isabel Schnabel to resign to take senior role at IMF",
+          "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr260924~bea1dd9824.en.html",
+          "as_of": "2026-09-24 20:00",
+          "source": "ECB",
+          "status": "STALE"
+        }
+      ]
     },
     {
       "region": "亞洲",
@@ -2609,7 +2679,7 @@
     {
       "name": "DXY",
       "low": 99.45999908447266,
-      "high": 102.36199951171875,
+      "high": 102.3489990234375,
       "as_of": "2026-10-05",
       "status": "VERIFIED",
       "method": "Last 20 available observations: observed min/max; not support/resistance",
@@ -2625,9 +2695,9 @@
     "10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02）",
     "2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02）",
     "10Y−EFFR +136.0 bp（2026-10-01）",
-    "DXY 當日 +0.42%；美元走強",
-    "黃金當日 -0.02%。",
-    "WTI 當日 -0.90%。"
+    "DXY 當日 +0.41%；美元走強",
+    "黃金當日 +0.04%。",
+    "WTI 當日 -1.11%。"
   ],
   "report_date": "2026-10-05",
   "schema_version": "3.0",
