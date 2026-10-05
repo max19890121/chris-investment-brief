@@ -1,12 +1,12 @@
 {
   "status": "AUTO · VERIFIED",
-  "updated_at": "2026-10-05 07:19 Asia/Taipei",
+  "updated_at": "2026-10-05 11:07 Asia/Taipei",
   "bluf": {
-    "headline": "全球市場、官方利率與波動率監控",
-    "brief": "CHRIS 投資早報採可驗證市場資料。美債殖利率使用 U.S. Treasury，VIX 使用 Cboe，EFFR 使用 Federal Reserve Bank of New York。無法取得的資料不以推算值取代。",
-    "theme": "Verified Data · Rates · Markets · Volatility"
+    "headline": "CHRIS 觀點｜Risk-On",
+    "brief": "CHRIS 觀點｜Risk-On。同日收盤漲跌：S&P 500 +0.73%、NASDAQ +1.19%、SOX +2.40%；科技與半導體當日領先大盤。 VIX 15.31：低波動 2Y–10Y (10Y−2Y) +45.0 bp（2026-10-02） 10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02） 2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02） 10Y−EFFR +136.0 bp（2026-10-01） DXY 當日 +0.54%；美元走強 黃金當日 +0.16%。 WTI 當日 -1.14%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
+    "theme": "Rule-based · Verified Inputs · Risk-On"
   },
-  "risk_note": "US Treasury 與 VIX 使用官方發布資料；EFFR 使用 New York Fed 官方資料。股指、FX、商品與產業 ETF 為公開市場行情來源，非交易所授權即時 feed。MOVE 尚未接入授權來源，因此不估算。",
+  "risk_note": "US Treasury 與 VIX 使用官方發布資料；EFFR 使用 New York Fed 官方資料。股指、FX、商品與產業 ETF 為公開市場行情來源，非交易所授權即時 feed。MOVE 尚未接入授權來源，因此不估算。 新鮮度門檻：7 個日曆日；各資料日期可能不同。USD/TWD: SOURCE ERROR；MOVE: NO FEED",
   "tickers": [
     {
       "name": "S&P 500",
@@ -46,26 +46,26 @@
     },
     {
       "name": "DXY",
-      "value": "101.89",
-      "change": "-0.04%",
-      "tone": "down",
+      "value": "102.48",
+      "change": "+0.54%",
+      "tone": "up",
       "status": "VERIFIED",
       "as_of": "2026-10-04",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "USD/TWD",
-      "value": "31.80",
-      "change": "-0.28%",
-      "tone": "down",
-      "status": "VERIFIED",
+      "value": "31.77",
+      "change": "SOURCE ERROR",
+      "tone": "warn",
+      "status": "SOURCE ERROR",
       "as_of": "2026-10-05",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "GOLD",
-      "value": "4,172.50",
-      "change": "+0.25%",
+      "value": "4,169.00",
+      "change": "+0.16%",
       "tone": "up",
       "status": "VERIFIED",
       "as_of": "2026-10-04",
@@ -73,9 +73,9 @@
     },
     {
       "name": "WTI",
-      "value": "91.11",
-      "change": "+0.00%",
-      "tone": "up",
+      "value": "90.07",
+      "change": "-1.14%",
+      "tone": "down",
       "status": "VERIFIED",
       "as_of": "2026-10-04",
       "source": "Yahoo Finance public market feed"
@@ -266,22 +266,118 @@
       "date": "2026-10-01",
       "status": "VERIFIED",
       "source": "Federal Reserve Bank of New York"
+    },
+    {
+      "name": "2Y–10Y (10Y−2Y)",
+      "value": "+45.0 bp",
+      "value_bp": 45.0,
+      "date": "2026-10-02",
+      "status": "VERIFIED",
+      "formula": "(US 10Y - US 2Y) × 100",
+      "derived": true,
+      "inputs": {
+        "US 10Y": {
+          "value": 5.28,
+          "as_of": "2026-10-02",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        },
+        "US 2Y": {
+          "value": 4.83,
+          "as_of": "2026-10-02",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        }
+      },
+      "source": "Derived from official observed rates"
+    },
+    {
+      "name": "10Y–30Y (30Y−10Y)",
+      "value": "+35.0 bp",
+      "value_bp": 35.0,
+      "date": "2026-10-02",
+      "status": "VERIFIED",
+      "formula": "(US 30Y - US 10Y) × 100",
+      "derived": true,
+      "inputs": {
+        "US 30Y": {
+          "value": 5.63,
+          "as_of": "2026-10-02",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        },
+        "US 10Y": {
+          "value": 5.28,
+          "as_of": "2026-10-02",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        }
+      },
+      "source": "Derived from official observed rates"
+    },
+    {
+      "name": "2Y–30Y (30Y−2Y)",
+      "value": "+80.0 bp",
+      "value_bp": 80.0,
+      "date": "2026-10-02",
+      "status": "VERIFIED",
+      "formula": "(US 30Y - US 2Y) × 100",
+      "derived": true,
+      "inputs": {
+        "US 30Y": {
+          "value": 5.63,
+          "as_of": "2026-10-02",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        },
+        "US 2Y": {
+          "value": 4.83,
+          "as_of": "2026-10-02",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        }
+      },
+      "source": "Derived from official observed rates"
+    },
+    {
+      "name": "10Y−EFFR",
+      "value": "+136.0 bp",
+      "value_bp": 136.0,
+      "date": "2026-10-01",
+      "status": "VERIFIED",
+      "formula": "(US 10Y - EFFR) × 100",
+      "derived": true,
+      "inputs": {
+        "US 10Y": {
+          "value": 5.24,
+          "as_of": "2026-10-01",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        },
+        "EFFR": {
+          "value": 3.88,
+          "as_of": "2026-10-01",
+          "status": "VERIFIED",
+          "source": "Federal Reserve Bank of New York"
+        }
+      },
+      "source": "Derived from official observed rates"
     }
   ],
   "commodities": [
     {
       "name": "WTI",
-      "value": "91.11",
-      "change": "+0.00%",
-      "tone": "up",
+      "value": "90.07",
+      "change": "-1.14%",
+      "tone": "down",
       "status": "VERIFIED",
       "as_of": "2026-10-04",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "GOLD",
-      "value": "4,172.50",
-      "change": "+0.25%",
+      "value": "4,169.00",
+      "change": "+0.16%",
       "tone": "up",
       "status": "VERIFIED",
       "as_of": "2026-10-04",
@@ -313,7 +409,23 @@
     ],
     [
       "Regime",
-      "Verified Data"
+      "Risk-On"
+    ],
+    [
+      "2Y–10Y (10Y−2Y)",
+      "+45.0 bp"
+    ],
+    [
+      "10Y–30Y (30Y−10Y)",
+      "+35.0 bp"
+    ],
+    [
+      "2Y–30Y (30Y−2Y)",
+      "+80.0 bp"
+    ],
+    [
+      "10Y−EFFR",
+      "+136.0 bp"
     ]
   ],
   "fed": [
@@ -349,10 +461,10 @@
     },
     {
       "name": "DXY",
-      "text": "101.89"
+      "text": "102.48"
     }
   ],
-  "chris_view": "CHRIS CIO Framework：利率 × 科技相對強弱 × 波動率。分析層只解讀已取得的市場資料，不生成或替代原始市場數值。",
+  "chris_view": "CHRIS 觀點｜Risk-On。同日收盤漲跌：S&P 500 +0.73%、NASDAQ +1.19%、SOX +2.40%；科技與半導體當日領先大盤。 VIX 15.31：低波動 2Y–10Y (10Y−2Y) +45.0 bp（2026-10-02） 10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02） 2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02） 10Y−EFFR +136.0 bp（2026-10-01） DXY 當日 +0.54%；美元走強 黃金當日 +0.16%。 WTI 當日 -1.14%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
   "sources": [
     {
       "name": "U.S. Treasury",
@@ -382,7 +494,7 @@
     {
       "name": "CHRIS CIO Layer",
       "ok": true,
-      "note": "Analysis only · does not create market data"
+      "note": "Rules 1.0 · Risk-On · analysis only"
     }
   ],
   "history": {
@@ -457,5 +569,282 @@
     4.83,
     5.28,
     5.63
-  ]
+  ],
+  "spreads": [
+    {
+      "name": "2Y–10Y (10Y−2Y)",
+      "value": "+45.0 bp",
+      "value_bp": 45.0,
+      "date": "2026-10-02",
+      "status": "VERIFIED",
+      "formula": "(US 10Y - US 2Y) × 100",
+      "derived": true,
+      "inputs": {
+        "US 10Y": {
+          "value": 5.28,
+          "as_of": "2026-10-02",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        },
+        "US 2Y": {
+          "value": 4.83,
+          "as_of": "2026-10-02",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        }
+      },
+      "source": "Derived from official observed rates"
+    },
+    {
+      "name": "10Y–30Y (30Y−10Y)",
+      "value": "+35.0 bp",
+      "value_bp": 35.0,
+      "date": "2026-10-02",
+      "status": "VERIFIED",
+      "formula": "(US 30Y - US 10Y) × 100",
+      "derived": true,
+      "inputs": {
+        "US 30Y": {
+          "value": 5.63,
+          "as_of": "2026-10-02",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        },
+        "US 10Y": {
+          "value": 5.28,
+          "as_of": "2026-10-02",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        }
+      },
+      "source": "Derived from official observed rates"
+    },
+    {
+      "name": "2Y–30Y (30Y−2Y)",
+      "value": "+80.0 bp",
+      "value_bp": 80.0,
+      "date": "2026-10-02",
+      "status": "VERIFIED",
+      "formula": "(US 30Y - US 2Y) × 100",
+      "derived": true,
+      "inputs": {
+        "US 30Y": {
+          "value": 5.63,
+          "as_of": "2026-10-02",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        },
+        "US 2Y": {
+          "value": 4.83,
+          "as_of": "2026-10-02",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        }
+      },
+      "source": "Derived from official observed rates"
+    },
+    {
+      "name": "10Y−EFFR",
+      "value": "+136.0 bp",
+      "value_bp": 136.0,
+      "date": "2026-10-01",
+      "status": "VERIFIED",
+      "formula": "(US 10Y - EFFR) × 100",
+      "derived": true,
+      "inputs": {
+        "US 10Y": {
+          "value": 5.24,
+          "as_of": "2026-10-01",
+          "status": "VERIFIED",
+          "source": "U.S. Treasury"
+        },
+        "EFFR": {
+          "value": 3.88,
+          "as_of": "2026-10-01",
+          "status": "VERIFIED",
+          "source": "Federal Reserve Bank of New York"
+        }
+      },
+      "source": "Derived from official observed rates"
+    }
+  ],
+  "risk_regime": {
+    "name": "Risk-On",
+    "status": "VERIFIED",
+    "rules_version": "1.0"
+  },
+  "analysis": {
+    "inputs": {
+      "S&P 500": {
+        "value": 7722.72,
+        "change_pct": 0.73,
+        "as_of": "2026-10-02",
+        "status": "VERIFIED",
+        "source": "Yahoo Finance public market feed"
+      },
+      "NASDAQ": {
+        "value": 27190.86,
+        "change_pct": 1.19,
+        "as_of": "2026-10-02",
+        "status": "VERIFIED",
+        "source": "Yahoo Finance public market feed"
+      },
+      "SOX": {
+        "value": 13136.67,
+        "change_pct": 2.4,
+        "as_of": "2026-10-02",
+        "status": "VERIFIED",
+        "source": "Yahoo Finance public market feed"
+      },
+      "VIX": {
+        "value": 15.31,
+        "change_pct": null,
+        "as_of": "2026-10-02",
+        "status": "VERIFIED",
+        "source": "Cboe Global Markets"
+      },
+      "DXY": {
+        "value": 102.48,
+        "change_pct": 0.54,
+        "as_of": "2026-10-04",
+        "status": "VERIFIED",
+        "source": "Yahoo Finance public market feed"
+      },
+      "GOLD": {
+        "value": 4169.0,
+        "change_pct": 0.16,
+        "as_of": "2026-10-04",
+        "status": "VERIFIED",
+        "source": "Yahoo Finance public market feed"
+      },
+      "WTI": {
+        "value": 90.07,
+        "change_pct": -1.14,
+        "as_of": "2026-10-04",
+        "status": "VERIFIED",
+        "source": "Yahoo Finance public market feed"
+      },
+      "US 2Y": {
+        "value": 4.83,
+        "as_of": "2026-10-02",
+        "status": "VERIFIED",
+        "source": "U.S. Treasury"
+      },
+      "US 10Y": {
+        "value": 5.28,
+        "as_of": "2026-10-02",
+        "status": "VERIFIED",
+        "source": "U.S. Treasury"
+      },
+      "US 30Y": {
+        "value": 5.63,
+        "as_of": "2026-10-02",
+        "status": "VERIFIED",
+        "source": "U.S. Treasury"
+      },
+      "EFFR": {
+        "value": 3.88,
+        "as_of": "2026-10-01",
+        "status": "VERIFIED",
+        "source": "Federal Reserve Bank of New York"
+      }
+    },
+    "signals": [
+      {
+        "name": "Equities",
+        "rule": "Compare same-date daily percent changes; no multi-day trend inference.",
+        "inputs": [
+          "S&P 500",
+          "NASDAQ",
+          "SOX"
+        ],
+        "status": "VERIFIED",
+        "text": "同日收盤漲跌：S&P 500 +0.73%、NASDAQ +1.19%、SOX +2.40%；科技與半導體當日領先大盤。"
+      },
+      {
+        "name": "Volatility",
+        "rule": "VIX <20 low; 20–<30 elevated; >=30 high.",
+        "inputs": [
+          "VIX"
+        ],
+        "status": "VERIFIED",
+        "text": "VIX 15.31：低波動"
+      },
+      {
+        "name": "2Y–10Y (10Y−2Y)",
+        "rule": "(US 10Y - US 2Y) × 100; positive/zero/negative spread only, no causal inference.",
+        "status": "VERIFIED",
+        "inputs": [
+          "US 10Y",
+          "US 2Y"
+        ],
+        "text": "2Y–10Y (10Y−2Y) +45.0 bp（2026-10-02）"
+      },
+      {
+        "name": "10Y–30Y (30Y−10Y)",
+        "rule": "(US 30Y - US 10Y) × 100; positive/zero/negative spread only, no causal inference.",
+        "status": "VERIFIED",
+        "inputs": [
+          "US 30Y",
+          "US 10Y"
+        ],
+        "text": "10Y–30Y (30Y−10Y) +35.0 bp（2026-10-02）"
+      },
+      {
+        "name": "2Y–30Y (30Y−2Y)",
+        "rule": "(US 30Y - US 2Y) × 100; positive/zero/negative spread only, no causal inference.",
+        "status": "VERIFIED",
+        "inputs": [
+          "US 30Y",
+          "US 2Y"
+        ],
+        "text": "2Y–30Y (30Y−2Y) +80.0 bp（2026-10-02）"
+      },
+      {
+        "name": "10Y−EFFR",
+        "rule": "(US 10Y - EFFR) × 100; positive/zero/negative spread only, no causal inference.",
+        "status": "VERIFIED",
+        "inputs": [
+          "US 10Y",
+          "EFFR"
+        ],
+        "text": "10Y−EFFR +136.0 bp（2026-10-01）"
+      },
+      {
+        "name": "Dollar",
+        "rule": "Daily change >0 rising; <0 falling; =0 unchanged.",
+        "inputs": [
+          "DXY"
+        ],
+        "status": "VERIFIED",
+        "text": "DXY 當日 +0.54%；美元走強"
+      },
+      {
+        "name": "Gold",
+        "rule": "Daily change >=1% flags a large rise; not evidence of safe-haven causality.",
+        "inputs": [
+          "GOLD"
+        ],
+        "status": "VERIFIED",
+        "text": "黃金當日 +0.16%。"
+      },
+      {
+        "name": "Oil",
+        "rule": "WTI daily change >=2% flags energy-price pressure; no inflation forecast.",
+        "inputs": [
+          "WTI"
+        ],
+        "status": "VERIFIED",
+        "text": "WTI 當日 -1.14%。"
+      }
+    ],
+    "rules": {
+      "version": "1.0",
+      "freshness": "0–7 calendar days relative to America/New_York; future/invalid dates = SOURCE ERROR; older = STALE. This is not a real-time guarantee.",
+      "regime": "Require all market/rate inputs and four synchronized spreads; same-date equities. Risk-Off: VIX>=30 OR VIX>=20 and >=2 negative indices. Else Risk-On: VIX<20 and all three indices positive. Else Mixed.",
+      "spreads": "Long minus short in basis points. 10Y−EFFR uses Treasury observation on EFFR effective date; no interpolation.",
+      "interpretation": "Single-session descriptive rules, not forecasts or recommendations. Gold/DXY/WTI/curve are contextual signals, not regime votes."
+    }
+  },
+  "sector_errors": []
 }
