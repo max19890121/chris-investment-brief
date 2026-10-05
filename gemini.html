@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chris 專屬投資早報與資產儀表板</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #334155;
+      --accent-blue: #38bdf8;
+      --accent-green: #34d399;
+      --accent-red: #f87171;
+      --accent-purple: #c084fc;
+      --accent-amber: #fbbf24;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 24px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .title-area h1 { font-size: 26px; font-weight: 700; color: #ffffff; display: flex; align-items: center; gap: 10px; }
+    .title-area p { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+    .status-area { display: flex; align-items: center; gap: 12px; font-size: 13px; }
+    .badge {
+      background: rgba(52, 211, 153, 0.15);
+      color: var(--accent-green);
+      padding: 6px 12px;
+      border-radius: 9999px;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pulse {
+      width: 8px; height: 8px; background-color: var(--accent-green); border-radius: 50%;
+      animation: pulse-animation 2s infinite;
+    }
+    @keyframes pulse-animation {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+    }
+    .btn-refresh {
+      background: var(--bg-secondary); color: var(--text-main); border: 1px solid var(--border-color);
+      padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px;
+    }
+    .market-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 28px;
+    }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px;
+    }
+    .market-card h3 { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+    .market-price { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .change { font-size: 13px; font-weight: 600; }
+    .change.green-up { color: var(--accent-green); }
+    .change.down { color: var(--accent-green); }
+    .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 28px; }
+    @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
+    .section-title { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: #ffffff; }
+    .portfolio-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+    .portfolio-table th, .portfolio-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border-color); }
+    .portfolio-table th { color: var(--text-muted); background: rgba(15, 23, 42, 0.4); }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .tag-ai { background: rgba(192, 132, 252, 0.2); color: var(--accent-purple); }
+    .tag-tw { background: rgba(56, 189, 248, 0.2); color: var(--accent-blue); }
+    .tag-bond { background: rgba(52, 211, 153, 0.2); color: var(--accent-green); }
+    .tag-income { background: rgba(251, 191, 36, 0.2); color: var(--accent-amber); }
+    .brief-content { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 22px; margin-bottom: 24px; }
+    .brief-item { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px dashed var(--border-color); }
+    .brief-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .brief-item h4 { font-size: 15px; color: var(--accent-blue); margin-bottom: 6px; }
+    .brief-item p { font-size: 14px; color: #cbd5e1; line-height: 1.7; }
+    .cashflow-box { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; }
+    .stat-row { display: flex; justify-content: space-between; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); font-size: 14px; }
+    .stat-row span:first-child { color: var(--text-muted); }
+    .stat-row span:last-child { font-weight: 600; color: #ffffff; }
+    footer { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title-area">
+        <h1>📊 Chris 專屬投資早報與資產儀表板</h1>
+        <p>為 Chris 量身打造的核心資產連動、全球總經與即時市場追蹤</p>
+      </div>
+      <div class="status-area">
+        <div class="badge"><div class="pulse"></div><span id="update-status">自動更新中 (每 5 分鐘刷新)</span></div>
+        <button class="btn-refresh" onclick="refreshData()">手動刷新</button>
+      </div>
+    </header>
+    <div class="market-grid">
+      <div class="card market-card"><h3>台股加權指數 (TAIEX)</h3><div class="market-price">49,658.76</div><div class="change green-up">▲ +1,183.02 (+2.44%)</div></div>
+      <div class="card market-card"><h3>台積電 (2330.TW)</h3><div class="market-price">2,565 元</div><div class="change green-up">▲ +65.00 (+2.60%)</div></div>
+      <div class="card market-card"><h3>S&P 500</h3><div class="market-price">7,722.72</div><div class="change green-up">▲ +56.27 (+0.73%)</div></div>
+      <div class="card market-card"><h3>Nasdaq 科技指數</h3><div class="market-price">27,190.86</div><div class="change green-up">▲ +319.26 (+1.19%)</div></div>
+      <div class="card market-card"><h3>美債 10 年期殖利率</h3><div class="market-price">5.26%</div><div class="change down">▼ -0.03% (降溫)</div></div>
+      <div class="card market-card"><h3>美元 / 新台幣</h3><div class="market-price">31.78</div><div class="change down">▼ -0.22% (台幣微升)</div></div>
+    </div>
+    <div class="main-grid">
+      <div>
+        <div class="section-title">📰 今日晨報觀點與總經核心剖析</div>
+        <div class="brief-content">
+          <div class="brief-item"><h4>1. 美國 9 月非農報告冷卻，科技股周線喜提連三紅</h4><p>就業放緩與薪資壓力降溫，市場預期聯準會升息壓力大減，激勵美股全面上攻。</p></div>
+          <div class="brief-item"><h4>2. 美債殖利率高檔回落，長天期債券價格釋放防禦力</h4><p>10 年期殖利率回降至 5.26%，直接支撐 PIMCO 收益增長與全球高息投資等級債部位。</p></div>
+          <div class="brief-item"><h4>3. 台股大漲站上 49,000 點，半導體供應鏈領軍</h4><p>台積電大漲推升指數創高，深度利好安聯台灣大壩基金與科技權值股。</p></div>
+        </div>
+        <div class="section-title">💼 Chris 核心資產配置明細</div>
+        <div class="card" style="padding: 0; overflow-x: auto;">
+          <table class="portfolio-table">
+            <thead><tr><th>基金名稱</th><th>幣別 / 配置規模</th><th>焦點</th><th>連動展望</th></tr></thead>
+            <tbody>
+              <tr><td><strong>安聯台灣大壩基金</strong></td><td>TWD 320,000</td><td><span class="tag tag-tw">台股成長</span></td><td style="color: var(--accent-green);">台股創高強勢受惠</td></tr>
+              <tr><td><strong>安聯 AI 收益成長基金</strong></td><td>USD 40,000</td><td><span class="tag tag-ai">AI 多重資產</span></td><td style="color: var(--accent-green);">美科技股動能延續</td></tr>
+              <tr><td><strong>PIMCO 收益增長基金</strong></td><td>USD 53,200</td><td><span class="tag tag-bond">全球債券核心</span></td><td style="color: var(--accent-blue);">利率回落提供資本防禦</td></tr>
+              <tr><td><strong>施羅德環球收益成長</strong></td><td>USD 50,000</td><td><span class="tag tag-income">多元資產平衡</span></td><td style="color: var(--accent-green);">股債平衡穩健增長</td></tr>
+              <tr><td><strong>貝萊德全球智慧數據</strong></td><td>TWD 600,000</td><td><span class="tag tag-income">量化選股配息</span></td><td style="color: var(--accent-blue);">月配現金流定錨防禦</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="section-title">💰 現金流與被動收入試算</div>
+        <div class="cashflow-box card">
+          <div class="stat-row"><span>台幣核心配置</span><span>NT$ 950,000</span></div>
+          <div class="stat-row"><span>美元核心配置</span><span>US$ 143,700</span></div>
+          <div class="stat-row"><span>總折合資產規模</span><span style="color: var(--accent-green);">約 NT$ 5,516,000</span></div>
+          <div class="stat-row"><span>預估月被動配息</span><span style="color: var(--accent-amber);">約 NT$ 23,000 / 月</span></div>
+          <div class="stat-row"><span>家庭每月淨現金流</span><span>約 NT$ 35,000 - 40,000</span></div>
+        </div>
+      </div>
+    </div>
+    <footer><p>Chris 投資早報系統 ｜ 資料來源：Google Finance / TWSE / FRED ｜ 最後更新時間：<span id="last-updated-time">2026-10-05 12:25</span></p></footer>
+  </div>
+  <script>
+    function refreshData() {
+      const now = new Date();
+      const timeStr = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+      document.getElementById('last-updated-time').textContent = timeStr;
+      document.getElementById('update-status').textContent = '剛剛已更新 (' + now.toLocaleTimeString() + ')';
+    }
+    setInterval(refreshData, 300000);
+  </script>
+</body>
+</html>
