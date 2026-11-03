@@ -1,186 +1,186 @@
 {
   "status": "AUTO · PARTIAL",
-  "updated_at": "2026-11-02 07:36 Asia/Taipei",
+  "updated_at": "2026-11-03 11:54 Asia/Taipei",
   "bluf": {
-    "headline": "CHRIS 觀點｜Mixed",
-    "brief": "CHRIS 觀點｜Mixed。同日收盤漲跌：S&P 500 -1.82%、NASDAQ -2.86%、SOX -7.20%；科技與半導體未同步領先大盤。 VIX 19.42：低波動 2Y–10Y (10Y−2Y) +38.0 bp（2026-10-30） 10Y–30Y (30Y−10Y) +37.0 bp（2026-10-30） 2Y–30Y (30Y−2Y) +75.0 bp（2026-10-30） 10Y−EFFR +110.0 bp（2026-10-29） DXY 當日 +0.07%；美元走強 黃金當日 +0.30%。 WTI 當日 -1.63%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
-    "theme": "Rule-based · Verified Inputs · Mixed"
+    "headline": "CHRIS 觀點｜Risk-Off",
+    "brief": "CHRIS 觀點｜Risk-Off。同日收盤漲跌：S&P 500 -0.51%、NASDAQ -1.07%、SOX -3.37%；科技與半導體未同步領先大盤。 VIX 21.15：波動升高 2Y–10Y (10Y−2Y) +32.0 bp（2026-11-02） 10Y–30Y (30Y−10Y) +37.0 bp（2026-11-02） 2Y–30Y (30Y−2Y) +69.0 bp（2026-11-02） 10Y−EFFR +106.0 bp（2026-10-30） DXY 當日 +0.03%；美元走強 黃金當日 -0.79%。 WTI 當日 +0.16%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
+    "theme": "Rule-based · Verified Inputs · Risk-Off"
   },
-  "risk_note": "US Treasury 與 VIX 使用官方發布資料；EFFR 使用 New York Fed 官方資料。股指、FX、商品與產業 ETF 為公開市場行情來源，非交易所授權即時 feed。MOVE 使用 Investing.com 公開延遲歷史行情，非官方 ICE API。 新鮮度門檻：7 個日曆日；各資料日期可能不同。",
+  "risk_note": "US Treasury 與 VIX 使用官方發布資料；EFFR 使用 New York Fed 官方資料。股指、FX、商品與產業 ETF 為公開市場行情來源，非交易所授權即時 feed。MOVE 使用 Investing.com 公開延遲歷史行情，非官方 ICE API。 新鮮度門檻：7 個日曆日；各資料日期可能不同。USD/TWD: SOURCE ERROR；",
   "tickers": [
     {
       "name": "S&P 500",
-      "value": "7,580.07",
-      "change": "-1.82%",
+      "value": "7,541.40",
+      "change": "-0.51%",
       "tone": "down",
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "NASDAQ",
-      "value": "25,437.00",
-      "change": "-2.86%",
+      "value": "25,164.36",
+      "change": "-1.07%",
       "tone": "down",
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "SOX",
-      "value": "10,688.80",
-      "change": "-7.20%",
+      "value": "10,328.33",
+      "change": "-3.37%",
       "tone": "down",
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "US 10Y",
-      "value": "4.94%",
-      "change": "2026-10-30",
+      "value": "4.91%",
+      "change": "2026-11-02",
       "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "U.S. Department of the Treasury"
     },
     {
       "name": "DXY",
-      "value": "101.95",
-      "change": "+0.07%",
+      "value": "101.78",
+      "change": "+0.03%",
       "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-11-01",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "USD/TWD",
-      "value": "32.60",
-      "change": "+0.12%",
-      "tone": "up",
-      "status": "VERIFIED",
-      "as_of": "2026-11-01",
+      "value": "32.71",
+      "change": "SOURCE ERROR",
+      "tone": "warn",
+      "status": "SOURCE ERROR",
+      "as_of": "2026-11-03",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "GOLD",
-      "value": "3,910.60",
-      "change": "+0.30%",
-      "tone": "up",
+      "value": "3,938.30",
+      "change": "-0.79%",
+      "tone": "down",
       "status": "VERIFIED",
-      "as_of": "2026-11-01",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "WTI",
-      "value": "102.42",
-      "change": "-1.63%",
-      "tone": "down",
+      "value": "96.61",
+      "change": "+0.16%",
+      "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-11-01",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "VIX",
-      "value": "19.42",
-      "change": "2026-10-30",
+      "value": "21.15",
+      "change": "2026-11-02",
       "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Cboe Global Markets"
     },
     {
       "name": "MOVE",
-      "value": "100.20",
-      "change": "+7.12%",
+      "value": "100.36",
+      "change": "+0.16%",
       "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Investing.com · ICE BofAML MOVE · delayed public data",
       "source_url": "https://www.investing.com/indices/ice-bofaml-move-historical-data",
       "data_type": "DELAYED",
-      "change_pct": 7.12
+      "change_pct": 0.16
     },
     {
       "name": "Dow Jones",
-      "value": "51,770.31",
-      "change": "-1.09%",
-      "tone": "down",
+      "value": "51,983.98",
+      "change": "+0.41%",
+      "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "Russell 2000",
-      "value": "2,811.84",
-      "change": "-1.66%",
+      "value": "2,805.88",
+      "change": "-0.21%",
       "tone": "down",
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "Brent 期貨",
-      "value": "111.66",
-      "change": "-5.08%",
+      "value": "104.73",
+      "change": "-0.04%",
       "tone": "down",
       "status": "VERIFIED",
-      "as_of": "2026-11-01",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     }
   ],
   "risk": [
     {
       "name": "VIX",
-      "value": "19.42",
-      "label": "2026-10-30",
+      "value": "21.15",
+      "label": "2026-11-02",
       "tone": "up"
     },
     {
       "name": "US 10Y",
-      "value": "4.94%",
-      "label": "2026-10-30",
+      "value": "4.91%",
+      "label": "2026-11-02",
       "tone": "up"
     },
     {
       "name": "MOVE",
-      "value": "100.20",
-      "label": "2026-10-30 · DELAYED",
+      "value": "100.36",
+      "label": "2026-11-02 · DELAYED",
       "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Investing.com · ICE BofAML MOVE · delayed public data"
     }
   ],
   "news": [
     {
-      "title": "法官終止川普因愛潑斯坦報道而起訴《華爾街日報》的企圖",
-      "summary": "法官終止川普因愛潑斯坦報道而起訴《華爾街日報》的企圖",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOWDh2Tk1SWVpMWE1Mc1NmZ2JHUlFDOEFqVjg4T29yc1BLNXBibGFRSWNDUEhadDZiaEhiZXg4UFlfNV8tRVM3UVdfTkdzRzZVR2dmN2JwWjlIc3BHeVU0eVlJR0h1UThmaXhVWS1GcHZqb0c1NGR0VWoxU3k0Q3dLYU1hQVExZVJJd2FxZHpWOXc0NDRJWlZvUDk2Rm5GRUh1bXFITDBUZGFVWjY4T3VTWGh2NlFKaVBKLWc?oc=5",
+      "title": "蘋果預計假期季度利潤率將因記憶體成本上漲而下降",
+      "summary": "蘋果預計假期季度利潤率將因記憶體成本上漲而下降",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNTGFsc2NMYXRUbERoRkphY2hPVWNDM0ZRRmw3OHZzNnlfN0h1aEowUG9uaHZraTJPNlcyVFVYZGVjYmx2Ui01d09OTm9YejM3UGF1aUJKcHVUSUxxb0ZGNTktQmVuRVF0X0pKYTF2clJ6YnJpVmNmUEZESHc4ZWRqMkt1d0VyMEV2RVZlUkYtUE9EcW03ZXB5RzFmQk01endLRWtzNFpnVGd4el90TFUxLWhxaXRxYUsyT1lmbjIySjQ2NXcxdVE?oc=5",
       "source": "Reuters"
     },
     {
-      "title": "隨著人工智慧支出擔憂加深，納斯達克 10 月面臨 2 兆美元的損失",
-      "summary": "隨著人工智慧支出擔憂加深，納斯達克 10 月面臨 2 兆美元的損失",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNkNDLXpLZ1A0VklROTJVenpDRlZBWE10ZE1qWWk4ZFVqalgzWWJFdThSd2ZKeUhDanVRQjRhVVVZZGlGZzY1UWYzLXRSZTNHNDNPTkZZRUFJazAzYmV6NzF3QUJtNjhkWHY5OHZNZWVsSFdyY0NScGJadnE3T0dPTWtBUXZOaDJPYWJuX1NOVXkwbGlQSW9MdjlXTlNQTzdLZEdzTHFsQ2gzaEcwTkNHZTNCNF9hMG9lazFHRXItSzg?oc=5",
+      "title": "十月人工智慧相關股票的跳水測試了美國股市的整體彈性",
+      "summary": "十月人工智慧相關股票的跳水測試了美國股市的整體彈性",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSVlEWkkyN3lYZG41WXJvcl9pNWlKYW5VNjdmb1lHYkNGVHpmT1BHLWVDUFQydFNra3JIeVlfVFh5ZzhoTzRfMVdwZ2didmtGZ0hGZDN6ZmtTbUk5b2lIb3JfZ2poRld3R1BCM28zLUlHUnlZcHJQMXp3S01PTGNBSmxRN1pYMThUZXQtbHBHaU5CWnhTMFF6VTFidG05QzdQTnVJYmJiZl9YQTFxX3ZhWExjN0NZOUpTWjFTaUh5WUFSem9MdW1Z?oc=5",
       "source": "Reuters"
     },
     {
-      "title": "Meta、TikTok、X 在針對英國監管機構的線上安全資料要求的法律訴訟中敗訴",
-      "summary": "Meta、TikTok、X 在針對英國監管機構的線上安全資料要求的法律訴訟中敗訴",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZG8teFQwNFU4cXJzMjdVS2wtOGZKaFAwdDlBZjczR3lJSWYxYW8xdlYwZ2hoYW5mb3FvejVrQ2s1QUpOWGJYbGFKRjRBOWRLM3hZU1FoTHdOa1Q2N0xLSjV0RmlKdjBxa1lKRlduVXkwbE1SbWhETzJDV3B5NXNKc21NT1VhaFd6azhDVnRieHM5eURVSmVIcUNBNnNUUlZxM2h6VjhDUEw1OHVOc2htWlN3b01ranhVT0hTbg?oc=5",
+      "title": "評論：早晨競價：蘋果更健康的核心",
+      "summary": "評論：早晨競價：蘋果更健康的核心",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPX1RoUHBhYnYwYi1KLVFaNlMxbHJTTmhXd2Y3bHlRbm1GSkhiLUF3emxWdXVYSVZmOUdXMXEyb1lmX0xvTHJoUUl4NkdXODNndmVCMV9KTXZOVlowQmRZaDFNTkt0TTlINi01M09jZ0dYdHB3RWRxZ29aTElJbkpIc3p0VHpoaHZWZ1RHbTRadDJESjlVOXJZ?oc=5",
       "source": "Reuters"
     },
     {
-      "title": "華爾街未來一週美國中期選舉、財報、就業數據迫在眉睫，對人工智慧持謹慎態度的股市",
-      "summary": "華爾街未來一週美國中期選舉、財報、就業數據迫在眉睫，對人工智慧持謹慎態度的股市",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPMDJJM0JmU1Nreks0a1ViM1lWX2VRX043dHpXd2xjR091TTNJd1UyZjZ4a2kwMURZLXkwLTBHSWZaMG41VU5nbTE0VW1iNDdCbHNCTjc5RG5BZUx3QzM2d0IzUmJkWXB3VkNsMW5EMDVFUlQ1NmhvdDBVTy05RkpxaDZ4QW9xRExsY2QwVzFpMTJmRG52bW0tSWgwbkdCTlJlaFFnU2tUcEEyQml0cV9VRktaVTh4VDVFNkIwVjkyWmN6dFpTNE9FZkx4dw?oc=5",
+      "title": "華爾街和其他金融公司正關注中期選舉",
+      "summary": "華爾街和其他金融公司正關注中期選舉",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVkpxUklFUTdCSkhiYTVScExzTDk2NGdyN1JtaXh1bjZTb21RZTd2eEs5eGdlSkI2R3VMdzZITk55NUg0VEkzM0MxQ2lFajFSVXdob052ZG5JWU51eUlRV3dTMEZYNjUyNEtCRG1GMjFHQ1pRSEVQX2lsalJIUHM2R05wTHBvbTZqUU9GU1QzU3RMclU3dlpQODViTzhDTXB4Slc5SGdheHVmZkNMOVFMYkhGQzg?oc=5",
       "source": "Reuters"
     },
     {
-      "title": "中期選舉滿足獲利",
-      "summary": "中期選舉滿足獲利",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxORzJ5RF9XWncxal9sWkV5MS05ek4tS3psYmd1NFh5dkF3V1BxaXdlN0FFZzBabllhX2FnNVVjOWhTTllpbkRKeGNsNGFlYUE4SWw1RDd2QjdlZTZ0Wk9VM2laNUhpdGRnbUp5My1CRUlhOEU1VzM5Z3JkMExTVDgtQ0h3?oc=5",
+      "title": "標準普爾 500 指數收跌；蘋果在季度報告發布前股價下跌",
+      "summary": "標準普爾 500 指數收跌；蘋果在季度報告發布前股價下跌",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPbnVDQzd0LTF3Vi1BMnJDLWpGaHNIMlJVTDNnVmplMzZnVjRxRTZUUTRsQkVvZ21EN3lXMzA4ZDJnOTQwc01ld2tqT1pGZVN6VmpuVWpzLVVMUU1qcDdnRFdEQUZoM0l6Ym9NYnhfWDctWkZnSC1fLUk0RGxtUmd3WU9zLXdhcTdGTkJvcUxaazZKZEliVjl3bVBfZldDajJMOXZtVkx0NVI4YWlwMkVFbXpMR0ZGQW9wOWxEcTM3QThSdk1fb2c?oc=5",
       "source": "Reuters"
     }
   ],
@@ -208,130 +208,130 @@
   ],
   "sectors": [
     {
-      "name": "能源",
-      "change": 1.91,
-      "status": "VERIFIED",
-      "as_of": "2026-10-30",
-      "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
-    },
-    {
-      "name": "必需消費",
-      "change": 1.41,
-      "status": "VERIFIED",
-      "as_of": "2026-10-30",
-      "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
-    },
-    {
-      "name": "公用事業",
-      "change": 0.67,
-      "status": "VERIFIED",
-      "as_of": "2026-10-30",
-      "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
-    },
-    {
-      "name": "醫療保健",
-      "change": 0.45,
-      "status": "VERIFIED",
-      "as_of": "2026-10-30",
-      "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
-    },
-    {
-      "name": "原材料",
-      "change": 0.4,
-      "status": "VERIFIED",
-      "as_of": "2026-10-30",
-      "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
-    },
-    {
-      "name": "房地產",
-      "change": 0.26,
-      "status": "VERIFIED",
-      "as_of": "2026-10-30",
-      "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
-    },
-    {
       "name": "非必需消費",
-      "change": -0.71,
+      "change": 2.41,
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
     },
     {
       "name": "金融",
-      "change": -0.76,
+      "change": 1.86,
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
     },
     {
-      "name": "通訊服務",
-      "change": -1.29,
+      "name": "原材料",
+      "change": 1.76,
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
+      "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
+    },
+    {
+      "name": "必需消費",
+      "change": 1.58,
+      "status": "VERIFIED",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
     },
     {
       "name": "工業",
-      "change": -1.6,
+      "change": 1.38,
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
+      "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
+    },
+    {
+      "name": "房地產",
+      "change": 1.09,
+      "status": "VERIFIED",
+      "as_of": "2026-11-02",
+      "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
+    },
+    {
+      "name": "公用事業",
+      "change": 0.55,
+      "status": "VERIFIED",
+      "as_of": "2026-11-02",
+      "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
+    },
+    {
+      "name": "通訊服務",
+      "change": 0.36,
+      "status": "VERIFIED",
+      "as_of": "2026-11-02",
+      "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
+    },
+    {
+      "name": "醫療保健",
+      "change": -0.15,
+      "status": "VERIFIED",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
     },
     {
       "name": "資訊科技",
-      "change": -4.89,
+      "change": -2.95,
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
+      "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
+    },
+    {
+      "name": "能源",
+      "change": -3.96,
+      "status": "VERIFIED",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance · SPDR sector ETF proxy (not GICS index return)"
     }
   ],
   "rates": [
     {
       "name": "US 2Y",
-      "value": "4.56%",
-      "date": "2026-10-30",
+      "value": "4.59%",
+      "date": "2026-11-02",
       "status": "VERIFIED",
       "source": "U.S. Treasury"
     },
     {
       "name": "US 10Y",
-      "value": "4.94%",
-      "date": "2026-10-30",
+      "value": "4.91%",
+      "date": "2026-11-02",
       "status": "VERIFIED",
       "source": "U.S. Treasury"
     },
     {
       "name": "US 30Y",
-      "value": "5.31%",
-      "date": "2026-10-30",
+      "value": "5.28%",
+      "date": "2026-11-02",
       "status": "VERIFIED",
       "source": "U.S. Treasury"
     },
     {
       "name": "EFFR",
       "value": "3.88%",
-      "date": "2026-10-29",
+      "date": "2026-10-30",
       "status": "VERIFIED",
       "source": "Federal Reserve Bank of New York"
     },
     {
       "name": "2Y–10Y (10Y−2Y)",
-      "value": "+38.0 bp",
-      "value_bp": 38.0,
-      "date": "2026-10-30",
+      "value": "+32.0 bp",
+      "value_bp": 32.0,
+      "date": "2026-11-02",
       "status": "VERIFIED",
       "formula": "(US 10Y - US 2Y) × 100",
       "derived": true,
       "inputs": {
         "US 10Y": {
-          "value": 4.94,
-          "as_of": "2026-10-30",
+          "value": 4.91,
+          "as_of": "2026-11-02",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         },
         "US 2Y": {
-          "value": 4.56,
-          "as_of": "2026-10-30",
+          "value": 4.59,
+          "as_of": "2026-11-02",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         }
@@ -342,20 +342,20 @@
       "name": "10Y–30Y (30Y−10Y)",
       "value": "+37.0 bp",
       "value_bp": 37.0,
-      "date": "2026-10-30",
+      "date": "2026-11-02",
       "status": "VERIFIED",
       "formula": "(US 30Y - US 10Y) × 100",
       "derived": true,
       "inputs": {
         "US 30Y": {
-          "value": 5.31,
-          "as_of": "2026-10-30",
+          "value": 5.28,
+          "as_of": "2026-11-02",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         },
         "US 10Y": {
-          "value": 4.94,
-          "as_of": "2026-10-30",
+          "value": 4.91,
+          "as_of": "2026-11-02",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         }
@@ -364,22 +364,22 @@
     },
     {
       "name": "2Y–30Y (30Y−2Y)",
-      "value": "+75.0 bp",
-      "value_bp": 75.0,
-      "date": "2026-10-30",
+      "value": "+69.0 bp",
+      "value_bp": 69.0,
+      "date": "2026-11-02",
       "status": "VERIFIED",
       "formula": "(US 30Y - US 2Y) × 100",
       "derived": true,
       "inputs": {
         "US 30Y": {
-          "value": 5.31,
-          "as_of": "2026-10-30",
+          "value": 5.28,
+          "as_of": "2026-11-02",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         },
         "US 2Y": {
-          "value": 4.56,
-          "as_of": "2026-10-30",
+          "value": 4.59,
+          "as_of": "2026-11-02",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         }
@@ -388,22 +388,22 @@
     },
     {
       "name": "10Y−EFFR",
-      "value": "+110.0 bp",
-      "value_bp": 110.0,
-      "date": "2026-10-29",
+      "value": "+106.0 bp",
+      "value_bp": 106.0,
+      "date": "2026-10-30",
       "status": "VERIFIED",
       "formula": "(US 10Y - EFFR) × 100",
       "derived": true,
       "inputs": {
         "US 10Y": {
-          "value": 4.98,
-          "as_of": "2026-10-29",
+          "value": 4.94,
+          "as_of": "2026-10-30",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         },
         "EFFR": {
           "value": 3.88,
-          "as_of": "2026-10-29",
+          "as_of": "2026-10-30",
           "status": "VERIFIED",
           "source": "Federal Reserve Bank of New York"
         }
@@ -414,20 +414,20 @@
   "commodities": [
     {
       "name": "WTI",
-      "value": "102.42",
-      "change": "-1.63%",
-      "tone": "down",
+      "value": "96.61",
+      "change": "+0.16%",
+      "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-11-01",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "GOLD",
-      "value": "3,910.60",
-      "change": "+0.30%",
-      "tone": "up",
+      "value": "3,938.30",
+      "change": "-0.79%",
+      "tone": "down",
       "status": "VERIFIED",
-      "as_of": "2026-11-01",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     }
   ],
@@ -438,7 +438,7 @@
       "event": "ISM 製造業 PMI",
       "original_title": "ISM Manufacturing PMI",
       "actual": null,
-      "forecast": "54.7",
+      "forecast": "54.5",
       "previous": "54.5",
       "status": "VERIFIED",
       "source": "Forex Factory / Fair Economy",
@@ -450,7 +450,7 @@
       "event": "JOLTS 職缺數",
       "original_title": "JOLTS Job Openings",
       "actual": null,
-      "forecast": "7.11M",
+      "forecast": "7.15M",
       "previous": "7.08M",
       "status": "VERIFIED",
       "source": "Forex Factory / Fair Economy",
@@ -474,7 +474,7 @@
       "event": "ADP 非農就業變化",
       "original_title": "ADP Non-Farm Employment Change",
       "actual": null,
-      "forecast": "68K",
+      "forecast": "67K",
       "previous": "90K",
       "status": "VERIFIED",
       "source": "Forex Factory / Fair Economy",
@@ -498,7 +498,7 @@
       "event": "ISM 服務業 PMI",
       "original_title": "ISM Services PMI",
       "actual": null,
-      "forecast": "54.9",
+      "forecast": "54.8",
       "previous": "54.9",
       "status": "VERIFIED",
       "source": "Forex Factory / Fair Economy",
@@ -534,7 +534,7 @@
       "event": "非農就業人數變化",
       "original_title": "Non-Farm Employment Change",
       "actual": null,
-      "forecast": "63K",
+      "forecast": "65K",
       "previous": "29K",
       "status": "VERIFIED",
       "source": "Forex Factory / Fair Economy",
@@ -558,7 +558,7 @@
       "event": "密西根大學消費者信心（初值）",
       "original_title": "Prelim UoM Consumer Sentiment",
       "actual": null,
-      "forecast": "47.8",
+      "forecast": "48.1",
       "previous": "46.3",
       "status": "VERIFIED",
       "source": "Forex Factory / Fair Economy",
@@ -580,23 +580,23 @@
   "vol_signals": [
     [
       "VIX",
-      "19.42"
+      "21.15"
     ],
     [
       "MOVE",
-      "100.20 · 2026-10-30 · DELAYED"
+      "100.36 · 2026-11-02 · DELAYED"
     ],
     [
       "US 10Y",
-      "4.94%"
+      "4.91%"
     ],
     [
       "Regime",
-      "Mixed"
+      "Risk-Off"
     ],
     [
       "2Y–10Y (10Y−2Y)",
-      "+38.0 bp"
+      "+32.0 bp"
     ],
     [
       "10Y–30Y (30Y−10Y)",
@@ -604,11 +604,11 @@
     ],
     [
       "2Y–30Y (30Y−2Y)",
-      "+75.0 bp"
+      "+69.0 bp"
     ],
     [
       "10Y−EFFR",
-      "+110.0 bp"
+      "+106.0 bp"
     ]
   ],
   "fed": [
@@ -618,7 +618,7 @@
     ],
     [
       "Data Date",
-      "2026-10-29"
+      "2026-10-30"
     ],
     [
       "Source",
@@ -628,41 +628,41 @@
   "levels": [
     {
       "name": "S&P 500",
-      "text": "7,580.07"
+      "text": "7,541.40"
     },
     {
       "name": "NASDAQ",
-      "text": "25,437.00"
+      "text": "25,164.36"
     },
     {
       "name": "SOX",
-      "text": "10,688.80"
+      "text": "10,328.33"
     },
     {
       "name": "US 10Y",
-      "text": "4.94%"
+      "text": "4.91%"
     },
     {
       "name": "DXY",
-      "text": "101.95"
+      "text": "101.78"
     }
   ],
-  "chris_view": "CHRIS 觀點｜Mixed。同日收盤漲跌：S&P 500 -1.82%、NASDAQ -2.86%、SOX -7.20%；科技與半導體未同步領先大盤。 VIX 19.42：低波動 2Y–10Y (10Y−2Y) +38.0 bp（2026-10-30） 10Y–30Y (30Y−10Y) +37.0 bp（2026-10-30） 2Y–30Y (30Y−2Y) +75.0 bp（2026-10-30） 10Y−EFFR +110.0 bp（2026-10-29） DXY 當日 +0.07%；美元走強 黃金當日 +0.30%。 WTI 當日 -1.63%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
+  "chris_view": "CHRIS 觀點｜Risk-Off。同日收盤漲跌：S&P 500 -0.51%、NASDAQ -1.07%、SOX -3.37%；科技與半導體未同步領先大盤。 VIX 21.15：波動升高 2Y–10Y (10Y−2Y) +32.0 bp（2026-11-02） 10Y–30Y (30Y−10Y) +37.0 bp（2026-11-02） 2Y–30Y (30Y−2Y) +69.0 bp（2026-11-02） 10Y−EFFR +106.0 bp（2026-10-30） DXY 當日 +0.03%；美元走強 黃金當日 -0.79%。 WTI 當日 +0.16%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
   "sources": [
     {
       "name": "U.S. Treasury",
       "ok": true,
-      "note": "Official · 2026-10-30"
+      "note": "Official · 2026-11-02"
     },
     {
       "name": "Cboe VIX",
       "ok": true,
-      "note": "Official · 2026-10-30"
+      "note": "Official · 2026-11-02"
     },
     {
       "name": "New York Fed EFFR",
       "ok": true,
-      "note": "Official · 2026-10-29"
+      "note": "Official · 2026-10-30"
     },
     {
       "name": "Yahoo Market Feed",
@@ -672,13 +672,13 @@
     {
       "name": "MOVE",
       "ok": true,
-      "note": "Investing.com · ICE BofAML MOVE · delayed public data · VERIFIED · 2026-10-30",
+      "note": "Investing.com · ICE BofAML MOVE · delayed public data · VERIFIED · 2026-11-02",
       "url": "https://www.investing.com/indices/ice-bofaml-move-historical-data"
     },
     {
       "name": "CHRIS CIO Layer",
       "ok": true,
-      "note": "Rules 1.0 · Mixed · analysis only"
+      "note": "Rules 1.0 · Risk-Off · analysis only"
     },
     {
       "name": "CHRIS Chart History",
@@ -748,7 +748,6 @@
   ],
   "history": {
     "dates": [
-      "10-02",
       "10-05",
       "10-06",
       "10-07",
@@ -767,10 +766,10 @@
       "10-27",
       "10-28",
       "10-29",
-      "10-30"
+      "10-30",
+      "11-02"
     ],
     "dgs10": [
-      5.28,
       5.31,
       5.27,
       5.28,
@@ -789,10 +788,10 @@
       4.99,
       5.05,
       4.98,
-      4.94
+      4.94,
+      4.91
     ],
     "vix": [
-      15.31,
       15.52,
       15.01,
       15.08,
@@ -811,33 +810,34 @@
       17.52,
       16.91,
       17.2,
-      19.42
+      19.42,
+      21.15
     ]
   },
   "curve": [
-    4.56,
-    4.94,
-    5.31
+    4.59,
+    4.91,
+    5.28
   ],
   "spreads": [
     {
       "name": "2Y–10Y (10Y−2Y)",
-      "value": "+38.0 bp",
-      "value_bp": 38.0,
-      "date": "2026-10-30",
+      "value": "+32.0 bp",
+      "value_bp": 32.0,
+      "date": "2026-11-02",
       "status": "VERIFIED",
       "formula": "(US 10Y - US 2Y) × 100",
       "derived": true,
       "inputs": {
         "US 10Y": {
-          "value": 4.94,
-          "as_of": "2026-10-30",
+          "value": 4.91,
+          "as_of": "2026-11-02",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         },
         "US 2Y": {
-          "value": 4.56,
-          "as_of": "2026-10-30",
+          "value": 4.59,
+          "as_of": "2026-11-02",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         }
@@ -848,20 +848,20 @@
       "name": "10Y–30Y (30Y−10Y)",
       "value": "+37.0 bp",
       "value_bp": 37.0,
-      "date": "2026-10-30",
+      "date": "2026-11-02",
       "status": "VERIFIED",
       "formula": "(US 30Y - US 10Y) × 100",
       "derived": true,
       "inputs": {
         "US 30Y": {
-          "value": 5.31,
-          "as_of": "2026-10-30",
+          "value": 5.28,
+          "as_of": "2026-11-02",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         },
         "US 10Y": {
-          "value": 4.94,
-          "as_of": "2026-10-30",
+          "value": 4.91,
+          "as_of": "2026-11-02",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         }
@@ -870,22 +870,22 @@
     },
     {
       "name": "2Y–30Y (30Y−2Y)",
-      "value": "+75.0 bp",
-      "value_bp": 75.0,
-      "date": "2026-10-30",
+      "value": "+69.0 bp",
+      "value_bp": 69.0,
+      "date": "2026-11-02",
       "status": "VERIFIED",
       "formula": "(US 30Y - US 2Y) × 100",
       "derived": true,
       "inputs": {
         "US 30Y": {
-          "value": 5.31,
-          "as_of": "2026-10-30",
+          "value": 5.28,
+          "as_of": "2026-11-02",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         },
         "US 2Y": {
-          "value": 4.56,
-          "as_of": "2026-10-30",
+          "value": 4.59,
+          "as_of": "2026-11-02",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         }
@@ -894,22 +894,22 @@
     },
     {
       "name": "10Y−EFFR",
-      "value": "+110.0 bp",
-      "value_bp": 110.0,
-      "date": "2026-10-29",
+      "value": "+106.0 bp",
+      "value_bp": 106.0,
+      "date": "2026-10-30",
       "status": "VERIFIED",
       "formula": "(US 10Y - EFFR) × 100",
       "derived": true,
       "inputs": {
         "US 10Y": {
-          "value": 4.98,
-          "as_of": "2026-10-29",
+          "value": 4.94,
+          "as_of": "2026-10-30",
           "status": "VERIFIED",
           "source": "U.S. Treasury"
         },
         "EFFR": {
           "value": 3.88,
-          "as_of": "2026-10-29",
+          "as_of": "2026-10-30",
           "status": "VERIFIED",
           "source": "Federal Reserve Bank of New York"
         }
@@ -918,82 +918,82 @@
     }
   ],
   "risk_regime": {
-    "name": "Mixed",
+    "name": "Risk-Off",
     "status": "VERIFIED",
     "rules_version": "1.0"
   },
   "analysis": {
     "inputs": {
       "S&P 500": {
-        "value": 7580.07,
-        "change_pct": -1.82,
-        "as_of": "2026-10-30",
+        "value": 7541.4,
+        "change_pct": -0.51,
+        "as_of": "2026-11-02",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
       "NASDAQ": {
-        "value": 25437.0,
-        "change_pct": -2.86,
-        "as_of": "2026-10-30",
+        "value": 25164.36,
+        "change_pct": -1.07,
+        "as_of": "2026-11-02",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
       "SOX": {
-        "value": 10688.8,
-        "change_pct": -7.2,
-        "as_of": "2026-10-30",
+        "value": 10328.33,
+        "change_pct": -3.37,
+        "as_of": "2026-11-02",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
       "VIX": {
-        "value": 19.42,
+        "value": 21.15,
         "change_pct": null,
-        "as_of": "2026-10-30",
+        "as_of": "2026-11-02",
         "status": "VERIFIED",
         "source": "Cboe Global Markets"
       },
       "DXY": {
-        "value": 101.95,
-        "change_pct": 0.07,
-        "as_of": "2026-11-01",
+        "value": 101.78,
+        "change_pct": 0.03,
+        "as_of": "2026-11-02",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
       "GOLD": {
-        "value": 3910.6,
-        "change_pct": 0.3,
-        "as_of": "2026-11-01",
+        "value": 3938.3,
+        "change_pct": -0.79,
+        "as_of": "2026-11-02",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
       "WTI": {
-        "value": 102.42,
-        "change_pct": -1.63,
-        "as_of": "2026-11-01",
+        "value": 96.61,
+        "change_pct": 0.16,
+        "as_of": "2026-11-02",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
       "US 2Y": {
-        "value": 4.56,
-        "as_of": "2026-10-30",
+        "value": 4.59,
+        "as_of": "2026-11-02",
         "status": "VERIFIED",
         "source": "U.S. Treasury"
       },
       "US 10Y": {
-        "value": 4.94,
-        "as_of": "2026-10-30",
+        "value": 4.91,
+        "as_of": "2026-11-02",
         "status": "VERIFIED",
         "source": "U.S. Treasury"
       },
       "US 30Y": {
-        "value": 5.31,
-        "as_of": "2026-10-30",
+        "value": 5.28,
+        "as_of": "2026-11-02",
         "status": "VERIFIED",
         "source": "U.S. Treasury"
       },
       "EFFR": {
         "value": 3.88,
-        "as_of": "2026-10-29",
+        "as_of": "2026-10-30",
         "status": "VERIFIED",
         "source": "Federal Reserve Bank of New York"
       }
@@ -1008,7 +1008,7 @@
           "SOX"
         ],
         "status": "VERIFIED",
-        "text": "同日收盤漲跌：S&P 500 -1.82%、NASDAQ -2.86%、SOX -7.20%；科技與半導體未同步領先大盤。"
+        "text": "同日收盤漲跌：S&P 500 -0.51%、NASDAQ -1.07%、SOX -3.37%；科技與半導體未同步領先大盤。"
       },
       {
         "name": "Volatility",
@@ -1017,7 +1017,7 @@
           "VIX"
         ],
         "status": "VERIFIED",
-        "text": "VIX 19.42：低波動"
+        "text": "VIX 21.15：波動升高"
       },
       {
         "name": "2Y–10Y (10Y−2Y)",
@@ -1027,7 +1027,7 @@
           "US 10Y",
           "US 2Y"
         ],
-        "text": "2Y–10Y (10Y−2Y) +38.0 bp（2026-10-30）"
+        "text": "2Y–10Y (10Y−2Y) +32.0 bp（2026-11-02）"
       },
       {
         "name": "10Y–30Y (30Y−10Y)",
@@ -1037,7 +1037,7 @@
           "US 30Y",
           "US 10Y"
         ],
-        "text": "10Y–30Y (30Y−10Y) +37.0 bp（2026-10-30）"
+        "text": "10Y–30Y (30Y−10Y) +37.0 bp（2026-11-02）"
       },
       {
         "name": "2Y–30Y (30Y−2Y)",
@@ -1047,7 +1047,7 @@
           "US 30Y",
           "US 2Y"
         ],
-        "text": "2Y–30Y (30Y−2Y) +75.0 bp（2026-10-30）"
+        "text": "2Y–30Y (30Y−2Y) +69.0 bp（2026-11-02）"
       },
       {
         "name": "10Y−EFFR",
@@ -1057,7 +1057,7 @@
           "US 10Y",
           "EFFR"
         ],
-        "text": "10Y−EFFR +110.0 bp（2026-10-29）"
+        "text": "10Y−EFFR +106.0 bp（2026-10-30）"
       },
       {
         "name": "Dollar",
@@ -1066,7 +1066,7 @@
           "DXY"
         ],
         "status": "VERIFIED",
-        "text": "DXY 當日 +0.07%；美元走強"
+        "text": "DXY 當日 +0.03%；美元走強"
       },
       {
         "name": "Gold",
@@ -1075,7 +1075,7 @@
           "GOLD"
         ],
         "status": "VERIFIED",
-        "text": "黃金當日 +0.30%。"
+        "text": "黃金當日 -0.79%。"
       },
       {
         "name": "Oil",
@@ -1084,7 +1084,7 @@
           "WTI"
         ],
         "status": "VERIFIED",
-        "text": "WTI 當日 -1.63%。"
+        "text": "WTI 當日 +0.16%。"
       }
     ],
     "rules": {
@@ -1100,7 +1100,6 @@
     {
       "name": "S&P 500",
       "dates": [
-        "2026-08-07",
         "2026-08-10",
         "2026-08-11",
         "2026-08-12",
@@ -1159,10 +1158,10 @@
         "2026-10-27",
         "2026-10-28",
         "2026-10-29",
-        "2026-10-30"
+        "2026-10-30",
+        "2026-11-02"
       ],
       "values": [
-        7757.64013671875,
         7753.10986328125,
         7728.2001953125,
         7748.5,
@@ -1221,16 +1220,16 @@
         7722.60009765625,
         7743.97998046875,
         7720.39013671875,
-        7580.06982421875
+        7580.06982421875,
+        7541.39990234375
       ],
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "NASDAQ",
       "dates": [
-        "2026-08-07",
         "2026-08-10",
         "2026-08-11",
         "2026-08-12",
@@ -1289,10 +1288,10 @@
         "2026-10-27",
         "2026-10-28",
         "2026-10-29",
-        "2026-10-30"
+        "2026-10-30",
+        "2026-11-02"
       ],
       "values": [
-        26690.619140625,
         26605.359375,
         26445.44921875,
         26588.490234375,
@@ -1351,16 +1350,16 @@
         26477.810546875,
         26549.849609375,
         26184.720703125,
-        25437.0
+        25437.0,
+        25164.36328125
       ],
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "SOX",
       "dates": [
-        "2026-08-07",
         "2026-08-10",
         "2026-08-11",
         "2026-08-12",
@@ -1419,10 +1418,10 @@
         "2026-10-27",
         "2026-10-28",
         "2026-10-29",
-        "2026-10-30"
+        "2026-10-30",
+        "2026-11-02"
       ],
       "values": [
-        12356.7900390625,
         11993.8603515625,
         12098.4697265625,
         12399.3798828125,
@@ -1481,16 +1480,16 @@
         11482.5,
         11684.0,
         11518.2001953125,
-        10688.7998046875
+        10688.7998046875,
+        10328.3291015625
       ],
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "US 10Y",
       "dates": [
-        "2026-08-06",
         "2026-08-07",
         "2026-08-10",
         "2026-08-11",
@@ -1549,10 +1548,10 @@
         "2026-10-27",
         "2026-10-28",
         "2026-10-29",
-        "2026-10-30"
+        "2026-10-30",
+        "2026-11-02"
       ],
       "values": [
-        4.69,
         4.65,
         4.72,
         4.7,
@@ -1611,17 +1610,17 @@
         4.99,
         5.05,
         4.98,
-        4.94
+        4.94,
+        4.91
       ],
       "status": "VERIFIED",
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "source": "U.S. Treasury",
       "unit": "%"
     },
     {
       "name": "DXY",
       "dates": [
-        "2026-08-23",
         "2026-08-24",
         "2026-08-25",
         "2026-08-26",
@@ -1680,10 +1679,10 @@
         "2026-10-28",
         "2026-10-29",
         "2026-10-30",
-        "2026-11-01"
+        "2026-11-01",
+        "2026-11-02"
       ],
       "values": [
-        null,
         99.0,
         98.91999816894531,
         99.16999816894531,
@@ -1742,17 +1741,16 @@
         102.19000244140625,
         102.04000091552734,
         101.87999725341797,
-        101.9520034790039
+        null,
+        101.78099822998047
       ],
       "status": "VERIFIED",
-      "as_of": "2026-11-01",
+      "as_of": "2026-11-02",
       "source": "Yahoo Finance public market feed"
     }
   ],
   "move_history": {
     "dates": [
-      "2026-10-01",
-      "2026-10-02",
       "2026-10-05",
       "2026-10-06",
       "2026-10-07",
@@ -1771,11 +1769,10 @@
       "2026-10-27",
       "2026-10-28",
       "2026-10-29",
-      "2026-10-30"
+      "2026-10-30",
+      "2026-11-02"
     ],
     "values": [
-      108.13,
-      107.29,
       113.6,
       105.2,
       102.56,
@@ -1794,10 +1791,11 @@
       97.87,
       94.55,
       93.54,
-      100.2
+      100.2,
+      100.36
     ],
     "status": "VERIFIED",
-    "as_of": "2026-10-30",
+    "as_of": "2026-11-02",
     "source": "Investing.com · ICE BofAML MOVE · delayed public data",
     "source_url": "https://www.investing.com/indices/ice-bofaml-move-historical-data",
     "error": null
@@ -1806,228 +1804,228 @@
     "us": [
       {
         "name": "S&P 500",
-        "value": "7,580.07",
-        "change": "-1.82%",
+        "value": "7,541.40",
+        "change": "-0.51%",
         "tone": "down",
         "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "NASDAQ",
-        "value": "25,437.00",
-        "change": "-2.86%",
+        "value": "25,164.36",
+        "change": "-1.07%",
         "tone": "down",
         "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "Dow Jones",
-        "value": "51,770.31",
-        "change": "-1.09%",
-        "tone": "down",
+        "value": "51,983.98",
+        "change": "+0.41%",
+        "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "Russell 2000",
-        "value": "2,811.84",
-        "change": "-1.66%",
+        "value": "2,805.88",
+        "change": "-0.21%",
         "tone": "down",
         "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "SOX",
-        "value": "10,688.80",
-        "change": "-7.20%",
+        "value": "10,328.33",
+        "change": "-3.37%",
         "tone": "down",
         "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       }
     ],
     "asia": [
       {
         "name": "台灣加權",
-        "value": "45,211.83",
-        "change": "-2.49%",
-        "tone": "down",
-        "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "value": "43,826.23",
+        "change": "SOURCE ERROR",
+        "tone": "warn",
+        "status": "SOURCE ERROR",
+        "as_of": "2026-11-03",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "日經225",
-        "value": "63,290.11",
-        "change": "-2.12%",
+        "value": "63,081.86",
+        "change": "-0.33%",
         "tone": "down",
         "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "韓國KOSPI",
-        "value": "5,730.74",
-        "change": "-3.48%",
-        "tone": "down",
-        "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "value": "5,659.66",
+        "change": "SOURCE ERROR",
+        "tone": "warn",
+        "status": "SOURCE ERROR",
+        "as_of": "2026-11-03",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "香港恆生",
-        "value": "23,294.42",
-        "change": "+1.46%",
-        "tone": "up",
-        "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "value": "23,480.95",
+        "change": "SOURCE ERROR",
+        "tone": "warn",
+        "status": "SOURCE ERROR",
+        "as_of": "2026-11-03",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "新加坡海峽",
-        "value": "5,376.74",
-        "change": "-0.36%",
-        "tone": "down",
-        "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "value": "5,286.95",
+        "change": "SOURCE ERROR",
+        "tone": "warn",
+        "status": "SOURCE ERROR",
+        "as_of": "2026-11-03",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "澳洲ASX 200",
-        "value": "8,891.60",
+        "value": "8,862.60",
         "change": "SOURCE ERROR",
         "tone": "warn",
         "status": "SOURCE ERROR",
-        "as_of": "2026-11-02",
+        "as_of": "2026-11-03",
         "source": "Yahoo Finance public market feed"
       }
     ],
     "europe": [
       {
         "name": "STOXX Europe 600",
-        "value": "646.75",
-        "change": "-0.36%",
-        "tone": "down",
+        "value": "649.44",
+        "change": "+0.42%",
+        "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "德國DAX",
-        "value": "25,818.21",
-        "change": "-0.85%",
-        "tone": "down",
+        "value": "25,981.09",
+        "change": "+0.63%",
+        "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "法國CAC 40",
-        "value": "7,969.42",
-        "change": "-0.01%",
-        "tone": "down",
+        "value": "8,047.69",
+        "change": "+0.98%",
+        "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "英國FTSE 100",
-        "value": "10,729.80",
-        "change": "+0.07%",
+        "value": "10,761.30",
+        "change": "+0.29%",
         "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-10-30",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       }
     ],
     "fx": [
       {
         "name": "DXY",
-        "value": "101.95",
-        "change": "+0.07%",
+        "value": "101.78",
+        "change": "+0.03%",
         "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-11-01",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "EUR/USD",
         "value": "1.12",
-        "change": "-0.19%",
-        "tone": "down",
-        "status": "VERIFIED",
-        "as_of": "2026-11-01",
+        "change": "SOURCE ERROR",
+        "tone": "warn",
+        "status": "SOURCE ERROR",
+        "as_of": "2026-11-03",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "USD/JPY",
-        "value": "157.63",
-        "change": "-0.11%",
-        "tone": "down",
-        "status": "VERIFIED",
-        "as_of": "2026-11-01",
+        "value": "157.86",
+        "change": "SOURCE ERROR",
+        "tone": "warn",
+        "status": "SOURCE ERROR",
+        "as_of": "2026-11-03",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "AUD/USD",
         "value": "0.70",
-        "change": "+0.05%",
-        "tone": "up",
-        "status": "VERIFIED",
-        "as_of": "2026-11-01",
+        "change": "SOURCE ERROR",
+        "tone": "warn",
+        "status": "SOURCE ERROR",
+        "as_of": "2026-11-03",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "USD/TWD",
-        "value": "32.60",
-        "change": "+0.12%",
-        "tone": "up",
-        "status": "VERIFIED",
-        "as_of": "2026-11-01",
+        "value": "32.71",
+        "change": "SOURCE ERROR",
+        "tone": "warn",
+        "status": "SOURCE ERROR",
+        "as_of": "2026-11-03",
         "source": "Yahoo Finance public market feed"
       }
     ],
     "energy": [
       {
         "name": "WTI",
-        "value": "102.42",
-        "change": "-1.63%",
-        "tone": "down",
+        "value": "96.61",
+        "change": "+0.16%",
+        "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-11-01",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "Brent 期貨",
-        "value": "111.66",
-        "change": "-5.08%",
+        "value": "104.73",
+        "change": "-0.04%",
         "tone": "down",
         "status": "VERIFIED",
-        "as_of": "2026-11-01",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       }
     ],
     "metals": [
       {
         "name": "GOLD",
-        "value": "3,910.60",
-        "change": "+0.30%",
-        "tone": "up",
+        "value": "3,938.30",
+        "change": "-0.79%",
+        "tone": "down",
         "status": "VERIFIED",
-        "as_of": "2026-11-01",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "白銀期貨",
-        "value": "49.77",
-        "change": "+1.37%",
-        "tone": "up",
+        "value": "49.78",
+        "change": "-1.84%",
+        "tone": "down",
         "status": "VERIFIED",
-        "as_of": "2026-11-01",
+        "as_of": "2026-11-02",
         "source": "Yahoo Finance public market feed"
       },
       {
@@ -2100,6 +2098,13 @@
       "status": "VERIFIED",
       "items": [
         {
+          "title": " Boris Vujčić: Integrated, open and resilient: Europe’s strengths in a fragmenting world",
+          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp.261102~70003226e9.en.html",
+          "as_of": "2026-11-02 17:30",
+          "source": "ECB",
+          "status": "VERIFIED"
+        },
+        {
           "title": " Philip R. Lane: AI adoption in Europe",
           "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261030~08d9d540f0.en.html",
           "as_of": "2026-10-31 00:10",
@@ -2153,21 +2158,14 @@
           "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261027~506ef03145.en.html",
           "as_of": "2026-10-27 08:00",
           "source": "ECB",
-          "status": "VERIFIED"
+          "status": "STALE"
         },
         {
           "title": " Survey on the Access to Finance of Enterprises: lending conditions tightened ",
           "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261026~bde7b6d11a.en.html",
           "as_of": "2026-10-26 17:00",
           "source": "ECB",
-          "status": "VERIFIED"
-        },
-        {
-          "title": " Frank Elderson: Taking action for nature – investing in economic resilience and prosperity",
-          "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261026~d903d7ad85.en.html",
-          "as_of": "2026-10-26 13:00",
-          "source": "ECB",
-          "status": "VERIFIED"
+          "status": "STALE"
         }
       ]
     },
@@ -2179,8 +2177,22 @@
       "items": [
         {
           "title": "BC-Nikkei 225 Futures",
-          "url": "https://finance.yahoo.com/markets/world-indices/articles/bc-nikkei-225-futures-210016483.html?.tsrc=rss",
-          "as_of": "2026-11-02 05:00",
+          "url": "https://finance.yahoo.com/markets/world-indices/articles/bc-nikkei-225-futures-233012717.html?.tsrc=rss",
+          "as_of": "2026-11-03 07:30",
+          "source": "Yahoo Asia",
+          "status": "VERIFIED"
+        },
+        {
+          "title": "US Elections, Crude, Earnings Churn Asian Stock Markets",
+          "url": "https://finance.yahoo.com/markets/world-indices/articles/us-elections-crude-earnings-churn-104929642.html?.tsrc=rss",
+          "as_of": "2026-11-02 18:49",
+          "source": "Yahoo Asia",
+          "status": "VERIFIED"
+        },
+        {
+          "title": "Japanese Stocks Fall on Domestic Earnings, Eyes on US Midterms",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/japanese-stocks-fall-domestic-earnings-070116236.html?.tsrc=rss",
+          "as_of": "2026-11-02 15:01",
           "source": "Yahoo Asia",
           "status": "VERIFIED"
         },
@@ -2232,20 +2244,6 @@
           "as_of": "2026-10-27 18:38",
           "source": "Yahoo Asia",
           "status": "VERIFIED"
-        },
-        {
-          "title": "HSBC shares hit 6-month low as Q3 results miss estimates; announces $1bn buyback",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/hsbc-3q-pretax-profit-rises-050320424.html?.tsrc=rss",
-          "as_of": "2026-10-27 13:03",
-          "source": "Yahoo Asia",
-          "status": "VERIFIED"
-        },
-        {
-          "title": "Central Bank, Oil, Tech Outlooks Roil Asian Stock Markets",
-          "url": "https://finance.yahoo.com/markets/world-indices/articles/central-bank-oil-tech-outlooks-103707995.html?.tsrc=rss",
-          "as_of": "2026-10-26 18:37",
-          "source": "Yahoo Asia",
-          "status": "VERIFIED"
         }
       ]
     },
@@ -2271,67 +2269,67 @@
     "status": "VERIFIED",
     "items": [
       {
-        "title": "Judge ends Trump's attempts to sue Wall Street Journal over Epstein reporting",
-        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOWDh2Tk1SWVpMWE1Mc1NmZ2JHUlFDOEFqVjg4T29yc1BLNXBibGFRSWNDUEhadDZiaEhiZXg4UFlfNV8tRVM3UVdfTkdzRzZVR2dmN2JwWjlIc3BHeVU0eVlJR0h1UThmaXhVWS1GcHZqb0c1NGR0VWoxU3k0Q3dLYU1hQVExZVJJd2FxZHpWOXc0NDRJWlZvUDk2Rm5GRUh1bXFITDBUZGFVWjY4T3VTWGh2NlFKaVBKLWc?oc=5",
-        "as_of": "2026-11-01 06:58",
-        "published_at": "2026-10-31T22:58:33+00:00",
+        "title": "Apple forecasts margin drop in holiday quarter as rising memory costs bite",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNTGFsc2NMYXRUbERoRkphY2hPVWNDM0ZRRmw3OHZzNnlfN0h1aEowUG9uaHZraTJPNlcyVFVYZGVjYmx2Ui01d09OTm9YejM3UGF1aUJKcHVUSUxxb0ZGNTktQmVuRVF0X0pKYTF2clJ6YnJpVmNmUEZESHc4ZWRqMkt1d0VyMEV2RVZlUkYtUE9EcW03ZXB5RzFmQk01endLRWtzNFpnVGd4el90TFUxLWhxaXRxYUsyT1lmbjIySjQ2NXcxdVE?oc=5",
+        "as_of": "2026-11-03 05:31",
+        "published_at": "2026-11-02T21:31:00+00:00",
         "source": "Reuters",
         "publisher_url": "https://www.reuters.com",
         "delivery": "Google News RSS",
         "status": "VERIFIED",
-        "summary_zh": "法官終止川普因愛潑斯坦報道而起訴《華爾街日報》的企圖",
+        "summary_zh": "蘋果預計假期季度利潤率將因記憶體成本上漲而下降",
         "translation_status": "OK",
         "summary_method": "Translated publisher headline only; not a full-article summary"
       },
       {
-        "title": "Nasdaq faces $2 trillion wipeout in October as AI spending fears deepen",
-        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNkNDLXpLZ1A0VklROTJVenpDRlZBWE10ZE1qWWk4ZFVqalgzWWJFdThSd2ZKeUhDanVRQjRhVVVZZGlGZzY1UWYzLXRSZTNHNDNPTkZZRUFJazAzYmV6NzF3QUJtNjhkWHY5OHZNZWVsSFdyY0NScGJadnE3T0dPTWtBUXZOaDJPYWJuX1NOVXkwbGlQSW9MdjlXTlNQTzdLZEdzTHFsQ2gzaEcwTkNHZTNCNF9hMG9lazFHRXItSzg?oc=5",
-        "as_of": "2026-10-31 04:42",
-        "published_at": "2026-10-30T20:42:09+00:00",
+        "title": "October dive for AI-related shares tests broader US stock market's resilience",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPSVlEWkkyN3lYZG41WXJvcl9pNWlKYW5VNjdmb1lHYkNGVHpmT1BHLWVDUFQydFNra3JIeVlfVFh5ZzhoTzRfMVdwZ2didmtGZ0hGZDN6ZmtTbUk5b2lIb3JfZ2poRld3R1BCM28zLUlHUnlZcHJQMXp3S01PTGNBSmxRN1pYMThUZXQtbHBHaU5CWnhTMFF6VTFidG05QzdQTnVJYmJiZl9YQTFxX3ZhWExjN0NZOUpTWjFTaUh5WUFSem9MdW1Z?oc=5",
+        "as_of": "2026-11-03 01:08",
+        "published_at": "2026-11-02T17:08:44+00:00",
         "source": "Reuters",
         "publisher_url": "https://www.reuters.com",
         "delivery": "Google News RSS",
         "status": "VERIFIED",
-        "summary_zh": "隨著人工智慧支出擔憂加深，納斯達克 10 月面臨 2 兆美元的損失",
+        "summary_zh": "十月人工智慧相關股票的跳水測試了美國股市的整體彈性",
         "translation_status": "OK",
         "summary_method": "Translated publisher headline only; not a full-article summary"
       },
       {
-        "title": "Meta, TikTok, X lose legal challenge against UK watchdog over online safety data demands",
-        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZG8teFQwNFU4cXJzMjdVS2wtOGZKaFAwdDlBZjczR3lJSWYxYW8xdlYwZ2hoYW5mb3FvejVrQ2s1QUpOWGJYbGFKRjRBOWRLM3hZU1FoTHdOa1Q2N0xLSjV0RmlKdjBxa1lKRlduVXkwbE1SbWhETzJDV3B5NXNKc21NT1VhaFd6azhDVnRieHM5eURVSmVIcUNBNnNUUlZxM2h6VjhDUEw1OHVOc2htWlN3b01ranhVT0hTbg?oc=5",
-        "as_of": "2026-10-31 00:54",
-        "published_at": "2026-10-30T16:54:33+00:00",
+        "title": "COMMENTARY: Morning Bid: Apple's healthier core",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPX1RoUHBhYnYwYi1KLVFaNlMxbHJTTmhXd2Y3bHlRbm1GSkhiLUF3emxWdXVYSVZmOUdXMXEyb1lmX0xvTHJoUUl4NkdXODNndmVCMV9KTXZOVlowQmRZaDFNTkt0TTlINi01M09jZ0dYdHB3RWRxZ29aTElJbkpIc3p0VHpoaHZWZ1RHbTRadDJESjlVOXJZ?oc=5",
+        "as_of": "2026-11-02 20:28",
+        "published_at": "2026-11-02T12:28:37+00:00",
         "source": "Reuters",
         "publisher_url": "https://www.reuters.com",
         "delivery": "Google News RSS",
         "status": "VERIFIED",
-        "summary_zh": "Meta、TikTok、X 在針對英國監管機構的線上安全資料要求的法律訴訟中敗訴",
+        "summary_zh": "評論：早晨競價：蘋果更健康的核心",
         "translation_status": "OK",
         "summary_method": "Translated publisher headline only; not a full-article summary"
       },
       {
-        "title": "Wall St Week Ahead Midterm US elections, earnings, jobs data loom for AI-wary stock market",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPMDJJM0JmU1Nreks0a1ViM1lWX2VRX043dHpXd2xjR091TTNJd1UyZjZ4a2kwMURZLXkwLTBHSWZaMG41VU5nbTE0VW1iNDdCbHNCTjc5RG5BZUx3QzM2d0IzUmJkWXB3VkNsMW5EMDVFUlQ1NmhvdDBVTy05RkpxaDZ4QW9xRExsY2QwVzFpMTJmRG52bW0tSWgwbkdCTlJlaFFnU2tUcEEyQml0cV9VRktaVTh4VDVFNkIwVjkyWmN6dFpTNE9FZkx4dw?oc=5",
-        "as_of": "2026-10-30 18:16",
-        "published_at": "2026-10-30T10:16:00+00:00",
+        "title": "The midterm races Wall Street and other financial firms are watching",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOVkpxUklFUTdCSkhiYTVScExzTDk2NGdyN1JtaXh1bjZTb21RZTd2eEs5eGdlSkI2R3VMdzZITk55NUg0VEkzM0MxQ2lFajFSVXdob052ZG5JWU51eUlRV3dTMEZYNjUyNEtCRG1GMjFHQ1pRSEVQX2lsalJIUHM2R05wTHBvbTZqUU9GU1QzU3RMclU3dlpQODViTzhDTXB4Slc5SGdheHVmZkNMOVFMYkhGQzg?oc=5",
+        "as_of": "2026-11-02 19:06",
+        "published_at": "2026-11-02T11:06:00+00:00",
         "source": "Reuters",
         "publisher_url": "https://www.reuters.com",
         "delivery": "Google News RSS",
         "status": "VERIFIED",
-        "summary_zh": "華爾街未來一週美國中期選舉、財報、就業數據迫在眉睫，對人工智慧持謹慎態度的股市",
+        "summary_zh": "華爾街和其他金融公司正關注中期選舉",
         "translation_status": "OK",
         "summary_method": "Translated publisher headline only; not a full-article summary"
       },
       {
-        "title": "Midterms meet earnings",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxORzJ5RF9XWncxal9sWkV5MS05ek4tS3psYmd1NFh5dkF3V1BxaXdlN0FFZzBabllhX2FnNVVjOWhTTllpbkRKeGNsNGFlYUE4SWw1RDd2QjdlZTZ0Wk9VM2laNUhpdGRnbUp5My1CRUlhOEU1VzM5Z3JkMExTVDgtQ0h3?oc=5",
-        "as_of": "2026-10-30 16:54",
-        "published_at": "2026-10-30T08:54:26+00:00",
+        "title": "S&P 500 ends down; Apple dips ahead of quarterly report",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPbnVDQzd0LTF3Vi1BMnJDLWpGaHNIMlJVTDNnVmplMzZnVjRxRTZUUTRsQkVvZ21EN3lXMzA4ZDJnOTQwc01ld2tqT1pGZVN6VmpuVWpzLVVMUU1qcDdnRFdEQUZoM0l6Ym9NYnhfWDctWkZnSC1fLUk0RGxtUmd3WU9zLXdhcTdGTkJvcUxaazZKZEliVjl3bVBfZldDajJMOXZtVkx0NVI4YWlwMkVFbXpMR0ZGQW9wOWxEcTM3QThSdk1fb2c?oc=5",
+        "as_of": "2026-11-02 18:57",
+        "published_at": "2026-11-02T10:57:00+00:00",
         "source": "Reuters",
         "publisher_url": "https://www.reuters.com",
         "delivery": "Google News RSS",
         "status": "VERIFIED",
-        "summary_zh": "中期選舉滿足獲利",
+        "summary_zh": "標準普爾 500 指數收跌；蘋果在季度報告發布前股價下跌",
         "translation_status": "OK",
         "summary_method": "Translated publisher headline only; not a full-article summary"
       }
@@ -2363,7 +2361,7 @@
     "url": "https://markets.newyorkfed.org/api/rates/all/latest.json",
     "lower": 3.75,
     "upper": 4.0,
-    "as_of": "2026-10-29"
+    "as_of": "2026-10-30"
   },
   "fedwatch": {
     "status": "NO FEED",
@@ -2451,7 +2449,7 @@
         "event": "ISM 製造業 PMI",
         "original_title": "ISM Manufacturing PMI",
         "actual": null,
-        "forecast": "54.7",
+        "forecast": "54.5",
         "previous": "54.5",
         "status": "VERIFIED",
         "source": "Forex Factory / Fair Economy",
@@ -2463,7 +2461,7 @@
         "event": "JOLTS 職缺數",
         "original_title": "JOLTS Job Openings",
         "actual": null,
-        "forecast": "7.11M",
+        "forecast": "7.15M",
         "previous": "7.08M",
         "status": "VERIFIED",
         "source": "Forex Factory / Fair Economy",
@@ -2487,7 +2485,7 @@
         "event": "ADP 非農就業變化",
         "original_title": "ADP Non-Farm Employment Change",
         "actual": null,
-        "forecast": "68K",
+        "forecast": "67K",
         "previous": "90K",
         "status": "VERIFIED",
         "source": "Forex Factory / Fair Economy",
@@ -2511,7 +2509,7 @@
         "event": "ISM 服務業 PMI",
         "original_title": "ISM Services PMI",
         "actual": null,
-        "forecast": "54.9",
+        "forecast": "54.8",
         "previous": "54.9",
         "status": "VERIFIED",
         "source": "Forex Factory / Fair Economy",
@@ -2547,7 +2545,7 @@
         "event": "非農就業人數變化",
         "original_title": "Non-Farm Employment Change",
         "actual": null,
-        "forecast": "63K",
+        "forecast": "65K",
         "previous": "29K",
         "status": "VERIFIED",
         "source": "Forex Factory / Fair Economy",
@@ -2571,7 +2569,7 @@
         "event": "密西根大學消費者信心（初值）",
         "original_title": "Prelim UoM Consumer Sentiment",
         "actual": null,
-        "forecast": "47.8",
+        "forecast": "48.1",
         "previous": "46.3",
         "status": "VERIFIED",
         "source": "Forex Factory / Fair Economy",
@@ -2667,9 +2665,9 @@
   "key_levels": [
     {
       "name": "S&P 500",
-      "low": 7580.06982421875,
+      "low": 7541.39990234375,
       "high": 7818.93017578125,
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "status": "VERIFIED",
       "method": "Last 20 available observations: observed min/max; not support/resistance",
       "source": "Yahoo Finance public market feed",
@@ -2678,9 +2676,9 @@
     },
     {
       "name": "NASDAQ",
-      "low": 25437.0,
+      "low": 25164.36328125,
       "high": 27599.7890625,
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "status": "VERIFIED",
       "method": "Last 20 available observations: observed min/max; not support/resistance",
       "source": "Yahoo Finance public market feed",
@@ -2689,9 +2687,9 @@
     },
     {
       "name": "SOX",
-      "low": 10688.7998046875,
+      "low": 10328.3291015625,
       "high": 13217.8203125,
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "status": "VERIFIED",
       "method": "Last 20 available observations: observed min/max; not support/resistance",
       "source": "Yahoo Finance public market feed",
@@ -2700,9 +2698,9 @@
     },
     {
       "name": "US 10Y",
-      "low": 4.94,
+      "low": 4.91,
       "high": 5.31,
-      "as_of": "2026-10-30",
+      "as_of": "2026-11-02",
       "status": "VERIFIED",
       "method": "Last 20 available observations: observed min/max; not support/resistance",
       "source": "U.S. Treasury",
@@ -2713,7 +2711,7 @@
       "name": "DXY",
       "low": 101.61000061035156,
       "high": 102.58000183105469,
-      "as_of": "2026-11-01",
+      "as_of": "2026-11-02",
       "status": "VERIFIED",
       "method": "Last 20 available observations: observed min/max; not support/resistance",
       "source": "Yahoo Finance public market feed",
@@ -2722,17 +2720,17 @@
     }
   ],
   "core_observations": [
-    "同日收盤漲跌：S&P 500 -1.82%、NASDAQ -2.86%、SOX -7.20%；科技與半導體未同步領先大盤。",
-    "VIX 19.42：低波動",
-    "2Y–10Y (10Y−2Y) +38.0 bp（2026-10-30）",
-    "10Y–30Y (30Y−10Y) +37.0 bp（2026-10-30）",
-    "2Y–30Y (30Y−2Y) +75.0 bp（2026-10-30）",
-    "10Y−EFFR +110.0 bp（2026-10-29）",
-    "DXY 當日 +0.07%；美元走強",
-    "黃金當日 +0.30%。",
-    "WTI 當日 -1.63%。"
+    "同日收盤漲跌：S&P 500 -0.51%、NASDAQ -1.07%、SOX -3.37%；科技與半導體未同步領先大盤。",
+    "VIX 21.15：波動升高",
+    "2Y–10Y (10Y−2Y) +32.0 bp（2026-11-02）",
+    "10Y–30Y (30Y−10Y) +37.0 bp（2026-11-02）",
+    "2Y–30Y (30Y−2Y) +69.0 bp（2026-11-02）",
+    "10Y−EFFR +106.0 bp（2026-10-30）",
+    "DXY 當日 +0.03%；美元走強",
+    "黃金當日 -0.79%。",
+    "WTI 當日 +0.16%。"
   ],
-  "report_date": "2026-11-02",
+  "report_date": "2026-11-03",
   "schema_version": "3.0",
   "coverage": {
     "status": "PARTIAL",
