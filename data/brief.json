@@ -1,9 +1,9 @@
 {
   "status": "AUTO · PARTIAL",
-  "updated_at": "2026-11-26 12:56 Asia/Taipei",
+  "updated_at": "2026-11-27 12:56 Asia/Taipei",
   "bluf": {
     "headline": "CHRIS 觀點｜Risk-Off",
-    "brief": "CHRIS 觀點｜Risk-Off。同日收盤漲跌：S&P 500 -0.25%、NASDAQ -0.62%、SOX -0.65%；科技與半導體未同步領先大盤。 VIX 28.29：波動升高 2Y–10Y (10Y−2Y) +24.0 bp（2026-11-25） 10Y–30Y (30Y−10Y) +39.0 bp（2026-11-25） 2Y–30Y (30Y−2Y) +63.0 bp（2026-11-25） 10Y−EFFR +103.0 bp（2026-11-24） DXY 當日 +0.12%；美元走強 黃金當日 +2.56%；達單日上漲 1% 觀察門檻。 WTI 當日 +0.86%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
+    "brief": "CHRIS 觀點｜Risk-Off。同日收盤漲跌：S&P 500 -0.25%、NASDAQ -0.62%、SOX -0.65%；科技與半導體未同步領先大盤。 VIX 28.29：波動升高 2Y–10Y (10Y−2Y) +24.0 bp（2026-11-25） 10Y–30Y (30Y−10Y) +39.0 bp（2026-11-25） 2Y–30Y (30Y−2Y) +63.0 bp（2026-11-25） 10Y−EFFR +103.0 bp（2026-11-24） DXY 當日 +0.08%；美元走強 黃金當日 +3.61%；達單日上漲 1% 觀察門檻。 WTI 當日 +2.49%；達單日上漲 2% 能源價格壓力門檻。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
     "theme": "Rule-based · Verified Inputs · Risk-Off"
   },
   "risk_note": "US Treasury 與 VIX 使用官方發布資料；EFFR 使用 New York Fed 官方資料。股指、FX、商品與產業 ETF 為公開市場行情來源，非交易所授權即時 feed。MOVE 使用 Investing.com 公開延遲歷史行情，非官方 ICE API。 新鮮度門檻：7 個日曆日；各資料日期可能不同。USD/TWD: SOURCE ERROR； MOVE: SOURCE ERROR",
@@ -46,38 +46,38 @@
     },
     {
       "name": "DXY",
-      "value": "103.80",
-      "change": "+0.12%",
+      "value": "103.76",
+      "change": "+0.08%",
       "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-11-25",
-      "source": "Yahoo Finance public market feed"
-    },
-    {
-      "name": "USD/TWD",
-      "value": "32.94",
-      "change": "SOURCE ERROR",
-      "tone": "warn",
-      "status": "SOURCE ERROR",
       "as_of": "2026-11-26",
       "source": "Yahoo Finance public market feed"
     },
     {
+      "name": "USD/TWD",
+      "value": "32.96",
+      "change": "SOURCE ERROR",
+      "tone": "warn",
+      "status": "SOURCE ERROR",
+      "as_of": "2026-11-27",
+      "source": "Yahoo Finance public market feed"
+    },
+    {
       "name": "GOLD",
-      "value": "3,626.30",
-      "change": "+2.56%",
+      "value": "3,663.40",
+      "change": "+3.61%",
       "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-11-25",
+      "as_of": "2026-11-26",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "WTI",
-      "value": "84.40",
-      "change": "+0.86%",
+      "value": "85.76",
+      "change": "+2.49%",
       "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-11-25",
+      "as_of": "2026-11-26",
       "source": "Yahoo Finance public market feed"
     },
     {
@@ -102,7 +102,7 @@
     },
     {
       "name": "Dow Jones",
-      "value": "50,182.90",
+      "value": "50,182.95",
       "change": "+0.33%",
       "tone": "up",
       "status": "VERIFIED",
@@ -120,11 +120,11 @@
     },
     {
       "name": "Brent 期貨",
-      "value": "91.16",
-      "change": "-3.65%",
+      "value": "92.26",
+      "change": "-2.48%",
       "tone": "down",
       "status": "VERIFIED",
-      "as_of": "2026-11-25",
+      "as_of": "2026-11-26",
       "source": "Yahoo Finance public market feed"
     }
   ],
@@ -153,33 +153,33 @@
   ],
   "news": [
     {
-      "title": "受美國關稅影響亞洲股市上漲",
-      "summary": "受美國關稅影響亞洲股市上漲",
+      "title": "川普表示，在股市回升之前，週三的市場讓他短暫“擔憂”",
+      "summary": "川普表示，在股市回升之前，週三的市場讓他短暫“擔憂”",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOWHRXZnN1TmZVRDJ6VUJtNjhuRm85eGlQVmdGNGQ0SC0yeHlPVUlKSksyLVNZa0VqRGdqUWVtaW1oNHhjQldDdHlKYnZ0TVgtbkpEcmJfVEcyTUxnNkNYeEdaYXlWUmQwcnhyLUtrUERoYnhIdnVxV3lFeUhza21Wc3U2WW9yd2loWmpxeXE4SG9OT2Rlai1reWtSemRkYnlBZndLaFVNOHJHeDF4ZkVmckpqSzZSbElNZHpfdUFLTTBsOW9C?oc=5",
+      "source": "Reuters"
+    },
+    {
+      "title": "歐洲股市因關稅擔憂緩解和歐洲央行領導力延續而收高",
+      "summary": "歐洲股市因關稅擔憂緩解和歐洲央行領導力延續而收高",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOWDAyOS03ZTA0ZzRTRmR6d2diZDJ5X0V0ejhjSlg1MzhMaTlCNU1LNTBCYVlJS2VhVV9USmNxYnNGYk9CaTdYckN1NVBZLWNKQm9BYXB5SEpNYVMyN3hzbFRjaExPY3piakNDakM1Qm1NSDJ1MFJLZzF3NGN5TFVCYThrYmNzZFhyVzN1bVBhaXh6a2t4cUxNQzBGUnpWVVFxb1l2cFR5WE1UZ0tvUEpDcw?oc=5",
+      "source": "Reuters"
+    },
+    {
+      "title": "股市上漲，歐洲正在醞釀下一任歐洲央行總裁",
+      "summary": "股市上漲，歐洲正在醞釀下一任歐洲央行總裁",
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPUWRTQ2N0czgwTVhPdVhvZDUzeDNDRUJ6cFd0MWx1N05aSTJHaUlOdTQ5X2xieEVueHJ3VTRrb0ppNEtzbFVBRm1fU3VvV0xpMWVlUWg3c0NvWXJxS2ZabkwwejhwenhCVmhYRUdweUwwdHhTTWd1bTh2QlR1dFpvVDFHVQ?oc=5",
+      "source": "Reuters"
+    },
+    {
+      "title": "川普關稅擾亂市場，世界股市暴跌，人工智慧漲勢消退",
+      "summary": "川普關稅擾亂市場，世界股市暴跌，人工智慧漲勢消退",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNRFVsTjFROGtER0loSkZOcnF2NDRLUWFmcjBHZ01ybE51N19idjFFMXI1dnFqZ21JYS1HVVpicTJ1V1RfVU4zd3pkVEZMWHdqMUJWRENOQWJ2VjFqT1Y3WS0xYTV3bzd2RnRraFhtOVpzVE9yYThzdV9tdWxJbUpjNzFraw?oc=5",
       "source": "Reuters"
     },
     {
       "title": "AI股暴跌加深，但午後反彈造成的損失有限",
       "summary": "AI股暴跌加深，但午後反彈造成的損失有限",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMmNMM0doWElDVk9BdjNGZnJHakNCUFg1blQzSlk0eW9zeVduV3ZKcEtJd0hpUkxDMVhnRE9rY1lLUzF1eENZaFh0SUNKbmRjanN3YWtZakZud2RYUnlSRkk5b1RZT2VfbFJPXzhZVEVyYnFnRHBwYVlGdFQzaEt2Z2VjaGVXWUE0Qmd5bjZYandmR2M2QXBSY2tKem80OGNlSzh3?oc=5",
-      "source": "Reuters"
-    },
-    {
-      "title": "Anthropic 的幻燈片測試了華爾街對未來人工智慧利潤的豪賭",
-      "summary": "Anthropic 的幻燈片測試了華爾街對未來人工智慧利潤的豪賭",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZE1sRHlKd3Y1aUpqaUVpeFQ3QjFmX191blVmM1gyS0hidW81RjFjSXJjQndnODAwQU9qb3VkYkJfZ3ppYzdBQ1J5cTRUaDMzamxvZVNsYzB6RUpiVzd2RlhxV2hKaDRjTFdhamRKZ3g3MXZDY1c5c3NMalpmc09aQ3JnNGEyQTR5NG85OW9VTEE1NW9md1VKdFYxeTlnbWNjd25UcjVwamhDX1pIaXc?oc=5",
-      "source": "Reuters"
-    },
-    {
-      "title": "英國股市下跌，銀行、礦商跟隨華爾街拋售",
-      "summary": "英國股市下跌，銀行、礦商跟隨華爾街拋售",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOTW1VcFBpakVFWW8xQ3dPdGNtZFRQRGJuX2tmOTVZOHBsa2hvQ3hkNHMwVmJvNmo1eHlxd0xkV2xDSFpuSGZqX2hUMWxQUV9xdVl5WTNfOXFRYnRYRGlKcF9xajludy1FQjY3R1dFT2pjYkEyXzRnYkd5amRiSDA4QkZyeFR3N0NKUGZsbDV2SW0xS085Qzl4bHdFSW1HNEVrX0hvbE5HUmo1QQ?oc=5",
-      "source": "Reuters"
-    },
-    {
-      "title": "逢低買入股票？期權市場信號表明等待",
-      "summary": "逢低買入股票？期權市場信號表明等待",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQU0dOWTF0OFdPY3R6M1VaWklxVjlwaGkzcDk3d1U4WXp2Q1dNX3FfYW5qYmMzZG1MbDUtRGg5elI1RUEwZzBVaGVZZnV1LUptczdWQU1teXhlVkN5cWVXNjZneXcxMkxPcEJtbVltV3VjWkVrN2pWTmNhTC1zby1sNWdDbGtCOVEyMEdXemdLNXRydHVv?oc=5",
       "source": "Reuters"
     }
   ],
@@ -413,20 +413,20 @@
   "commodities": [
     {
       "name": "WTI",
-      "value": "84.40",
-      "change": "+0.86%",
+      "value": "85.76",
+      "change": "+2.49%",
       "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-11-25",
+      "as_of": "2026-11-26",
       "source": "Yahoo Finance public market feed"
     },
     {
       "name": "GOLD",
-      "value": "3,626.30",
-      "change": "+2.56%",
+      "value": "3,663.40",
+      "change": "+3.61%",
       "tone": "up",
       "status": "VERIFIED",
-      "as_of": "2026-11-25",
+      "as_of": "2026-11-26",
       "source": "Yahoo Finance public market feed"
     }
   ],
@@ -631,10 +631,10 @@
     },
     {
       "name": "DXY",
-      "text": "103.80"
+      "text": "103.76"
     }
   ],
-  "chris_view": "CHRIS 觀點｜Risk-Off。同日收盤漲跌：S&P 500 -0.25%、NASDAQ -0.62%、SOX -0.65%；科技與半導體未同步領先大盤。 VIX 28.29：波動升高 2Y–10Y (10Y−2Y) +24.0 bp（2026-11-25） 10Y–30Y (30Y−10Y) +39.0 bp（2026-11-25） 2Y–30Y (30Y−2Y) +63.0 bp（2026-11-25） 10Y−EFFR +103.0 bp（2026-11-24） DXY 當日 +0.12%；美元走強 黃金當日 +2.56%；達單日上漲 1% 觀察門檻。 WTI 當日 +0.86%。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
+  "chris_view": "CHRIS 觀點｜Risk-Off。同日收盤漲跌：S&P 500 -0.25%、NASDAQ -0.62%、SOX -0.65%；科技與半導體未同步領先大盤。 VIX 28.29：波動升高 2Y–10Y (10Y−2Y) +24.0 bp（2026-11-25） 10Y–30Y (30Y−10Y) +39.0 bp（2026-11-25） 2Y–30Y (30Y−2Y) +63.0 bp（2026-11-25） 10Y−EFFR +103.0 bp（2026-11-24） DXY 當日 +0.08%；美元走強 黃金當日 +3.61%；達單日上漲 1% 觀察門檻。 WTI 當日 +2.49%；達單日上漲 2% 能源價格壓力門檻。 判讀僅反映已公布數據與單日變動；不推論資金流向或未來走勢。",
   "sources": [
     {
       "name": "U.S. Treasury",
@@ -940,23 +940,23 @@
         "source": "Cboe Global Markets"
       },
       "DXY": {
-        "value": 103.8,
-        "change_pct": 0.12,
-        "as_of": "2026-11-25",
+        "value": 103.76,
+        "change_pct": 0.08,
+        "as_of": "2026-11-26",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
       "GOLD": {
-        "value": 3626.3,
-        "change_pct": 2.56,
-        "as_of": "2026-11-25",
+        "value": 3663.4,
+        "change_pct": 3.61,
+        "as_of": "2026-11-26",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
       "WTI": {
-        "value": 84.4,
-        "change_pct": 0.86,
-        "as_of": "2026-11-25",
+        "value": 85.76,
+        "change_pct": 2.49,
+        "as_of": "2026-11-26",
         "status": "VERIFIED",
         "source": "Yahoo Finance public market feed"
       },
@@ -1053,7 +1053,7 @@
           "DXY"
         ],
         "status": "VERIFIED",
-        "text": "DXY 當日 +0.12%；美元走強"
+        "text": "DXY 當日 +0.08%；美元走強"
       },
       {
         "name": "Gold",
@@ -1062,7 +1062,7 @@
           "GOLD"
         ],
         "status": "VERIFIED",
-        "text": "黃金當日 +2.56%；達單日上漲 1% 觀察門檻。"
+        "text": "黃金當日 +3.61%；達單日上漲 1% 觀察門檻。"
       },
       {
         "name": "Oil",
@@ -1071,7 +1071,7 @@
           "WTI"
         ],
         "status": "VERIFIED",
-        "text": "WTI 當日 +0.86%。"
+        "text": "WTI 當日 +2.49%；達單日上漲 2% 能源價格壓力門檻。"
       }
     ],
     "rules": {
@@ -1338,7 +1338,7 @@
         22617.73046875,
         24089.560546875,
         23733.5390625,
-        23585.802734375
+        23585.80078125
       ],
       "status": "VERIFIED",
       "as_of": "2026-11-25",
@@ -1468,7 +1468,7 @@
         8408.58984375,
         9588.0498046875,
         8832.5,
-        8774.8623046875
+        8774.8603515625
       ],
       "status": "VERIFIED",
       "as_of": "2026-11-25",
@@ -1608,7 +1608,6 @@
     {
       "name": "DXY",
       "dates": [
-        "2026-09-17",
         "2026-09-18",
         "2026-09-20",
         "2026-09-21",
@@ -1667,10 +1666,10 @@
         "2026-11-22",
         "2026-11-23",
         "2026-11-24",
-        "2026-11-25"
+        "2026-11-25",
+        "2026-11-26"
       ],
       "values": [
-        100.22000122070312,
         100.22000122070312,
         null,
         100.43000030517578,
@@ -1729,10 +1728,11 @@
         null,
         104.31999969482422,
         103.80999755859375,
-        103.7979965209961
+        103.66999816894531,
+        103.75599670410156
       ],
       "status": "VERIFIED",
-      "as_of": "2026-11-25",
+      "as_of": "2026-11-26",
       "source": "Yahoo Finance public market feed"
     }
   ],
@@ -1767,7 +1767,7 @@
       },
       {
         "name": "Dow Jones",
-        "value": "50,182.90",
+        "value": "50,182.95",
         "change": "+0.33%",
         "tone": "up",
         "status": "VERIFIED",
@@ -1796,105 +1796,105 @@
     "asia": [
       {
         "name": "台灣加權",
-        "value": "39,447.29",
+        "value": "39,332.66",
         "change": "SOURCE ERROR",
         "tone": "warn",
         "status": "SOURCE ERROR",
-        "as_of": "2026-11-26",
+        "as_of": "2026-11-27",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "日經225",
-        "value": "57,889.26",
+        "value": "58,564.61",
         "change": "SOURCE ERROR",
         "tone": "warn",
         "status": "SOURCE ERROR",
-        "as_of": "2026-11-26",
+        "as_of": "2026-11-27",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "韓國KOSPI",
-        "value": "4,777.35",
+        "value": "4,895.80",
         "change": "SOURCE ERROR",
         "tone": "warn",
         "status": "SOURCE ERROR",
-        "as_of": "2026-11-26",
+        "as_of": "2026-11-27",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "香港恆生",
-        "value": "22,373.81",
+        "value": "22,416.44",
         "change": "SOURCE ERROR",
         "tone": "warn",
         "status": "SOURCE ERROR",
-        "as_of": "2026-11-26",
+        "as_of": "2026-11-27",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "新加坡海峽",
-        "value": "4,974.44",
+        "value": "4,973.17",
         "change": "SOURCE ERROR",
         "tone": "warn",
         "status": "SOURCE ERROR",
-        "as_of": "2026-11-26",
+        "as_of": "2026-11-27",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "澳洲ASX 200",
-        "value": "8,765.30",
+        "value": "8,837.90",
         "change": "SOURCE ERROR",
         "tone": "warn",
         "status": "SOURCE ERROR",
-        "as_of": "2026-11-26",
+        "as_of": "2026-11-27",
         "source": "Yahoo Finance public market feed"
       }
     ],
     "europe": [
       {
         "name": "STOXX Europe 600",
-        "value": "626.03",
-        "change": "-1.06%",
-        "tone": "down",
+        "value": "636.98",
+        "change": "+1.75%",
+        "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-11-25",
+        "as_of": "2026-11-26",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "德國DAX",
-        "value": "24,702.13",
-        "change": "-1.26%",
-        "tone": "down",
+        "value": "25,215.52",
+        "change": "+2.08%",
+        "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-11-25",
+        "as_of": "2026-11-26",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "法國CAC 40",
-        "value": "7,980.57",
-        "change": "-0.75%",
-        "tone": "down",
+        "value": "8,108.74",
+        "change": "+1.61%",
+        "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-11-25",
+        "as_of": "2026-11-26",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "英國FTSE 100",
-        "value": "10,426.90",
-        "change": "-0.38%",
-        "tone": "down",
+        "value": "10,609.30",
+        "change": "+1.75%",
+        "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-11-25",
+        "as_of": "2026-11-26",
         "source": "Yahoo Finance public market feed"
       }
     ],
     "fx": [
       {
         "name": "DXY",
-        "value": "103.80",
-        "change": "+0.12%",
+        "value": "103.76",
+        "change": "+0.08%",
         "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-11-25",
+        "as_of": "2026-11-26",
         "source": "Yahoo Finance public market feed"
       },
       {
@@ -1903,74 +1903,74 @@
         "change": "SOURCE ERROR",
         "tone": "warn",
         "status": "SOURCE ERROR",
-        "as_of": "2026-11-26",
+        "as_of": "2026-11-27",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "USD/JPY",
-        "value": "159.17",
+        "value": "159.26",
         "change": "SOURCE ERROR",
         "tone": "warn",
         "status": "SOURCE ERROR",
-        "as_of": "2026-11-26",
+        "as_of": "2026-11-27",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "AUD/USD",
-        "value": "0.66",
+        "value": "0.67",
         "change": "SOURCE ERROR",
         "tone": "warn",
         "status": "SOURCE ERROR",
-        "as_of": "2026-11-26",
+        "as_of": "2026-11-27",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "USD/TWD",
-        "value": "32.94",
+        "value": "32.96",
         "change": "SOURCE ERROR",
         "tone": "warn",
         "status": "SOURCE ERROR",
-        "as_of": "2026-11-26",
+        "as_of": "2026-11-27",
         "source": "Yahoo Finance public market feed"
       }
     ],
     "energy": [
       {
         "name": "WTI",
-        "value": "84.40",
-        "change": "+0.86%",
+        "value": "85.76",
+        "change": "+2.49%",
         "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-11-25",
+        "as_of": "2026-11-26",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "Brent 期貨",
-        "value": "91.16",
-        "change": "-3.65%",
+        "value": "92.26",
+        "change": "-2.48%",
         "tone": "down",
         "status": "VERIFIED",
-        "as_of": "2026-11-25",
+        "as_of": "2026-11-26",
         "source": "Yahoo Finance public market feed"
       }
     ],
     "metals": [
       {
         "name": "GOLD",
-        "value": "3,626.30",
-        "change": "+2.56%",
+        "value": "3,663.40",
+        "change": "+3.61%",
         "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-11-25",
+        "as_of": "2026-11-26",
         "source": "Yahoo Finance public market feed"
       },
       {
         "name": "白銀期貨",
-        "value": "42.22",
-        "change": "+5.40%",
+        "value": "43.72",
+        "change": "+9.17%",
         "tone": "up",
         "status": "VERIFIED",
-        "as_of": "2026-11-25",
+        "as_of": "2026-11-26",
         "source": "Yahoo Finance public market feed"
       },
       {
@@ -2060,7 +2060,7 @@
           "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261119a.htm",
           "as_of": "2026-11-20 00:00",
           "source": "Federal Reserve",
-          "status": "VERIFIED"
+          "status": "STALE"
         },
         {
           "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
@@ -2075,20 +2075,6 @@
           "as_of": "2026-11-14 05:15",
           "source": "Federal Reserve",
           "status": "STALE"
-        },
-        {
-          "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
-          "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm",
-          "as_of": "2026-11-13 02:30",
-          "source": "Federal Reserve",
-          "status": "STALE"
-        },
-        {
-          "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
-          "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
-          "as_of": "2026-11-13 01:45",
-          "source": "Federal Reserve",
-          "status": "STALE"
         }
       ]
     },
@@ -2098,6 +2084,13 @@
       "source_url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "VERIFIED",
       "items": [
+        {
+          "title": " Meeting of 28-29 October 2026",
+          "url": "https://www.ecb.europa.eu//press/accounts/2026/html/ecb.mg261126~ccf28c8071.en.html",
+          "as_of": "2026-11-26 20:30",
+          "source": "ECB",
+          "status": "VERIFIED"
+        },
         {
           "title": " ECB and Sveriges Riksbank conclude agreement for Sweden to join T2",
           "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261125_1~6333a90f3a.en.html",
@@ -2160,13 +2153,6 @@
           "as_of": "2026-11-18 02:30",
           "source": "ECB",
           "status": "STALE"
-        },
-        {
-          "title": " Frank Elderson: Smart supervision for small banks",
-          "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261116_1~11dd7f62af.en.html",
-          "as_of": "2026-11-16 21:00",
-          "source": "ECB",
-          "status": "STALE"
         }
       ]
     },
@@ -2177,9 +2163,30 @@
       "status": "VERIFIED",
       "items": [
         {
+          "title": "Japan Tobacco shares surge on report of Imperial Brands takeover",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/japan-tobacco-shares-surge-report-025249524.html?.tsrc=rss",
+          "as_of": "2026-11-27 10:52",
+          "source": "Yahoo Asia",
+          "status": "VERIFIED"
+        },
+        {
           "title": "BC-Nikkei 225 Futures",
-          "url": "https://finance.yahoo.com/markets/world-indices/articles/bc-nikkei-225-futures-233012760.html?.tsrc=rss",
-          "as_of": "2026-11-26 07:30",
+          "url": "https://finance.yahoo.com/markets/world-indices/articles/bc-nikkei-225-futures-233013753.html?.tsrc=rss",
+          "as_of": "2026-11-27 07:30",
+          "source": "Yahoo Asia",
+          "status": "VERIFIED"
+        },
+        {
+          "title": "SoftBank Group Stocks Jump 7.32% as AI Rebound Lifts Tokyo After a 14.83% Rout",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/softbank-group-stocks-jump-7-184827003.html?.tsrc=rss",
+          "as_of": "2026-11-27 02:48",
+          "source": "Yahoo Asia",
+          "status": "VERIFIED"
+        },
+        {
+          "title": "Kioxia jumps 14% after Nvidia collaboration as chip stocks rebound",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/kioxia-jumps-14-nvidia-collaboration-062844097.html?.tsrc=rss",
+          "as_of": "2026-11-26 14:28",
           "source": "Yahoo Asia",
           "status": "VERIFIED"
         },
@@ -2224,27 +2231,6 @@
           "as_of": "2026-11-25 01:55",
           "source": "Yahoo Asia",
           "status": "VERIFIED"
-        },
-        {
-          "title": "Advantest Stocks Jump 12.45% as Tokyo Chip Testers Lead Huang Rebound",
-          "url": "https://finance.yahoo.com/markets/stocks/articles/advantest-stocks-jump-12-45-173630366.html?.tsrc=rss",
-          "as_of": "2026-11-25 01:36",
-          "source": "Yahoo Asia",
-          "status": "VERIFIED"
-        },
-        {
-          "title": "Nvidia Bulls Rule on Asian Stock Markets",
-          "url": "https://finance.yahoo.com/markets/world-indices/articles/nvidia-bulls-rule-asian-stock-103642321.html?.tsrc=rss",
-          "as_of": "2026-11-24 18:36",
-          "source": "Yahoo Asia",
-          "status": "VERIFIED"
-        },
-        {
-          "title": "Asia chipmaking stocks soar tracking Nvidia rally; S.Korea, Taiwan lead",
-          "url": "https://finance.yahoo.com/technology/ai/articles/asia-chipmaking-stocks-soar-tracking-021520376.html?.tsrc=rss",
-          "as_of": "2026-11-24 10:15",
-          "source": "Yahoo Asia",
-          "status": "VERIFIED"
         }
       ]
     },
@@ -2270,7 +2256,33 @@
     "status": "VERIFIED",
     "items": [
       {
-        "title": "Stocks rally in Asia, unrocked by US tariffs",
+        "title": "Trump says Wednesday's market had him briefly 'concerned' before stocks recovered",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOWHRXZnN1TmZVRDJ6VUJtNjhuRm85eGlQVmdGNGQ0SC0yeHlPVUlKSksyLVNZa0VqRGdqUWVtaW1oNHhjQldDdHlKYnZ0TVgtbkpEcmJfVEcyTUxnNkNYeEdaYXlWUmQwcnhyLUtrUERoYnhIdnVxV3lFeUhza21Wc3U2WW9yd2loWmpxeXE4SG9OT2Rlai1reWtSemRkYnlBZndLaFVNOHJHeDF4ZkVmckpqSzZSbElNZHpfdUFLTTBsOW9C?oc=5",
+        "as_of": "2026-11-27 08:25",
+        "published_at": "2026-11-27T00:25:00+00:00",
+        "source": "Reuters",
+        "publisher_url": "https://www.reuters.com",
+        "delivery": "Google News RSS",
+        "status": "VERIFIED",
+        "summary_zh": "川普表示，在股市回升之前，週三的市場讓他短暫“擔憂”",
+        "translation_status": "OK",
+        "summary_method": "Translated publisher headline only; not a full-article summary"
+      },
+      {
+        "title": "European stocks end higher on easing tariff fears, ECB leadership continuity",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOWDAyOS03ZTA0ZzRTRmR6d2diZDJ5X0V0ejhjSlg1MzhMaTlCNU1LNTBCYVlJS2VhVV9USmNxYnNGYk9CaTdYckN1NVBZLWNKQm9BYXB5SEpNYVMyN3hzbFRjaExPY3piakNDakM1Qm1NSDJ1MFJLZzF3NGN5TFVCYThrYmNzZFhyVzN1bVBhaXh6a2t4cUxNQzBGUnpWVVFxb1l2cFR5WE1UZ0tvUEpDcw?oc=5",
+        "as_of": "2026-11-27 01:43",
+        "published_at": "2026-11-26T17:43:00+00:00",
+        "source": "Reuters",
+        "publisher_url": "https://www.reuters.com",
+        "delivery": "Google News RSS",
+        "status": "VERIFIED",
+        "summary_zh": "歐洲股市因關稅擔憂緩解和歐洲央行領導力延續而收高",
+        "translation_status": "OK",
+        "summary_method": "Translated publisher headline only; not a full-article summary"
+      },
+      {
+        "title": "Stocks rally, Europe sizes up next ECB chief",
         "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPUWRTQ2N0czgwTVhPdVhvZDUzeDNDRUJ6cFd0MWx1N05aSTJHaUlOdTQ5X2xieEVueHJ3VTRrb0ppNEtzbFVBRm1fU3VvV0xpMWVlUWg3c0NvWXJxS2ZabkwwejhwenhCVmhYRUdweUwwdHhTTWd1bTh2QlR1dFpvVDFHVQ?oc=5",
         "as_of": "2026-11-26 09:35",
         "published_at": "2026-11-26T01:35:00+00:00",
@@ -2278,7 +2290,20 @@
         "publisher_url": "https://www.reuters.com",
         "delivery": "Google News RSS",
         "status": "VERIFIED",
-        "summary_zh": "受美國關稅影響亞洲股市上漲",
+        "summary_zh": "股市上漲，歐洲正在醞釀下一任歐洲央行總裁",
+        "translation_status": "OK",
+        "summary_method": "Translated publisher headline only; not a full-article summary"
+      },
+      {
+        "title": "World stocks tumble as Trump tariffs rattle markets, AI rally fades",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNRFVsTjFROGtER0loSkZOcnF2NDRLUWFmcjBHZ01ybE51N19idjFFMXI1dnFqZ21JYS1HVVpicTJ1V1RfVU4zd3pkVEZMWHdqMUJWRENOQWJ2VjFqT1Y3WS0xYTV3bzd2RnRraFhtOVpzVE9yYThzdV9tdWxJbUpjNzFraw?oc=5",
+        "as_of": "2026-11-26 08:28",
+        "published_at": "2026-11-26T00:28:43+00:00",
+        "source": "Reuters",
+        "publisher_url": "https://www.reuters.com",
+        "delivery": "Google News RSS",
+        "status": "VERIFIED",
+        "summary_zh": "川普關稅擾亂市場，世界股市暴跌，人工智慧漲勢消退",
         "translation_status": "OK",
         "summary_method": "Translated publisher headline only; not a full-article summary"
       },
@@ -2292,45 +2317,6 @@
         "delivery": "Google News RSS",
         "status": "VERIFIED",
         "summary_zh": "AI股暴跌加深，但午後反彈造成的損失有限",
-        "translation_status": "OK",
-        "summary_method": "Translated publisher headline only; not a full-article summary"
-      },
-      {
-        "title": "Anthropic's slide tests Wall Street's lofty bets on future AI profits",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZE1sRHlKd3Y1aUpqaUVpeFQ3QjFmX191blVmM1gyS0hidW81RjFjSXJjQndnODAwQU9qb3VkYkJfZ3ppYzdBQ1J5cTRUaDMzamxvZVNsYzB6RUpiVzd2RlhxV2hKaDRjTFdhamRKZ3g3MXZDY1c5c3NMalpmc09aQ3JnNGEyQTR5NG85OW9VTEE1NW9md1VKdFYxeTlnbWNjd25UcjVwamhDX1pIaXc?oc=5",
-        "as_of": "2026-11-26 02:35",
-        "published_at": "2026-11-25T18:35:00+00:00",
-        "source": "Reuters",
-        "publisher_url": "https://www.reuters.com",
-        "delivery": "Google News RSS",
-        "status": "VERIFIED",
-        "summary_zh": "Anthropic 的幻燈片測試了華爾街對未來人工智慧利潤的豪賭",
-        "translation_status": "OK",
-        "summary_method": "Translated publisher headline only; not a full-article summary"
-      },
-      {
-        "title": "UK stocks fall as banks, miners track Wall Street selloff",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOTW1VcFBpakVFWW8xQ3dPdGNtZFRQRGJuX2tmOTVZOHBsa2hvQ3hkNHMwVmJvNmo1eHlxd0xkV2xDSFpuSGZqX2hUMWxQUV9xdVl5WTNfOXFRYnRYRGlKcF9xajludy1FQjY3R1dFT2pjYkEyXzRnYkd5amRiSDA4QkZyeFR3N0NKUGZsbDV2SW0xS085Qzl4bHdFSW1HNEVrX0hvbE5HUmo1QQ?oc=5",
-        "as_of": "2026-11-26 01:20",
-        "published_at": "2026-11-25T17:20:52+00:00",
-        "source": "Reuters",
-        "publisher_url": "https://www.reuters.com",
-        "delivery": "Google News RSS",
-        "status": "VERIFIED",
-        "summary_zh": "英國股市下跌，銀行、礦商跟隨華爾街拋售",
-        "translation_status": "OK",
-        "summary_method": "Translated publisher headline only; not a full-article summary"
-      },
-      {
-        "title": "Buy the stock dip? Options market signals say wait",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQU0dOWTF0OFdPY3R6M1VaWklxVjlwaGkzcDk3d1U4WXp2Q1dNX3FfYW5qYmMzZG1MbDUtRGg5elI1RUEwZzBVaGVZZnV1LUptczdWQU1teXhlVkN5cWVXNjZneXcxMkxPcEJtbVltV3VjWkVrN2pWTmNhTC1zby1sNWdDbGtCOVEyMEdXemdLNXRydHVv?oc=5",
-        "as_of": "2026-11-25 18:25",
-        "published_at": "2026-11-25T10:25:50+00:00",
-        "source": "Reuters",
-        "publisher_url": "https://www.reuters.com",
-        "delivery": "Google News RSS",
-        "status": "VERIFIED",
-        "summary_zh": "逢低買入股票？期權市場信號表明等待",
         "translation_status": "OK",
         "summary_method": "Translated publisher headline only; not a full-article summary"
       }
@@ -2700,7 +2686,7 @@
       "name": "DXY",
       "low": 101.51000213623047,
       "high": 104.31999969482422,
-      "as_of": "2026-11-25",
+      "as_of": "2026-11-26",
       "status": "VERIFIED",
       "method": "Last 20 available observations: observed min/max; not support/resistance",
       "source": "Yahoo Finance public market feed",
@@ -2715,11 +2701,11 @@
     "10Y–30Y (30Y−10Y) +39.0 bp（2026-11-25）",
     "2Y–30Y (30Y−2Y) +63.0 bp（2026-11-25）",
     "10Y−EFFR +103.0 bp（2026-11-24）",
-    "DXY 當日 +0.12%；美元走強",
-    "黃金當日 +2.56%；達單日上漲 1% 觀察門檻。",
-    "WTI 當日 +0.86%。"
+    "DXY 當日 +0.08%；美元走強",
+    "黃金當日 +3.61%；達單日上漲 1% 觀察門檻。",
+    "WTI 當日 +2.49%；達單日上漲 2% 能源價格壓力門檻。"
   ],
-  "report_date": "2026-11-26",
+  "report_date": "2026-11-27",
   "schema_version": "3.0",
   "coverage": {
     "status": "PARTIAL",
